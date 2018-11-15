@@ -1,0 +1,339 @@
+* {
+    margin: auto;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    border: 0;
+    width: -moz-available;
+    vertical-align: baseline;
+    overflow-x: hidden;
+    position: absolute;
+}
+
+.ContainEverything {
+    position: initial;
+    border: none;
+    margin-top: 160px;
+    width: 100%;
+    height: 98%;
+}
+
+.AllR {
+    font-size: 50px;
+    font-family: Dosis-Bold;
+    font-weight: 800;
+    color: Salmon;
+    display: block;
+    text-align: center;
+}
+
+.AllSearchResults ul li {
+    text-align: start;
+    width: 970px;
+    height: 320px;
+    list-style: none;
+    border-bottom: white dashed 2px;
+}
+
+.AllSearchResults ul li:last-child {
+    border: none;
+    margin-bottom: 50px;
+}
+
+/*每个框*/
+.eachOne {
+    width: 900px;
+    height: 320px;
+    margin: 0 auto;
+    display: -webkit-flex;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.showImage {
+    width: 440px;
+    height: 300px;
+}
+
+.eachOneLeft {
+    width: 440px;
+    height: 300px;
+}
+
+.eachOneRight {
+    width: 440px;
+    height: 300px;
+}
+
+.eachOne a {
+    text-decoration: none;
+    color: AliceBlue;
+    font-family: fantasy;
+}
+
+.eachOne a:hover {
+    color: powderblue;
+    text-decoration: none;
+}
+
+.PJTitle {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.PJCategory {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.PJTeam {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.PJPurpose {
+    font-size: 21px;
+}
+
+.progress {
+    margin-top: 10px;
+    width: 400px;
+    height: 25px;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    border-radius: 4.5px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+}
+
+.progress-bar {
+    float: left;
+    height: 100%;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+    background-color: #75C9E6;
+}
+
+.close:hover, .close:focus {
+    color: #000;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.alert-dismissable .close, .alert-dismissible .close {
+    color: inherit;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+}
+
+.close {
+    float: right;
+    font-size: 30px;
+    color: #000;
+    opacity: 0.3;
+}
+
+.alert {
+    margin: 300px auto 280px;
+    font-size: 30px;
+    width: 1100px;
+    padding: 15px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+}
+
+.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+}
+
+.Page-box {
+    position: inherit;
+    text-align: center;
+}
+
+.Page-box span {
+    float: left;
+    margin: 0 5px;
+    width: 38px;
+    height: 38px;
+    line-height: 38px;
+    color: #bdbdbd;
+    font-size: 14px;
+}
+
+.Page-box .disabled {
+    float: left;
+    margin: 0 5px;
+    width: 38px;
+    height: 38px;
+    line-height: 38px;
+    background: #e91e63;
+    color: #fff;
+    font-size: 14px;
+    border: 1px solid #e91e63;
+}
+
+.Page-box a {
+    text-decoration: none;
+    float: left;
+    margin: 0 5px;
+    width: 38px;
+    height: 38px;
+    line-height: 38px;
+    background: #fff;
+    border: 1px solid #ebebeb;
+    color: #bdbdbd;
+    font-size: 14px;
+}
+
+.Page-box a:hover {
+    color: #fff;
+    opacity: 0.85;
+    background: #e91e63;
+}
+
+.PJFPercent {
+    color: Fuchsia;
+}
+
+.PJPublishTime {
+    color: yellow;
+}
+
+/*点赞*/
+.praise {
+    position: absolute;
+    margin-left: 360px;
+    margin-top: 20px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+/*心形*/
+.like {
+    font-size: 30px;
+    height: 30px;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.like_alt {
+    height: 30px;
+    color: whitesmoke;
+}
+
+.cs {
+    font-size: 30px;
+    height: 30px;
+    cursor: pointer;
+    color: OrangeRed;
+}
+
+.cs .like_alt {
+    color: OrangeRed;
+}
+
+#praise-txt {
+    line-height: 25px;
+    display: block;
+    color: white;
+    font-size: 20px;
+}
+
+/*动态点赞开始*/
+.praise{
+    width:40px;
+    height:40px;
+    cursor: pointer;
+    text-align:center;
+}
+
+.praise-txt{
+    height:25px;
+    line-height:25px;
+    display: block;
+}
+.praise img{
+    width:40px;
+    height:40px;
+    display:block;
+    margin: 0 auto;
+}
+.praise img.animation{
+    animation: myfirst 0.5s;
+    -moz-animation: myfirst 0.5s;
+}
+.add-num{
+    display:none;
+}
+.add-num .add-animation{
+    color: white;
+    position:absolute;
+    top:-15px;
+    left: 10px;
+    font-size: 15px;
+    opacity: 0;
+    animation: mypraise 0.5s ;
+    font-style:normal;
+}
+.praise .hover , .add-num .add-animation.hover , .praise-txt.hover{
+    color: #EB4F38;
+}
+
+@keyframes myfirst
+{
+    0%{
+        width:40px;
+        height:40px;
+    }
+    50%{
+        width:50px;
+        height:50px;
+    }
+    100% {
+        width:40px;
+        height:40px;
+    }
+}
+@keyframes mypraise
+{
+    0%{
+        top:-15px;
+        opacity: 0;
+        filter: Alpha(opacity=0);
+        -moz-opacity:0;
+    }
+    25%{
+        top:-20px;
+        opacity: 0.5;
+        filter: Alpha(opacity=50);
+        -moz-opacity:0.5;
+    }
+    50%{
+        top:-25px;
+        opacity: 1;
+        filter: Alpha(opacity=100);
+        -moz-opacity:1;
+    }
+    75%{
+        top:-30px;
+        opacity: 0.5;
+        filter: Alpha(opacity=50);
+        -moz-opacity:0.5;
+    }
+    100% {
+        top:-35px;
+        opacity: 0;
+        filter: Alpha(opacity=0);
+        -moz-opacity:0;
+    }
+}
+
+.footer-link{
+    margin-top:25px;
+}

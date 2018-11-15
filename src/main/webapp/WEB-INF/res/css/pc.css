@@ -1,0 +1,530 @@
+.wrap{
+    margin-top: 120px;
+}
+
+
+#head .logo, #head .top-nav, #head h1, .skyblue {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.l {
+    float: left;
+}
+
+.r {
+    float: right;
+}
+
+ol, ul {
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: #333333;
+}
+
+a {
+    cursor: pointer;
+}
+
+a img {
+    border: none;
+}
+
+.personal {
+    margin: 0;
+    padding: 0;
+    background: url(../image/personal_bg.jpg);
+}
+
+.wrap {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    height: auto;
+    overflow: hidden;
+}
+
+.personal .left_nav {
+    width: 25%;
+    margin-top: 55px;
+    margin-bottom: 55px;
+}
+
+.personal ul.ul_left_nav li {
+    height: 60px;
+    line-height: 60px;
+}
+
+.personal ul.ul_left_nav li a {
+    display: block;
+    width: 100%;
+    font-size: 16px;
+}
+
+.personal ul.ul_left_nav li a .left_nav_icon {
+    width: 31px;
+    height: 31px;
+    background-color: #d2d2d2;
+    border-radius: 50%;
+    vertical-align: middle;
+    line-height: 28px;
+    text-align: center;
+    margin-right: 25px;
+}
+
+.dib {
+    display: inline-block;
+}
+
+.personal ul.ul_left_nav li a .left_nav_icon .icon_img {
+    vertical-align: middle;
+    padding: 5px 0;
+}
+
+.personal ul.ul_left_nav li.active a .left_nav_icon {
+    background-color: #ff9e19;
+}
+
+.personal ul.ul_left_nav li.active a .left_nav_name {
+    color: #ff6600;
+}
+
+.personal .right_content {
+    width: 75%;
+    margin-top: 70px;
+    min-height: 500px;
+}
+
+.personal .personal_info {
+    margin-bottom: 25px;
+}
+
+.personal .personal_info .personal_info_left {
+    width: 60%;
+    height: 162px;
+    background: #fff;
+    background-image: url(../image/personal_index_bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center left;
+    border-right: 1px dashed #ececec;
+    padding-top: 32px;
+    padding-left: 55px;
+}
+
+.personal .personal_info .personal_info_left .head_portrait {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #f4f4f4;
+}
+
+.personal .personal_info .personal_info_left .head_portrait img {
+    width: 100%;
+    height: 100%;
+}
+
+.personal .personal_info .personal_info_left .nickname {
+    margin-top: 24px;
+    margin-left: 20px;
+}
+
+.personal .personal_info .personal_info_left .nickname p {
+    font-size: 22px;
+    color: #333333;
+    padding-bottom: 12px;
+}
+
+.personal .personal_info .personal_info_left .nickname span {
+    color: #005ea7;
+    font-size: 18px;
+    padding-right: 14px;
+}
+
+.personal .personal_info .personal_info_right {
+    position: relative;
+    width: 30%;
+    height: 162px;
+    background: #fff;
+}
+
+.personal .personal_info .personal_info_right_asset {
+    width: 90%;
+    height: 131px;
+    border: 1px solid #ff6600;
+    border-radius: 8px;
+    margin: 15px auto;
+    background: #fefae6;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 25px;
+}
+
+.personal .personal_info .personal_info_right_asset .tit {
+    width: 110px;
+    height: 30px;
+    background-image: url(../image/personal_index_img01.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: #fff;
+    font-size: 12px;
+    text-align: right;
+    line-height: 30px;
+    padding-right: 12px;
+}
+
+.personal .personal_info .personal_info_right_asset .mub .mub_com {
+    width: 50%;
+    margin-top: 10px;
+}
+
+.personal .personal_info .personal_info_right_asset .mub .mub_com span {
+    font-size: 18px;
+    color: #666666;
+}
+
+.personal .personal_info .personal_info_right_asset .mub .mub_com p {
+    color: #ff6600;
+    font-size: 26px;
+    font-weight: bold;
+    padding-top: 5px;
+}
+
+.personal .minheight800 {
+    min-height: 800px;
+}
+
+.personal .common {
+    background: #fff;
+    margin-bottom: 40px;
+    padding-right: 35px;
+    padding-left: 35px;
+}
+
+.personal .common_title {
+    padding: 28px 0 24px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.personal .user_info {
+    padding: 20px;
+}
+
+.personal .common_title span {
+    padding-left: 20px;
+    font-size: 18px;
+    color: #333333;
+    border-left: 5px solid #ff9e19;
+}
+
+.personal .common_title a.complete {
+    font-size: 12px;
+    color: #999999;
+    line-height: 20px;
+}
+
+.personal .user_info li.fix {
+    padding: 15px 40px 15px 0;
+    line-height: 30px;
+}
+
+.am-btn {
+    border-radius: 2px;
+}
+
+button, .am-btn {
+    outline: none;
+}
+
+input[type="file"] {
+    display: block;
+}
+
+input {
+    outline: none;
+}
+
+.tc {
+    text-align: center;
+}
+
+.personal .user_info .has_check {
+    color: #d2d2d2;
+    margin-left: 10px;
+}
+
+.user_info ._title {
+    width: 20%;
+}
+
+.button:hover {
+    background-color: #ffba5b;
+}
+
+.button {
+    width: 100px;
+    height: 38px;
+    line-height: 38px;
+    font-size: 14px;
+    background-color: #ff9e19;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    transition: all 0.2s;
+    outline: none;
+}
+
+.tab-selected {
+    border-radius: 4px;
+    /*border:solid 2px #1f7eaa;*/
+    background-color: #618aff;
+    color: white;
+}
+
+.tab-menu {
+    background-color: ivory;
+}
+
+.tab-menu ul li {
+    /*background-color: darkgreen;*/
+    display: inline-block;
+}
+
+.tab-menu ul li a {
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.tab-hide {
+    display: none;
+    /*width: 90%;*/
+}
+
+.update-container {
+    padding: 20px 0;
+    background-color: #ffffff;
+}
+.update-list{
+
+    list-style-type: none;
+
+}
+.update-item{
+    position: relative;
+    margin-left: 20px;
+    padding: 0 0 20px 20px;
+    border-left: solid 1px #6179e2;
+}
+.a_fold{
+    position: absolute;
+    left: -10px;
+    color: white;
+    font-size: 16px;
+    padding: 0 3px 4px;
+    text-decoration: none;
+    background-color: #6c7cc8;
+    font-weight: bolder;
+    border-radius: 50px;
+    height: 20px;
+}
+.update-item-title{
+    margin-bottom: 10px;
+    height: 55px;
+}
+.update-item-content{
+    width: 100%;
+    display: none;
+    height: 100px;
+    overflow-y: visible;
+}
+
+.update-item-title p {
+    float: left;
+    margin-left: 20px;
+    color: #999999;
+}
+
+.update-item-title h3 {
+    float: left;
+    font-size: 18px;
+}
+
+.personal .order_number {
+    height: 40px;
+    line-height: 40px;
+    background-color: #fafafa;
+}
+
+.personal .order_number .order_number_left {
+    font-size: 14px;
+    color: #666666;
+    padding-left: 15px;
+}
+.personal .order_number .order_number_right {
+    font-size: 14px;
+    color: #005ea7;
+}
+
+.personal .order_number .order_number_right span {
+    color: #005ea7;
+}
+
+.personal .project_order_content {
+    margin-bottom: 30px;
+    height: 250px;
+}
+
+.personal .project_order_content .project_order_content_img {
+    margin-top: 15px;
+    width: 30%;
+    height: 182px;
+}
+
+.personal .project_hotel_order_content .project_order_content_img vide,.personal .project_hotel_order_content .project_order_content_img img {
+    width: 100%;
+    height: 100%;
+}
+
+.personal .project_order_content .project_order_content_info {
+    margin-left: 2%;
+    width: 65%;
+}
+
+.personal .project_order_content .project_order_content_info a {
+    display: block;
+    font-size: 20px;
+    color: #333333;
+    line-height: 60px;
+    height: 60px;
+    border-bottom: 1px dashed #ececec;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+
+.personal .project_order_content .project_order_content_info p {
+    line-height: 32px;
+    font-size: 14px;
+    color: #666666;
+}
+
+.personal .project_order_content .project_order_content_info p em {
+    color: #ff6600;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.personal .project_order_content .project_order_content_info a.w_customer {
+    position: absolute;
+    right: 20px;
+    bottom: 5px;
+    width: 80px;
+    height: 30px;
+    border-bottom: none;
+    margin-bottom: 0;
+    line-height: 28px;
+    font-size: 14px;
+    text-align: center;
+    color: #666666;
+    border: 1px solid #c9c9c9;
+    border-radius: 3px;
+    transition: all 0.2s;
+    outline: none;
+}
+
+.personal .order_detail{
+    padding-top: 25px;
+    padding-bottom: 15px;
+}
+
+.personal .check {
+    padding-left: 25px;
+    margin-bottom: 5px;
+    line-height: 40px;
+}
+
+.personal .check .check_left {
+    width: 20%;
+    font-size: 14px;
+    color: #999999;
+}
+
+.personal .check .check_right {
+    color: #333333;
+    font-size: 16px;
+}
+
+.fix::before, .fix::after {
+    display: table;
+    clear: both;
+    content: '';
+}
+
+.personal .check .m-main {
+    color: #ff6600;
+}
+
+.personal .check .fz-20 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.addressList {
+    margin-top: 20px;
+    padding-bottom: 30px;
+    overflow: hidden;
+    width: 40%;
+    /*height: 170px;*/
+}
+
+.addressList .user-address{
+    height: 100px;
+    overflow-y: visible;
+}
+
+.addressList .user_phone{
+    margin-top:10px;
+    margin-bottom: 2px;
+}
+.addressList .box {
+    background-image: url(../image/shdz_bg.jpg);
+    background-size: 100% 100%;
+    padding: 13px 26px;
+}
+.addressList .name {
+    display: block;
+    height: 26px;
+    font-size: 14px;
+    color: #1c1c1c;
+    line-height: 26px;
+    font-weight: normal;
+}
+
+#toHome > .icon_house_alt{
+    text-decoration: none;
+
+}
+
+.icon_profile:before {
+    font-size: 23px;
+    color: LightSeaGreen;
+    margin-right: 5px;
+}
+
+.icon_key:before {
+    font-size: 23px;
+    color: LightSeaGreen;
+    margin-right: 5px;
+}
+
+#head .logo, #head .top-nav, #head h1, .skyblue {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

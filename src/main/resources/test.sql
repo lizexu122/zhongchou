@@ -1,0 +1,1 @@
+select DATE_FORMAT(create_time,'%Y-%m-%d'),status,Count(id) from `order` where  DATE_FORMAT(create_time,'%Y-%m-%d')> DATE_SUB(CURDATE(),INTERVAL 30 DAY) GROUP BY DATE_FORMAT(create_time,'%Y-%m-%d'),status ORDER BY create_time

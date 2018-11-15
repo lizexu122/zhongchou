@@ -1,0 +1,177 @@
+/*start 课程模块*/
+/*start 课程系列模块*/
+.block_courseAtlas {
+    width: 60%;
+    min-height: 500px;
+    margin: 30px 230px;
+}
+
+/*start 课程系列头部*/
+course_head {
+    padding: 20px 0;
+    height: 120px;
+    background-color: #f9f9f9;
+    margin-left: 48px;
+}
+/*start 头部左部*/
+.course_head_l{
+    float: left;
+    width: 80%;
+    height: 120px;
+    margin-left: 48px;
+}
+
+.head_img{
+    float: left;
+    width: 40%;
+    height: 110px;
+    border: solid 1px #f1f1f1;
+    background-color: #0f86dd;
+}
+.head_img>h3{
+    color: #222740;
+    font-size: 50px;
+    text-align: center;
+    margin: 22px 0;
+}
+
+.course_head_l .brief{
+    padding-left: 4%;
+    margin-left: 21%;
+}
+.course_head_l .brief h3{
+    font-size: 28px;
+}
+.course_head_l .brief p{
+    padding: 30px 0 30px;
+    color: #666666;
+}
+
+/*end 头部左部*/
+/*start 头部右部*/
+.course_head_r{
+    float: right;
+    width: 20%;
+}
+.data{
+    border-left: 1px solid #e9e9e9;
+    height: 90px;
+    width: 80%;
+    text-align: center;
+}
+.data .num{
+    font-size: 30px;
+    color: #03b2dd;
+}
+
+.data .text{
+    font-size: 14px;
+    color: #999990;
+}
+/*end 头部右部*/
+/*end 课程系列头部*/
+
+/*start 系列内容*/
+.course_box{
+    padding: 20px 0;
+    background-color: #ffffff;
+}
+.course_box ul{
+    list-style-type: none;
+}
+/*列表1，列表2，列表3*/
+.course_box_list .first,.course_box_list .second,.course_box_list .third{
+    position: relative;
+    margin-left: 20px;
+    padding: 0 0 20px 20px;
+    height: 900px;
+
+}
+/*控制滑动切换的小按钮：绝对定位，置于列表边缘，不受其他元素影响*/
+.course_box_list > li > a {
+    position: absolute;
+    left: -10px;
+    color: white;
+    font-size: 16px;
+    padding: 0 3px 4px;
+    text-decoration: none;
+    background-color: #6c7cc8;
+    font-weight: bolder;
+    border-radius: 50px;
+    margin-left: 25px;
+}
+
+.course_title{
+    margin-bottom: 10px;
+    height: 30px;
+}
+.course_title h3{
+    float: left;
+    font-size: 18px;
+}
+.course_title p{
+    float: left;
+    margin-left: 20px;
+    color: #999999;
+}
+
+.course_name{
+    height: 42px;
+    line-height: 42px;
+    font-size: 14px;
+}
+.course_name>li{
+    float: left;
+    border-right: solid 1px #c2c2c2;
+}
+.course_name>li>a{
+    padding: 0 15px;
+    height: 30px;
+    line-height: 30px;
+    color: #666666;
+    text-decoration: none;
+
+}
+
+/*下拉课程：初始隐藏，点击小按钮进行下拉收起切换*/
+.course_down{
+    width: 100%;
+    display: none;
+    height: 300px;
+}
+.course_down ul{
+    margin: 20px 0;
+    width: 100%;
+}
+.course_down li{
+    float: left;
+    width: 50px;
+    /*     display: -webkit-inline-flex; */
+    /*     margin-right: 8%; */
+    height: 200px;
+}
+.course_down a{
+    text-decoration: none;
+    color: #333333;
+}
+.course_down h3{
+    margin-top: 6px;
+    height: 25px;
+    font-size: 14px;
+}
+
+.course_img {
+    height: 165px;
+    width: 100%;
+    border: solid 5px #bfcaeb;
+    border-radius: 5px;
+    background-color: orange;
+}
+.course_img h4{
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    margin: 60px 0;
+}
+/*end 系列内容*/
+/*end 课程系列模块*/
