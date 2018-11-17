@@ -39,7 +39,7 @@
     <div class="container-fluid">
         <div class="row cb-slideshow-text-container ">
             <div class="tm-content col-xl-6 col-sm-8 col-xs-8 ml-auto section">
-                <header class="mb-5"><h1>Quick Login</h1></header>
+                <header class="mb-5"><h1>Quick Logina</h1></header>
                 <br/>
                 <P class="mb-5">If you do not have an account, please
                     <a id="Register" rel="nofollow" target="_parent" href='#'>register</a>
