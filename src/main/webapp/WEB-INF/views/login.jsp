@@ -52,7 +52,7 @@
                                    placeholder="PhoneNumber" required/>
                             <br><br>
                             <input name="password" type="password" class="form-control" id="password"
-                                   placeholder="Password" required/>
+                                   placeholder="Password" required />
                             <br><br>
                         </div>
                         <br>
