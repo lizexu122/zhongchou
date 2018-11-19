@@ -55,7 +55,7 @@
                         </c:if>
                         <span style="font-size: 14px;color: gray;">
                             <i>
-                            <c:if test="${sessionScope.user.status==1}">Certified</c:if>
+                            <c:if test="${sessionScope.user.status==1}">Certifixed</c:if>
                             <c:if test="${sessionScope.user.status==0}">Uncertified</c:if>
                             <c:if test="${sessionScope.user.status==-1}">Blacklist User</c:if>
                             </i>
