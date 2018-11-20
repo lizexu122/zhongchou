@@ -67,6 +67,9 @@
                                     <span class="has_check">已验证</span>
                                 </p>
                                 <p>
+                                    <span class="has_check">验证过程有疑问？</span>
+                                </p>
+                                <p>
                                     <span style="background-color: #00a0e9">有疑问？ </span>
                                 </p>
 

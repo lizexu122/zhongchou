@@ -43,7 +43,7 @@
                 <br/>
                 <P class="mb-5">If you do not have an account, please
                     <a id="Register" rel="nofollow" target="_parent" href='#'>register</a>
-                    immediately. Thank you for visiting ou site!</P>
+                    immediately. Thank you for visiting outsite!</P>
                 <br>
                 <form action="${ctp}/doLogin" method="post" class="subscribe-form" id="f2">
                     <div class="row form-section">
