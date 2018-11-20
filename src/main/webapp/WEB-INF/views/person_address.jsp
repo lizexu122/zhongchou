@@ -76,6 +76,7 @@
             </div>
             <div id="addressList" class="addressList r">
             </div>
+            <div style="background-color: #00b7ee">a beautiful day</div>
         </div>
     </div>
 </div>
