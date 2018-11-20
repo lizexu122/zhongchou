@@ -131,7 +131,7 @@
                             <i>
                             <c:if test="${sessionScope.user.status==1}">Certified</c:if>
                             <c:if test="${sessionScope.user.status==0}">Uncertified</c:if>
-                            <c:if test="${sessionScope.user.status==-1}">Blacklist User</c:if>
+                            <c:if test="${sessionScope.user.status==-1}">Blalist User</c:if>
                             </i>
                         </span>
         </p>
