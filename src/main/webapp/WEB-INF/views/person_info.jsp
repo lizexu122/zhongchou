@@ -72,6 +72,9 @@
                                 <p>
                                     <span style="background-color: #00a0e9">有疑问？ </span>
                                 </p>
+                                <p>
+                                    <span style="background-color: #00a0e9;align-content: center">提示：请注意字母大小写 </span>
+                                </p>
 
                                 <div style="clear: both"></div>
                             </li>
