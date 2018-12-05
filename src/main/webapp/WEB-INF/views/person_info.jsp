@@ -34,6 +34,33 @@
                     <li><a class="tab-selected" href="#">Modify Person Information</a></li>
                     <li><a href="#">Certificate</a></li>
                 </ul>
+                <li class="fix">
+                    <p class="_title l">gender</p>
+                    <p class="l">
+                        <label>
+                            <input type="radio" name="gender" value="female"
+                            <c:if test="${sessionScope.user.gender=='female'}">
+                                   checked="true"
+                            </c:if>
+                            > Female
+                        </label>
+                        <label>
+                            <input type="radio" name="gender" value="male"
+                            <c:if test="${sessionScope.user.gender=='male'}">
+                                   checked
+                            </c:if>
+                            > Male
+                        </label>
+                        <label>
+                            <input type="radio" name="gender" value="secrecy"
+                            <c:if test="${sessionScope.user.gender=='secrecy'}">
+                                   checked
+                            </c:if>
+                            > Secrecy
+                        </label>
+                    </p>
+                    <div style="clear: both"></div>
+                </li>
             </div>
             <div class="tab-box">
                 <div class="user_info fix">
