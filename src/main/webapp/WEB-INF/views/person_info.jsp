@@ -58,6 +58,7 @@
                             </c:if>
                             > Secrecy
                         </label>
+                    <p class="_title l">class</p>
                     </p>
                     <div style="clear: both"></div>
                 </li>
@@ -80,6 +81,9 @@
                             <li class="fix">
                                 <p class="_title l">username</p>
                                 <p class="l">
+                                <div style="background-color: #00a0e9">
+
+                            </div>
                                     <input type="text" name="username" id="inputUserName"
                                            value="${sessionScope.user.username}" class="info_text">
                                 </p>
