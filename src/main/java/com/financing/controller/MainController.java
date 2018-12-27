@@ -5,10 +5,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-/**
- * @author Penny
- * 页面分发控制
- */
 @Controller
 public class MainController {
 
@@ -185,16 +181,6 @@ public class MainController {
         return "forward:/doGetOrderDetail-" + oid;
     }
 
-//    /**
-//     * 用户收藏
-//     *
-//     * @return
-//     */
-//    @RequestMapping(value = "/personCenter/personInterest")
-//    public String personInterest() {
-//        return "person_interest";
-//    }
-
     /**
      * 用户评论
      *
@@ -227,6 +213,3 @@ public class MainController {
         return "forward:/doProjectSupport-" + pid;
     }
 }
-/*
- * 立即支持页
- */

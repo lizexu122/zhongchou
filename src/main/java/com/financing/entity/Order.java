@@ -8,10 +8,6 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
 
-/**
- * 订单
- * Created by Penny on 2018/5/20.
- */
 @Entity
 @Table(name = "`Order`")
 public class Order {

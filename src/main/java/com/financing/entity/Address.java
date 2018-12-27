@@ -2,10 +2,6 @@ package com.financing.entity;
 
 import javax.persistence.*;
 
-/**
- * 收货地址
- * Created by Penny on 2018/5/20.
- */
 @Entity
 @Table(name = "Address")
 public class Address {

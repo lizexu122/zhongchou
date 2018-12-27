@@ -16,9 +16,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by Penny on 2018/5/21.
- */
 @Controller
 public class InterestController {
     private static final int SUCCESS_CODE = 1;
@@ -34,7 +31,7 @@ public class InterestController {
      * 增加：重复性限制
      * 全局控制：使用USid与PJid
      * @param
-     * @return map
+     * @return
      */
     @RequestMapping(value = "/doGetInterest")
     @ResponseBody

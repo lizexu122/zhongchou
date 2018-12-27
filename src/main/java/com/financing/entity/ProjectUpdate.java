@@ -5,10 +5,6 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import javax.persistence.*;
 import java.util.Date;
 
-/**
- * 项目更新
- * Created by Penny on 2018/5/26.
- */
 @Entity
 @Table(name = "Project_Update")
 public class ProjectUpdate {

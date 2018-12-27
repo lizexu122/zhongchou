@@ -8,9 +8,6 @@ import java.util.Map;
 
 import static sun.net.www.protocol.http.HttpURLConnection.userAgent;
 
-/**
- * Created by Penny on 2018/6/1.
- */
 public class WebServiceUtil {
     public static final String DEF_CHATSET = "UTF-8";
     public static final int DEF_CONN_TIMEOUT = 30000;

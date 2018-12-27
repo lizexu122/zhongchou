@@ -16,9 +16,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by Penny on 2018/5/26.
- */
 @Controller
 public class ProjectUpdateController {
 
@@ -26,13 +23,11 @@ public class ProjectUpdateController {
     private ProjectUpdateService projectUpdateService;
 
     private static final int SUCCESS_CODE = 1;
-    private static final int FAIL_CODE = 0;
 
 
     /**
      * 发布项目更新
      * @param request
-     * @return
      */
     @RequestMapping(value = "/doAddUpdate",method = RequestMethod.POST)
     @ResponseBody
@@ -60,7 +55,6 @@ public class ProjectUpdateController {
     /**
      * 根据项目id获取项目更新列表
      * @param pid
-     * @return
      */
     @RequestMapping(value = "/doGetUpdate-{pid}")
     @ResponseBody

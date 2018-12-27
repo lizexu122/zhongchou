@@ -2,10 +2,6 @@ package com.financing.entity;
 
 import javax.persistence.*;
 
-/**
- * 项目分类
- * Created by Penny on 2018/5/16.
- */
 @Entity
 @Table(name = "Category")
 public class Category {

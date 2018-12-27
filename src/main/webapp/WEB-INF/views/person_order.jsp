@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Lizexu
-  Date: 2018/6/3
-  Time: 12:53
-  To change this template use File | Settings | File Templates.
---%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <c:set var="ctp" value="${pageContext.request.contextPath}"/>
@@ -17,8 +10,6 @@
     <script src="${ctp}/js/layer.js" type="text/javascript"></script>
 </head>
 <body class="personal">
-<jsp:include page="header.jsp"/>
-<%--<jsp:include page="header.jsp "/>--%>
 <div class="wrap">
     <jsp:include page="person_left.jsp"/>
     <div class="r right_content">
@@ -30,8 +21,8 @@
             <div class="tab-menu">
                 <ul>
                     <li><a class="tab-selected" href="javascript:void(0);">All Order</a></li>
-                    <li><a href="javascript:void(0);">Submittek</a></li>
-                    <li><a href="javascript:void(0);">Withdrawm</a></li>
+                    <li><a href="javascript:void(0);">Submitted</a></li>
+                    <li><a href="javascript:void(0);">Withdrawn</a></li>
                     <li><a href="javascript:void(0);">Refund</a></li>
                 </ul>
             </div>
@@ -103,10 +94,10 @@
                                         "<div class=\"order_number_right r\">" + "<span>" + status + "</span>" + "</div>" +
                                     "</div>" +
                                     "<div class=\"project_order_content fix\">" +
-                                        "<div class=\"project_order_content_img l\">" + "<object data='" + data[i].project.cover + "'/>" + "</div>" +
+                                        "<div class=\"project_order_content_img l\">" + "<object class='order_showImg' data='" + data[i].project.cover+ "'/>" + "</div>" +
                                         "<div class=\"project_order_content_info l\">" +
                                             "<a href='/financing/personCenter/personOrder/detail-" + data[i].id + "' class='el'>" + data[i].project.title + "</a>" +
-                                            "<p>Create Time:"+data[i].createTime+"</p>"+
+                                            "<p>Create Time:" + data[i].createTime + "</p>"+
                                             "<p>Total:<em>$" + data[i].amount + "</em></p>";
 
 
@@ -147,7 +138,7 @@
                                 "<div class=\"order_number_right r\">" + "<span>" + status + "</span>" + "</div>" +
                                 "</div>" +
                                 "<div class=\"project_order_content fix\">" +
-                                "<div class=\"project_order_content_img l\">" + "<object data='" + data[i].project.cover + "'/>" + "</div>" +
+                                "<div class=\"project_order_content_img l\">" + "<object class='order_showImg' data='" + data[i].project.cover + "'/>" + "</div>" +
                                 "<div class=\"project_order_content_info l\">" +
                                 "<a href='/financing/personCenter/personOrder/detail-" + data[i].id + "' class='el'>" + data[i].project.title + "</a>" +
                                 "<p>Create Time:"+data[i].createTime+"</p>"+
@@ -192,7 +183,7 @@
                                 "<div class=\"order_number_right r\">" + "<span>" + status + "</span>" + "</div>" +
                                 "</div>" +
                                 "<div class=\"project_order_content fix\">" +
-                                "<div class=\"project_order_content_img l\">" + "<object data='" + data[i].project.cover + "'/>" + "</div>" +
+                                "<div class=\"project_order_content_img l\">" + "<object class='order_showImg' data='" + data[i].project + "'/>" + "</div>" +
                                 "<div class=\"project_order_content_info l\">" +
                                 "<a href='/financing/personCenter/personOrder/detail-" + data[i].id + "' class='el'>" + data[i].project.title + "</a>" +
                                 "<p>Create Time:"+data[i].createTime+"</p>"+
@@ -236,7 +227,7 @@
                                 "<div class=\"order_number_right r\">" + "<span>" + status + "</span>" + "</div>" +
                                 "</div>" +
                                 "<div class=\"project_order_content fix\">" +
-                                "<div class=\"project_order_content_img l\">" + "<object data='" + data[i].project.cover + "'/>" + "</div>" +
+                                "<div class=\"project_order_content_img l\">" + "<object class='order_showImg' data='" + data[i].project.cover + "'/>" + "</div>" +
                                 "<div class=\"project_order_content_info l\">" +
                                 "<a href='/financing/personCenter/personOrder/detail-" + data[i].id + "' class='el'>" + data[i].project.title + "</a>" +
                                 "<p>Create Time:"+data[i].createTime+"</p>"+

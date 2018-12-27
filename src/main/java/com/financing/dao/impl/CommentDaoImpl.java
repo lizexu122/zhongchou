@@ -14,9 +14,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-/**
- * Created by Penny on 2018/5/27.
- */
 @Repository
 public class CommentDaoImpl implements CommentDao {
 

@@ -2,9 +2,6 @@ package com.financing.utils;
 
 import java.util.Random;
 
-/**
- * Created by Penny on 2018/6/1.
- */
 public class RandomNameUtil {
 
     //生成随机用户名，数字和字母组成,

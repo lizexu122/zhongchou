@@ -5,11 +5,7 @@ import com.financing.entity.Project;
 import com.financing.entity.User;
 
 import java.util.List;
-import java.util.Map;
 
-/**
- * Created by Penny on 2018/5/21.
- */
 public interface OrderDao {
 
     void insert(Order order);

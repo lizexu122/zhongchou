@@ -2,9 +2,6 @@ package com.financing.entity;
 
 import javax.persistence.*;
 
-/**
- * Created by Penny on 2018/5/31.
- */
 @Entity
 @Table(name = "Admin")
 public class Admin {

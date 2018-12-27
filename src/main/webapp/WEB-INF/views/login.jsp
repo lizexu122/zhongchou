@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Penny
-  Date: 2018/5/14
-  Time: 22:07
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="ctp" value="${pageContext.request.contextPath}"/>
@@ -21,29 +14,27 @@
         .container {
             width: 310px;
         }
-
     </style>
 </head>
 <body class="loaded">
-<div id="particles-js"></div>
-<ul class="cb-slideshow">
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-</ul>
+<%--<ul class="cb-slideshow">--%>
+    <%--<li></li>--%>
+    <%--<li></li>--%>
+    <%--<li></li>--%>
+    <%--<li></li>--%>
+    <%--<li></li>--%>
+    <%--<li></li>--%>
+<%--</ul>--%>
 
 <div id="LoginPart">
     <div class="container-fluid">
         <div class="row cb-slideshow-text-container ">
             <div class="tm-content col-xl-6 col-sm-8 col-xs-8 ml-auto section">
-                <header class="mb-5"><h1>Quick Logina</h1></header>
+                <header class="mb-5"><h1>注册/登录</h1></header>
                 <br/>
-                <P class="mb-5">If you do not have an account, please
-                    <a id="Register" rel="nofollow" target="_parent" href='#'>register</a>
-                    immediately. Thank you for visiting outsite!</P>
+                <P class="mb-5">如果你没有用户，可以快速注册一个
+                    <a id="Register" rel="nofollow" target="_parent" href='#'>注册</a>
+                     谢谢您的光顾</P>
                 <br>
                 <form action="${ctp}/doLogin" method="post" class="subscribe-form" id="f2">
                     <div class="row form-section">
@@ -52,7 +43,7 @@
                                    placeholder="PhoneNumber" required/>
                             <br><br>
                             <input name="password" type="password" class="form-control" id="password"
-                                   placeholder="Password" required />
+                                   placeholder="Password" required/>
                             <br><br>
                         </div>
                         <br>
@@ -96,9 +87,6 @@
 
                         </div>
                         <br>
-                        <%--<div class="col-md-5 col-sm-5 col-xs-5">--%>
-                            <%--<button type="button" class="tm-btn-subscribe" onclick="cf()">Sign Up</button>--%>
-                        <%--</div>--%>
                     </div>
                 </form>
             </div>

@@ -288,7 +288,7 @@ ul, ol {
 .dropdown-action{
     /*min-width: 125px;*/
     z-index: 80;
-    left: -28px;
+    left: -55%;
     position: absolute;
     display: none;
     float: left;

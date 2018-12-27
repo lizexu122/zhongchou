@@ -10,9 +10,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/**
- * Created by Penny on 2018/5/27.
- */
 @Service
 public class CommentServiceImpl implements CommentService {
 

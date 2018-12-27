@@ -17,17 +17,11 @@
         http://www.springframework.org/schema/aop/spring-aop.xsd">
     <context:annotation-config/>
     <task:annotation-driven></task:annotation-driven>
-    <!--扫描注解包-->
     <context:component-scan base-package="com.financing" />
 
 
 
-
-    <!--********************************************配置hibernate********************************************-->
-
-    <!--扫描配置文件(这里指向的是之前配置的那个jdbc.properties)-->
     <context:property-placeholder location="classpath:jdbc.properties" />
-    <!-- 使用c3p0连接(池) -->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
         <property name="driverClass" value="${jdbc.driverClass}"></property>
         <property name="jdbcUrl" value="${jdbc.url}"></property>
@@ -39,7 +33,6 @@
         <property name="maxIdleTime" value="1200" />  <!--最大空闲时间-->
     </bean>
 
-    <!-- 配置sessionFactory-->
     <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <property name="packagesToScan" value="com.financing.entity"/>
         <property name="dataSource" ref="dataSource"></property>
@@ -55,21 +48,11 @@
             </props>
         </property>
     </bean>
-
-    <!--&lt;!&ndash; 配置hibernateTemplate&ndash;&gt;-->
-    <!--<bean id="hibernateTemplate" class="org.springframework.orm.hibernate4.HibernateTemplate">-->
-       <!--<property name="sessionFactory" ref="sessionFactory"/>-->
-       <!--<property name="checkWriteOperations" value="false"></property>-->
-    <!--</bean>-->
-
-    <!-- 事务管理器-->
     <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory"></property>
     </bean>
-    <!-- 使用annotation定义事务-->
     <tx:annotation-driven transaction-manager="transactionManager" />
 
-    <!--  声明式容器事务管理 ,transaction-manager指定事务管理器为transactionManager-->
     <tx:advice id="transactionAdvice" transaction-manager="transactionManager">
         <tx:attributes>
             <tx:method name="get*" propagation="REQUIRED" read-only="true"/>
@@ -77,7 +60,6 @@
         </tx:attributes>
     </tx:advice>
     <aop:config>
-         <!--只对业务逻辑层实施事务-->
         <aop:pointcut expression="execution(* com.financing.service.impl.*.*(..))" id="businessService"/>
         <aop:advisor advice-ref="transactionAdvice" pointcut-ref="businessService"/>
     </aop:config>

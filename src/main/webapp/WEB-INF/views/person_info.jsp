@@ -9,7 +9,7 @@
     <script src="${ctp}/js/jquery-1.11.0.min.js" type="text/javascript"></script>
     <script src="${ctp}/js/layer.js" type="text/javascript"></script>
     <script src="${ctp}/js/user.js" type="text/javascript"></script>
-    <title>- 个人中心 -</title>
+    <title>- PersonCenter -</title>
     <style>
         #save, #csave {
             position: relative;
@@ -19,7 +19,6 @@
 </head>
 
 <body class="personal">
-<jsp:include page="header.jsp"/>
 <div class="wrap">
     <jsp:include page="person_left.jsp"/>
     <div class="r right_content">

@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 
 /**
  * 用户
- * @author Penny
+ * @author
  *
  */
 @Entity()

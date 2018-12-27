@@ -20,9 +20,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author Penny
- */
 @Controller
 public class ProjectController {
 
@@ -38,13 +35,11 @@ public class ProjectController {
 
     /**
      * 用户发布项目,货币汇率转换
-     * @return
-     * @author Penny
      */
-    @RequestMapping(value = "/doCreateProject",method = RequestMethod.POST)
+    @RequestMapping(value = "/doCreateProject", method = RequestMethod.POST)
     @ResponseBody
-    public Map<String,Object> doCreateProject(@RequestParam MultipartFile coverUpload,HttpServletRequest request,HttpSession session){
-        Map<String,Object> result = new HashMap<String, Object>();
+    public Map<String, Object> doCreateProject(@RequestParam MultipartFile coverUpload, HttpServletRequest request, HttpSession session) {
+        Map<String, Object> result = new HashMap<String, Object>();
         User user = (User) session.getAttribute("user");
         Project project = new Project();
 
@@ -53,21 +48,21 @@ public class ProjectController {
 
         System.out.println("user = " + user);
         System.out.println("title = " + title);
-        String cover = FileUploadUtil.uploadFile(coverUpload,session);
-        if (cover.equals("file format error")){
-            result.put("flag",FAIL_CODE);
-            result.put("msg",cover);
-            result.put("data","");
+        String cover = FileUploadUtil.uploadFile(coverUpload, session);
+        if (cover.equals("file format error")) {
+            result.put("flag", FAIL_CODE);
+            result.put("msg", cover);
+            result.put("data", "");
             return result;
         }
-        String exchange = projectService.currencyExchange("CNY","USD");
-        if (exchange.equals("fail")){
-            result.put("flag",FAIL_CODE);
-            result.put("msg",exchange);
+        String exchange = projectService.currencyExchange("CNY", "USD");
+        if (exchange.equals("fail")) {
+            result.put("flag", FAIL_CODE);
+            result.put("msg", exchange);
             return result;
         }
         double currExchange = Double.parseDouble(exchange);
-        BigDecimal goal = BigDecimal.valueOf(Double.valueOf(request.getParameter("goal_amount"))) ;
+        BigDecimal goal = BigDecimal.valueOf(Double.valueOf(request.getParameter("goal_amount")));
         BigDecimal goalAmount = goal.multiply(BigDecimal.valueOf(currExchange));
 
         Date endTime = DateUtil.StringToDate(request.getParameter("end_time"));
@@ -100,73 +95,69 @@ public class ProjectController {
         project.setPraise(0);
 
         String projectId = projectService.addProject(project);
-        if ( projectId!=null){
+        if (projectId != null) {
             //添加无私回报
             ProjectBack projectBack = new ProjectBack();
             projectBack.setCompensation(1);
             projectBack.setContent("Thank you for your unselfish support!");
             project.setId(projectId);
             projectBack.setProject(project);
+            projectBack.setActual(0);
             projectBackService.addBack(projectBack);
 
-            result.put("flag",SUCCESS_CODE);
-            result.put("msg","create success");
-            result.put("data","");
+            result.put("flag", SUCCESS_CODE);
+            result.put("msg", "create success");
+            result.put("data", "");
             return result;
-        }else {
-            result.put("flag",FAIL_CODE);
-            result.put("msg","unknown error");
-            result.put("data","");
+        } else {
+            result.put("flag", FAIL_CODE);
+            result.put("msg", "unknown error");
+            result.put("data", "");
             return result;
         }
     }
 
     /**
      * 项目展示：最新发布
-     * @return
-     * @author Penny
      */
-    @RequestMapping(value = "/doShowNewProject",method = RequestMethod.GET)
-    public String doShowNewProject(ModelMap map){
-        Map<String,Object> result = new HashMap<String, Object>();
+    @RequestMapping(value = "/doShowNewProject", method = RequestMethod.GET)
+    public String doShowNewProject(ModelMap map) {
+        Map<String, Object> result = new HashMap<String, Object>();
 
         List<Project> projects = projectService.getNewProjectList();
-        result.put("flag",SUCCESS_CODE);
-        result.put("msg","NEW");
-        result.put("data",projects);
+        result.put("flag", SUCCESS_CODE);
+        result.put("msg", "NEW");
+        result.put("data", projects);
         map.addAllAttributes(result);
         return "project_show2";
     }
 
     /**
      * 项目展示：最多支持
-     * @return
-     * @author Penny
      */
-    @RequestMapping(value = "/doShowHotProject",method = RequestMethod.GET)
-    public String doShowHotProject(ModelMap map){
-        Map<String,Object> result = new HashMap<String, Object>();
+    @RequestMapping(value = "/doShowHotProject", method = RequestMethod.GET)
+    public String doShowHotProject(ModelMap map) {
+        Map<String, Object> result = new HashMap<String, Object>();
         List<Project> projects = projectService.getHotProjectList();
-        result.put("flag",SUCCESS_CODE);
-        result.put("msg","HOT");
-        result.put("data",projects);
+        result.put("flag", SUCCESS_CODE);
+        result.put("msg", "HOT");
+        result.put("data", projects);
         map.addAllAttributes(result);
         return "project_show2";
     }
 
     /**
      * 项目总数
-     * @return
      */
-    @RequestMapping(value = "/doProjectCount",method = RequestMethod.GET)
+    @RequestMapping(value = "/doProjectCount", method = RequestMethod.GET)
     @ResponseBody
-    public Map<String,Object> doProjectCount(){
+    public Map<String, Object> doProjectCount() {
         long count = projectService.getProjectCount();
 
-        Map<String,Object> result = new HashMap<String,Object>();
-        result.put("flag",SUCCESS_CODE);
-        result.put("msg","success");
-        result.put("data",count);
+        Map<String, Object> result = new HashMap<String, Object>();
+        result.put("flag", SUCCESS_CODE);
+        result.put("msg", "success");
+        result.put("data", count);
 
         return result;
     }
@@ -174,99 +165,95 @@ public class ProjectController {
 
     /**
      * 已完成项目数
-     * @return
      */
-    @RequestMapping(value = "/doProjectFinished",method = RequestMethod.GET)
+    @RequestMapping(value = "/doProjectFinished", method = RequestMethod.GET)
     @ResponseBody
-    public Map<String,Object> doProjectFinished(){
+    public Map<String, Object> doProjectFinished() {
         long count = projectService.getProjectFinished();
 
-        Map<String,Object> result = new HashMap<String,Object>();
-        result.put("flag",SUCCESS_CODE);
-        result.put("msg","success");
-        result.put("data",count);
+        Map<String, Object> result = new HashMap<String, Object>();
+        result.put("flag", SUCCESS_CODE);
+        result.put("msg", "success");
+        result.put("data", count);
 
         return result;
     }
 
     /**
      * 参与支持总数
-     * @return
      */
-    @RequestMapping(value = "/doSupportCount",method = RequestMethod.GET)
+    @RequestMapping(value = "/doSupportCount", method = RequestMethod.GET)
     @ResponseBody
-    public Map<String,Object> doSupportCount(){
+    public Map<String, Object> doSupportCount() {
         long count = projectService.getSupportCount();
 
-        Map<String,Object> result = new HashMap<String,Object>();
-        result.put("flag",SUCCESS_CODE);
-        result.put("msg","success");
-        result.put("data",count);
+        Map<String, Object> result = new HashMap<String, Object>();
+        result.put("flag", SUCCESS_CODE);
+        result.put("msg", "success");
+        result.put("data", count);
 
         return result;
     }
 
     /**
      * 最新发布前五条
-     * @return
      */
-    @RequestMapping(value = "/doNewProjectTop",method = RequestMethod.GET)
+    @RequestMapping(value = "/doNewProjectTop", method = RequestMethod.GET)
     @ResponseBody
-    public Map<String,Object> doNewProjectTop(){
+    public Map<String, Object> doNewProjectTop() {
         List<Project> projects = projectService.getNewProjectTop();
-        Map<String,Object> result = new HashMap<String,Object>();
-        result.put("flag",SUCCESS_CODE);
-        result.put("msg","success");
-        result.put("data",projects);
+        Map<String, Object> result = new HashMap<String, Object>();
+        result.put("flag", SUCCESS_CODE);
+        result.put("msg", "success");
+        result.put("data", projects);
         return result;
     }
 
 
     /**
      * 最新发布前五条
-     * @return
      */
-    @RequestMapping(value = "/doHotProjectTop",method = RequestMethod.GET)
+    @RequestMapping(value = "/doHotProjectTop", method = RequestMethod.GET)
     @ResponseBody
-    public Map<String,Object> doHotProjectTop(){
+    public Map<String, Object> doHotProjectTop() {
         List<Project> projects = projectService.getHotProjectTop();
-        Map<String,Object> result = new HashMap<String,Object>();
-        result.put("flag",SUCCESS_CODE);
-        result.put("msg","success");
-        result.put("data",projects);
+        Map<String, Object> result = new HashMap<String, Object>();
+        result.put("flag", SUCCESS_CODE);
+        result.put("msg", "success");
+        result.put("data", projects);
         return result;
     }
 
 
     /**
      * 根据类型展示前五条项目
+     *
      * @param cid
-     * @return
      */
-    @RequestMapping(value = "/doProjectTopByCID-{cid}",method = RequestMethod.GET)
+    @RequestMapping(value = "/doProjectTopByCID-{cid}", method = RequestMethod.GET)
     @ResponseBody
-    public Map<String,Object> doProjectTopByCID(@PathVariable("cid") String cid){
+    public Map<String, Object> doProjectTopByCID(@PathVariable("cid") String cid) {
         List<Project> projects = projectService.getProjectTopByCID(Integer.valueOf(cid));
-        Map<String,Object> result = new HashMap<String,Object>();
-        result.put("flag",SUCCESS_CODE);
-        result.put("msg","success");
-        result.put("data",projects);
+        Map<String, Object> result = new HashMap<String, Object>();
+        result.put("flag", SUCCESS_CODE);
+        result.put("msg", "success");
+        result.put("data", projects);
         return result;
     }
 
     /**
      * 项目展示：分类查询
+     *
      * @param cid
      * @param map
-     * @return
      */
-    @RequestMapping(value = "/doProjectByCID-{cid}",method = RequestMethod.GET)
-    public String doProjectByCID(@PathVariable("cid") String cid,ModelMap map){
+    @RequestMapping(value = "/doProjectByCID-{cid}", method = RequestMethod.GET)
+    public String doProjectByCID(@PathVariable("cid") String cid, ModelMap map) {
         List<Project> projects = projectService.getProjectByCID(Integer.valueOf(cid));
-        Map<String,Object> result = new HashMap<String,Object>();
-        result.put("flag",SUCCESS_CODE);
-        result.put("msg","success");
-        result.put("data",projects);
+        Map<String, Object> result = new HashMap<String, Object>();
+        result.put("flag", SUCCESS_CODE);
+        result.put("msg", "success");
+        result.put("data", projects);
         map.addAllAttributes(result);
         return "project_show2";
     }
@@ -276,10 +263,9 @@ public class ProjectController {
      * 项目展示：全部项目
      *
      * @param map
-     * @return
      */
-    @RequestMapping(value = "/doProjectAll",method = RequestMethod.GET)
-    public String doProjectAll(ModelMap map,HttpServletRequest request){
+    @RequestMapping(value = "/doProjectAll", method = RequestMethod.GET)
+    public String doProjectAll(ModelMap map, HttpServletRequest request) {
         int everyPage = 5;//每页记录数
         int totalCount = projectService.getProjectAllCont();//获取总记录数
         //点击链接重新获取当前页
@@ -295,24 +281,24 @@ public class ProjectController {
         //分页数据信息
         List<Project> list = projectService.findByPage(page);
 
-        map.addAttribute("page",page);
-        map.addAttribute("list",list);
+        map.addAttribute("page", page);
+        map.addAttribute("list", list);
         return "project_show";
     }
 
     /**
      * 根据关键字查询项目
+     *
      * @param map
      * @param keyword
-     * @return
      */
     @RequestMapping(value = "/doProjectByKey-{keyword}")
-    public String doProjectByKey(ModelMap map, @PathVariable("keyword") String keyword){
+    public String doProjectByKey(ModelMap map, @PathVariable("keyword") String keyword) {
         List<Project> projects = projectService.getProjectByKey(keyword);
-        Map<String,Object> result = new HashMap<String,Object>();
-        result.put("flag",SUCCESS_CODE);
-        result.put("msg","success");
-        result.put("data",projects);
+        Map<String, Object> result = new HashMap<String, Object>();
+        result.put("flag", SUCCESS_CODE);
+        result.put("msg", "success");
+        result.put("data", projects);
         map.addAllAttributes(result);
         return "project_show2";
     }
@@ -320,42 +306,42 @@ public class ProjectController {
 
     /**
      * 获取用户发布的项目列表
+     *
      * @param session
      * @return
      */
-    @RequestMapping(value = "doProjectByUser",method = RequestMethod.GET)
+    @RequestMapping(value = "doProjectByUser", method = RequestMethod.GET)
     @ResponseBody
-    public Map<String,Object> doProjectByUser(HttpSession session){
+    public Map<String, Object> doProjectByUser(HttpSession session) {
         User user = (User) session.getAttribute("user");
         List<Project> projects = projectService.getProjectByUser(user);
 
-        Map<String,Object> result = new HashMap<String,Object>();
-        result.put("flag",SUCCESS_CODE);
-        result.put("msg","user's projects");
-        result.put("data",projects);
+        Map<String, Object> result = new HashMap<String, Object>();
+        result.put("flag", SUCCESS_CODE);
+        result.put("msg", "user's projects");
+        result.put("data", projects);
         return result;
     }
 
     /**
      * 用户查看所发布的项目信息
+     *
      * @param session
      * @param pid
-     * @return
      */
     @RequestMapping(value = "/doProjectInfo-{pid}")
-    public String doProjectInfo(HttpSession session, @PathVariable("pid") String pid,ModelMap map){
+    public String doProjectInfo(HttpSession session, @PathVariable("pid") String pid, ModelMap map) {
         User user = (User) session.getAttribute("user");
         Project project = projectService.getProject(pid);
 
-        Map<String,Object> result = new HashMap<String,Object>();
-        result.put("flag",SUCCESS_CODE);
-        result.put("msg","project detail");
-        result.put("data",project);
+        Map<String, Object> result = new HashMap<String, Object>();
+        result.put("flag", SUCCESS_CODE);
+        result.put("msg", "project detail");
+        result.put("data", project);
         map.addAllAttributes(result);
 
         return "person_projectInfo";
     }
-
 
     /**
      * 项目详情页
@@ -365,15 +351,49 @@ public class ProjectController {
      * @return
      */
     @RequestMapping(value = "/doProjectDetail-{pid}")
-    public String doProjectDetail(@PathVariable("pid") String pid,ModelMap map){
+    public String doProjectDetail(@PathVariable("pid") String pid, ModelMap map) {
         Project project = projectService.getProject(pid);
-        Map<String,Object> result = new HashMap<String,Object>();
-        result.put("flag",SUCCESS_CODE);
-        result.put("msg","project detail");
-        result.put("data",project);
+        Map<String, Object> result = new HashMap<String, Object>();
+        result.put("flag", SUCCESS_CODE);
+        result.put("msg", "project detail");
+        result.put("data", project);
         map.addAllAttributes(result);
 
         return "project_Detail";
+    }
+
+    /**
+     * 项目展示：New的json数据
+     *
+     * @return
+     */
+    @RequestMapping(value = "/getNewProjectList", method = RequestMethod.GET)
+    @ResponseBody
+    public Map<String, Object> getNewProjectList(ModelMap map) {
+        Map<String, Object> result = new HashMap<>();
+        List<Project> projectList = projectService.getNewProjectList();
+        result.put("flag", SUCCESS_CODE);
+        result.put("msg", "NEWList");
+        result.put("data", projectList);
+        map.addAllAttributes(result);
+        return result;
+    }
+
+    /**
+     * 项目展示：Hot的json数据
+     *
+     * @return
+     */
+    @RequestMapping(value = "/getHotProjectList", method = RequestMethod.GET)
+    @ResponseBody
+    public Map<String, Object> getHotProjectList(ModelMap map) {
+        List<Project> projectList = projectService.getHotProjectList();
+        Map<String, Object> result = new HashMap<>();
+        result.put("flag", SUCCESS_CODE);
+        result.put("msg", "HOTList");
+        result.put("data", projectList);
+        map.addAllAttributes(result);
+        return result;
     }
 
     /**
@@ -386,45 +406,14 @@ public class ProjectController {
     @RequestMapping(value = "/doProjectSupport-{pid}")
     public String doProjectSupport(@PathVariable("pid") String pid, ModelMap map) {
         Project project = projectService.getProject(pid);
-        Map<String, Object> result = new HashMap<String, Object>();
+        Map<String, Object> result = new HashMap<>();
         result.put("flag", SUCCESS_CODE);
         result.put("msg", "project support");
         result.put("data", project);
         map.addAllAttributes(result);
         return "project_support";
+
     }
 
-
-    /**
-     * 项目展示：New的json数据
-     * @return
-     */
-    @RequestMapping(value = "/getNewProjectList",method = RequestMethod.GET)
-    @ResponseBody
-    public Map<String,Object> getNewProjectList(ModelMap map){
-        Map<String,Object> result = new HashMap<>();
-        List<Project> projectList = projectService.getNewProjectList();
-        result.put("flag",SUCCESS_CODE);
-        result.put("msg","NEWList");
-        result.put("data",projectList);
-        map.addAllAttributes(result);
-        return result;
-    }
-
-    /**
-     * 项目展示：Hot的json数据
-     * @return
-     */
-    @RequestMapping(value = "/getHotProjectList",method = RequestMethod.GET)
-    @ResponseBody
-    public Map<String,Object> getHotProjectList(ModelMap map){
-        List<Project> projectList = projectService.getHotProjectList();
-        Map<String,Object> result = new HashMap<>();
-        result.put("flag",SUCCESS_CODE);
-        result.put("msg","HOTList");
-        result.put("data",projectList);
-        map.addAllAttributes(result);
-        return result;
-    }
 
 }

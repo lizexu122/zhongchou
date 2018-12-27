@@ -19,9 +19,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by Penny on 2018/5/17.
- */
 @Service
 public class ProjectServiceImpl implements ProjectService {
 

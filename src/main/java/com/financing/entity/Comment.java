@@ -5,9 +5,6 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import javax.persistence.*;
 import java.util.Date;
 
-/**
- * Created by Penny on 2018/5/26.
- */
 @Entity
 @Table(name = "Comment")
 public class Comment {
@@ -23,7 +20,7 @@ public class Comment {
     @JoinColumn(name = "to_user_id", referencedColumnName = "id", nullable = true)
     private User toUser;
 
-    @Column
+    @Column(name = "create_time")
     private Date createTime;
 
     @Column

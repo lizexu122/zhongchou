@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 26942
-  Date: 2018/6/10
-  Time: 22:09
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="utf-8" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -17,8 +10,6 @@
     <script src="${ctp}/js/layer.js" type="text/javascript"></script>
 </head>
 <body class="personal">
-<jsp:include page="header.jsp"/>
-<%--<jsp:include page="header.jsp "/>--%>
 <div class="wrap">
     <jsp:include page="person_left.jsp"/>
     <div class="r right_content">

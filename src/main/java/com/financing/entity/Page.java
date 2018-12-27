@@ -2,32 +2,14 @@ package com.financing.entity;
 
 import org.springframework.stereotype.Component;
 
-
 @Component
 public class Page {
-//    private int everyPage;          //每页显示记录数
-//    private int totalCount;         //总记录数
-//    private int totalPage;          //总页数
-//    private int currentPage;        //当前页
-//    private int beginIndex;         //查询起始点
-//    private boolean hasPrePage;     //是否有上一页
-//    private boolean hasNextPage;
-
-
-    // 1.每页显示数量(everyPage
-    // )
-    private int everyPage;
-    // 2.总记录数(totalCount)
-    private int totalCount;
-    // 3.总页数(totalPage)
-    private int totalPage;
-    // 4.当前页(currentPage)
-    private int currentPage;
-    // 5.起始点(beginIndex)
-    private int beginIndex;
-    // 6.是否有上一页(hasPrePage)
-    private boolean hasPrePage;
-    // 7.是否有下一页(hasNextPage)
+    private int everyPage;          //每页显示记录数
+    private int totalCount;         //总记录数
+    private int totalPage;          //总页数
+    private int currentPage;        //当前页
+    private int beginIndex;         //查询起始点
+    private boolean hasPrePage;     //是否有上一页
     private boolean hasNextPage;
 
     public Page(int everyPage, int totalCount, int totalPage, int currentPage,
@@ -41,13 +23,8 @@ public class Page {
         this.hasNextPage = hasNextPage;
     }
 
-    //构造函数，默认
     public Page() {
     }
-
-    //构造方法，对所有属性进行设置
-
-
     public int getEveryPage() {
         return everyPage;
     }

@@ -1,14 +1,7 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 26942
-  Date: 2018/6/7
-  Time: 10:25
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="ctp" value="${pageContext.request.contextPath}"/>
-
+<jsp:include page="personTop.jsp"/>
 <div class="left_nav l">
     <ul class="ul_left_nav">
         <li id="personCenter" class="active">
@@ -78,7 +71,7 @@
             $('#personInfo').addClass("active");
         } else if (url.endsWith('Center/projectCreate') > 0) {
             $('#projectCreate').addClass("active");
-        } else if(url.endsWith('Center/personProject') > 0) {
+        } else if(url.indexOf('Center/personProject') > 0) {
             $('#personProject').addClass("active");
         } else if(url.endsWith('Center/personComment') > 0) {
             $('#personComment').addClass("active");

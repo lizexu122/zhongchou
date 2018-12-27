@@ -13,25 +13,25 @@
 <body>
 <div id="Head">
     <div class="logo">
-        <h1><a href="${ctp}/index">Fun<span>d</span>ing</a></h1>
+        <h1><a href="${ctp}/index">筹钱</a></h1>
     </div>
     <div class="top-nav">
         <ul class="memenu skyblue">
-            <li id="Home" class="active"><a href="${ctp}/index">Home</a></li>
-            <li id="Hot" class="grid"><a href="${ctp}/browse/hot">Hot</a></li>
-            <li id="New" class="grid"><a href="${ctp}/browse/new">New</a></li>
-            <li id="All" class="grid"><a href="${ctp}/browse/all">All</a>
+            <li id="Home" class="active"><a href="${ctp}/index">已有筹款</a></li>
+            <li id="Hot" class="grid"><a href="${ctp}/browse/hot">最热筹款</a></li>
+            <li id="New" class="grid"><a href="${ctp}/browse/new">最新筹款</a></li>
+            <li id="All" class="grid"><a href="${ctp}/browse/all">所有筹款</a>
                 <div class="mepanel">
                     <div class="row">
                         <div class="col1 me-one">
                             <h4>Type</h4>
                             <ul>
-                                <li><a href="${ctp}/browse/sort-1">Agriculture</a></li>
-                                <li><a href="${ctp}/browse/sort-2">Publish</a></li>
-                                <li><a href="${ctp}/browse/sort-3">Entertainment</a></li>
-                                <li><a href="${ctp}/browse/sort-4">Technology</a></li>
-                                <li><a href="${ctp}/browse/sort-5">Public Welfare</a></li>
-                                <li><a href="${ctp}/browse/sort-6">Other</a></li>
+                                <li><a href="${ctp}/browse/sort-1">农业</a></li>
+                                <li><a href="${ctp}/browse/sort-2">商业</a></li>
+                                <li><a href="${ctp}/browse/sort-3">娱乐</a></li>
+                                <li><a href="${ctp}/browse/sort-4">科技</a></li>
+                                <li><a href="${ctp}/browse/sort-5">网络</a></li>
+                                <li><a href="${ctp}/browse/sort-6">其他</a></li>
                             </ul>
                         </div>
                     </div>
@@ -51,7 +51,7 @@
             <div id="defaultShow">
                 <button id="promptLogin" type="submit" onclick="window.location.href='${ctp}/login'"
                         onmouseover="this.style.cursor='pointer'">
-                    <a href='javascript:;'>Login/Register</a>
+                    <a href='javascript:;'>注册/登录</a>
                 </button>
             </div>
         </c:when>

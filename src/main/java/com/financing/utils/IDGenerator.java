@@ -16,10 +16,6 @@ import javax.annotation.PostConstruct;
 import java.io.Serializable;
 import java.util.Properties;
 
-/**
- * @author Penny
- * 自动生成自定义主键
- */
 @Component
 public class IDGenerator implements Configurable,IdentifierGenerator {
 

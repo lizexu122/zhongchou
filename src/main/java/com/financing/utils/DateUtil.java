@@ -4,9 +4,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-/**
- * Created by Penny on 2018/5/17.
- */
 public class DateUtil {
 
 
@@ -14,7 +11,7 @@ public class DateUtil {
      * 字符串转日期
      * @param date
      * @return
-     * @author Penny
+     * @author
      */
     public static Date StringToDate(String date) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -42,7 +39,7 @@ public class DateUtil {
     /**
      * 年月日时分秒毫秒 作为 编号
      * @return
-     * @author Penny
+     * @author
      */
     public static String dateIDGenerator(){
         SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmssSSS");

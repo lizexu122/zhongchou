@@ -2,9 +2,6 @@ package com.financing.utils;
 
 import java.util.Random;
 
-/**
- * @author Penny
- */
 public class CreateIdUtil {
     final static int[] sizeList ={9,99,999,9999,99999,999999,
             9999999,99999999,999999999};

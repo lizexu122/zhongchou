@@ -7,9 +7,6 @@ import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
 
-/**
- * @author Penny
- */
 public class FileUploadUtil {
 
     /**
@@ -18,7 +15,6 @@ public class FileUploadUtil {
      * @param fileUpload
      * @param session
      * @return
-     * @author Penny
      */
     public static String uploadFile(MultipartFile fileUpload, HttpSession session){
         try {

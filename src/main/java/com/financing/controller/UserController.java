@@ -19,9 +19,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-/**
- * @author Penny
- */
 @Controller
 public class UserController {
 
@@ -61,8 +58,6 @@ public class UserController {
      * 用户登录操作
      * @param request
      * @param response
-     * @return
-     * @author Penny
      */
     @RequestMapping(value = "/doLogin",method = RequestMethod.POST)
     @ResponseBody
@@ -99,8 +94,6 @@ public class UserController {
      * 用户注册操作
      * @param request
      * @param response
-     * @return
-     * @author Penny
      */
     @RequestMapping(value = "/doRegister",method = RequestMethod.POST)
     @ResponseBody
@@ -138,8 +131,6 @@ public class UserController {
     /**
      * 退出登录操作
      * @param session
-     * @return
-     * @author Penny
      */
     @RequestMapping("/doLogout")
     public String doLogout(HttpSession session){
@@ -152,8 +143,6 @@ public class UserController {
      * @param avatarUpload
      * @param request
      * @param session
-     * @return
-     * @author Penny
      */
     @RequestMapping(value = "/doModifyUserInfo")
     @ResponseBody
@@ -177,10 +166,6 @@ public class UserController {
         user.setGender(request.getParameter("gender"));
         user.setZone(request.getParameter("zone"));
         user.setIntro(request.getParameter("intro"));
-
-//        System.out.println("user = " + user.getUsername());
-//        System.out.println("user1 = " + userService.getUserByUsername(user.getUsername()));
-
         User oldUser = userService.getUserByUsername(user.getUsername());
         if(oldUser!=null&&!oldUser.getId().equals(user.getId())){
             result.put("flag",FAIL_CODE);
@@ -205,7 +190,7 @@ public class UserController {
      * @param ic
      * @param session
      * @return
-     * @author Penny
+     * @author
      */
     @RequestMapping(value = "/doCertificate",method = RequestMethod.POST)
     @ResponseBody

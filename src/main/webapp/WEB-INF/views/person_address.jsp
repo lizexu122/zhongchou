@@ -11,10 +11,7 @@
     <script src="${ctp}/js/jquery-1.11.0.min.js" type="text/javascript"></script>
     <script src="${ctp}/js/layer.js" type="text/javascript"></script>
 </head>
-
 <body class="personal">
-<jsp:include page="header.jsp"/>
-<%--<jsp:include page="header.jsp "/>--%>
 <div class="wrap">
     <jsp:include page="person_left.jsp"/>
     <div class="r right_content">
@@ -103,9 +100,9 @@
                     for (var i = 0; i < data.length; i++) {
                         $("#addressList").append(
                             "<div class=\"box user-address\">" +
-                            "<strong class=\"name el\">"+data[i].recipient+"</strong>" +
-                            "<div class=\"text address\">"+data[i].postcode+"&nbsp;"+data[i].zone+"&nbsp;"+data[i].detail+"</div>" +
-                            "<p class=\"user_phone\">"+data[i].phone+"</p>" +
+                            "<strong class=\"name el\">" + data[i].recipient + "</strong>" +
+                            "<div class=\"text address\">" + data[i].postcode + "&nbsp;" + data[i].zone + "&nbsp;" + data[i].detail + "</div>" +
+                            "<p class=\"user_phone\">" + data[i].phone + "</p>" +
                             "</div>")
                     }
                 } else {

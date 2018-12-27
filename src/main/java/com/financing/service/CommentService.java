@@ -6,9 +6,6 @@ import com.financing.entity.User;
 
 import java.util.List;
 
-/**
- * Created by Penny on 2018/5/27.
- */
 public interface CommentService {
     void addComment(Comment comment);
     List<Comment> getCommentList(Project project);

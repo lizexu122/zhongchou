@@ -12,11 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
-/**
- * Created by Penny on 2018/5/21.
- */
-
 @Repository
 public class InterestDaoImpl implements InterestDao {
 

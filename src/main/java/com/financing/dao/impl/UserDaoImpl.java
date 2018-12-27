@@ -12,9 +12,6 @@ import org.springframework.stereotype.Repository;
 import java.math.BigDecimal;
 import java.util.List;
 
-/**
- * Created by Penny on 2018/5/13.
- */
 @Repository
 public class UserDaoImpl implements UserDao{
 

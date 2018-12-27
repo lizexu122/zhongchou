@@ -14,9 +14,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author Penny
- */
 @Service
 public class UserServiceImpl implements UserService{
     @Autowired

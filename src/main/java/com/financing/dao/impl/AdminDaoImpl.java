@@ -9,9 +9,6 @@ import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-/**
- * Created by Penny on 2018/5/31.
- */
 @Repository
 public class AdminDaoImpl implements AdminDao {
 

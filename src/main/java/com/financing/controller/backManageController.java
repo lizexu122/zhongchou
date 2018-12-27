@@ -13,10 +13,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * 后台管理
- * @author Penny
- */
 @Controller
 public class backManageController {
 

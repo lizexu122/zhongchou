@@ -15,9 +15,6 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by Penny on 2018/5/16.
- */
 @Repository
 public class ProjectDaoImpl implements ProjectDao {
 

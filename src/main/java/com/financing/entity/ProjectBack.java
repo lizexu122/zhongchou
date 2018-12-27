@@ -6,10 +6,6 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
 
-/**
- * 项目回报
- * Created by Penny on 2018/5/19.
- */
 @Entity
 @Table(name = "Project_Back")
 public class ProjectBack {
@@ -104,7 +100,7 @@ public class ProjectBack {
         return actual;
     }
 
-    public void setActual(Integer acutual) {
-        this.actual = acutual;
+    public void setActual(Integer actual) {
+        this.actual = actual;
     }
 }

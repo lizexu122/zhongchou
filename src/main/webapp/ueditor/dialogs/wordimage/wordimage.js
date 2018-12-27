@@ -1,5 +1,5 @@
 /**
- * Created by JetBrains PhpStorm.
+  JetBrains PhpStorm.
  * User: taoqili
  * Date: 12-1-30
  * Time: 下午12:50

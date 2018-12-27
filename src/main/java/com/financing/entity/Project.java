@@ -11,10 +11,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-/**
- * 项目信息
- * Created by Penny on 2018/5/16.
- */
 @Entity
 @Table(name = "Project")
 public class Project {

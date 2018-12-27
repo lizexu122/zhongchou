@@ -9,9 +9,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/**
- * Created by Penny on 2018/5/21.
- */
 @Service
 public class AddressServiceImpl implements AddressService {
 

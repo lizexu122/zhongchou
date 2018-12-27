@@ -12,9 +12,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-/**
- * Created by Penny on 2018/5/26.
- */
 @Repository
 public class ProjectUpdateDaoImpl implements ProjectUpdateDao {
 

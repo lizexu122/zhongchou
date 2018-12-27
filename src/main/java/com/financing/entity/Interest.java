@@ -2,10 +2,6 @@ package com.financing.entity;
 
 import javax.persistence.*;
 
-/**
- * 收藏
- * Created by Penny on 2018/5/20.
- */
 @Entity
 @Table(name = "Interest")
 public class Interest {

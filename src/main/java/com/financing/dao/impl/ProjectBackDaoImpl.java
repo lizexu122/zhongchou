@@ -12,9 +12,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-/**
- * Created by dell on 2018/5/19.
- */
 @Repository
 public class ProjectBackDaoImpl implements ProjectBackDao {
     @Autowired

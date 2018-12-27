@@ -14,10 +14,6 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
-/**定时任务
- * @author penny
- */
-
 @Component
 public class ScheduleTask {
 
@@ -34,8 +30,9 @@ public class ScheduleTask {
     /**
      * 项目融资状态
      */
-    @Scheduled(cron ="0/30 * * * * ?")
-    public void projectStatus(){//间隔30秒执行一次
+
+    @Scheduled(cron ="0 */5 * * * ?")
+    public void projectStatus(){//间隔5分钟执行一次
         List<Project> projectList= projectService.getProjectList();
         for (Project project:projectList) {
             Date now = new Date();

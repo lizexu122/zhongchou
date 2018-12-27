@@ -11,9 +11,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-/**
- * Created by Penny on 2018/5/20.
- */
 @Repository
 public class AddressDaoImpl implements AddressDao {
 

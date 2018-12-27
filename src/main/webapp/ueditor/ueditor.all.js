@@ -13838,7 +13838,7 @@ UE.plugin.register('anchor', function (){
 ///commandsName  WordCount,wordCount
 ///commandsTitle  字数统计
 /*
- * Created by JetBrains WebStorm.
+  JetBrains WebStorm.
  * User: taoqili
  * Date: 11-9-7
  * Time: 下午8:18

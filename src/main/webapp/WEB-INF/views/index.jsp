@@ -1,11 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="ctp" value="${pageContext.request.contextPath}"/>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
     <meta charset="utf-8"/>
-    <title>Funding</title>
+    <title>Money</title>
     <link rel="stylesheet" href="${ctp}/css/main.css" type="text/css"/>
     <link rel="stylesheet" href="${ctp}/css/model.css" type="text/css"/>
     <link rel="stylesheet" href="${ctp}/css/jquery.slideBox.css" type="text/css"/>
@@ -71,28 +70,25 @@
             <li>
                 <div class="banner1">
                     <div class="banner-info">
-                        <h3>Investment</h3>
-                        <p>Investment in fixed assets is an important vehicle for ensuring that the latest technology is
-                            available to business.</p>
-                        <%--固定资产投资是确保企业获得最新技术的重要手段--%>
+                        <h3>投资</h3>
+                        <p>投资与收益并存,不投资怎么可以赚钱</p>
                     </div>
                 </div>
             </li>
             <li>
                 <div class="banner2">
                     <div class="banner-info">
-                        <h3>Achieve the goal</h3>
-                        <p> One option is to tap existing limited partners for co-investments. </p>
-                        <%--寻求现有有限合伙人共同投资是一个选择--%>
+                        <h3>四个自信</h3>
+                        <p>坚持道德自信，理论自信，文化自信，制度自信</p>
+
                     </div>
                 </div>
             </li>
             <li>
                 <div class="banner3">
                     <div class="banner-info">
-                        <h3>Gain wealth</h3>
-                        <p>Wise investing is the surest path to financial independence and its something everyone can
-                            work on.</p>
+                        <h3>资本积累</h3>
+                        <p>可以通过资本积累不断积累财富，进而创造更大的财富</p>
                         <%--明智的投资是经济独立最可靠的道路，而且每个人都可以做到。--%>
                     </div>
                 </div>
@@ -106,53 +102,53 @@
     <div class="aboutProject" id="about">
         <div class="showMember" id="pricing">
             <div class="Center">
-                <span class="AboutObject">Total Number of</span>
+                <span class="AboutObject">总数量</span>
                 <div class="members">
                     <ul>
                         <li>
                             <div class="numOMember">
-                                <h5>First</h5>
+                                <h5>第一个</h5>
                             </div>
                             <div class="nameOMember">
-                                <h2>Projects Posted</h2>
+                                <h2>已发布的项目</h2>
                             </div>
                             <div class="amountOMember">
                                 <h2 id="pjPosted"></h2>
                             </div>
                             <div class="bigNumOMember">
-                                <h5>First</h5>
+                                <h5>第一个</h5>
                             </div>
                         </li>
                     </ul>
                     <ul>
                         <li>
                             <div class="numOMember">
-                                <h5>Second</h5>
+                                <h5>第二个</h5>
                             </div>
                             <div class="nameOMember">
-                                <h2>Backers</h2>
+                                <h2>银行家</h2>
                             </div>
                             <div class="amountOMember">
                                 <h2 id="backers"></h2>
                             </div>
                             <div class="bigNumOMember">
-                                <h5>Second</h5>
+                                <h5>第二个</h5>
                             </div>
                         </li>
                     </ul>
                     <ul>
                         <li>
                             <div class="numOMember">
-                                <h5>Third</h5>
+                                <h5>第三个</h5>
                             </div>
                             <div class="nameOMember">
-                                <h2>Projects Completed</h2>
+                                <h2>已完成项目</h2>
                             </div>
                             <div class="amountOMember">
                                 <h2 id="pjCompleted"></h2>
                             </div>
                             <div class="bigNumOMember">
-                                <h5>Third</h5>
+                                <h5>第三个</h5>
                             </div>
                         </li>
                     </ul>
@@ -165,19 +161,19 @@
 <div class="secondBackground">
     <%--用于展示部分前五记录--%>
     <div id="aboutNP">
-        <div class="typeOfProject">
-            <ul class="top">
-                <li class="currentLi"><a href="javascript:;" onclick="showTopFiveOfNH('doNewProjectTop')">New &
-                    Noteworthy</a></li>
-                <li><a href="javascript:;" onclick="showTopFiveOfNH('doHotProjectTop')">Hot</a></li>
-                <li><a href="javascript:;" onclick="showTopFiveOfNH('doProjectTopByCID-1')">Agriculture</a></li>
-                <li><a href="javascript:;" onclick="showTopFiveOfNH('doProjectTopByCID-2')">Publish</a></li>
-            </ul>
-        </div>
-        <div id="showNP" class="showNP">
-            <jsp:include page="model.jsp"/>
-        </div>
-    </div>
+        <%--<div class="typeOfProject">--%>
+            <%--<ul class="top">--%>
+                <%--<li class="currentLi"><a href="javascript:;" onclick="showTopFiveOfNH('doNewProjectTop')">最新发布--%>
+                    <%--</a></li>--%>
+                <%--<li><a href="javascript:;" onclick="showTopFiveOfNH('doHotProjectTop')">最热发布</a></li>--%>
+                <%--<li><a href="javascript:;" onclick="showTopFiveOfNH('doProjectTopByCID-1')">农业</a></li>--%>
+                <%--<li><a href="javascript:;" onclick="showTopFiveOfNH('doProjectTopByCID-2')">发布者</a></li>--%>
+            <%--</ul>--%>
+        <%--</div>--%>
+        <%--<div id="showNP" class="showNP">--%>
+            <%--<jsp:include page="model.jsp"/>--%>
+        <%--</div>--%>
+    <%--</div>--%>
     <jsp:include page="footer.jsp"/>
 </div>
 </body>

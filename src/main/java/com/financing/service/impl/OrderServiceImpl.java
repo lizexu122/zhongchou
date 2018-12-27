@@ -14,9 +14,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by Penny on 2018/5/21.
- */
 
 @Service
 public class OrderServiceImpl implements OrderService {
@@ -75,20 +72,33 @@ public class OrderServiceImpl implements OrderService {
     public List<Map<String, Object>> getOrderStatistic() {
         List<Object> list =  orderDao.queryOrderStatistic();
         List<Map<String,Object>> statistic = new ArrayList<Map<String,Object>>();
-        for (int i = 0;i<list.size();i++) {
+        for (int i = 0,j=0;i<list.size();i++) {
             Object oj =  list.get(i);
             JSONArray array = JSONArray.fromObject(oj);
             Map<String,Object> data = new HashMap<String,Object>();
             List<Map<String,Object>> dataList = new ArrayList<Map<String,Object>>();
             Map<String,Object> dataSub = new HashMap<String,Object>();
-            if((i!=0)&&JSONArray.fromObject(list.get(i-1)).get(0).equals(array.get(0))){//日期相同
-                data = statistic.get(i-1);
-                dataList = (List<Map<String, Object>>) data.get("data");
-                dataSub.put("status",array.get(1));//status
-                dataSub.put("count",array.get(2));//count
-                dataList.add(dataSub);
-            }else {
+            if (i!=0&&JSONArray.fromObject(list.get(i-1)).get(0).equals(array.get(0))){//日期相同
+                if(j!=0){
+                    System.out.println(i);
+                    System.out.println(statistic);
+                    data = statistic.get(j-1);
+                    System.out.println(data);
+                    dataList = (List<Map<String, Object>>) data.get("data");
+                    dataSub.put("status",array.get(1));//status
+                    dataSub.put("count",array.get(2));//count
+                    dataList.add(dataSub);
+                }else {
 
+                    data.put("date",array.get(0));//date
+
+                    dataSub.put("status",array.get(1));//status
+                    dataSub.put("count",array.get(2));//count
+                    dataList.add(dataSub);
+                    data.put("data",dataList);
+                    statistic.add(data);
+                }
+            }else{
                 data.put("date",array.get(0));//date
 
                 dataSub.put("status",array.get(1));//status
@@ -96,7 +106,9 @@ public class OrderServiceImpl implements OrderService {
                 dataList.add(dataSub);
                 data.put("data",dataList);
                 statistic.add(data);
+                j++;
             }
+
         }
 
         for (Map<String,Object> map:statistic) {

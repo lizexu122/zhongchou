@@ -6,9 +6,7 @@ import com.financing.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-/**
- * Created by dell on 2018/5/31.
- */
+
 @Service
 public class AdminServiceImpl implements AdminService {
 
