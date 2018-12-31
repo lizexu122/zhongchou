@@ -26,7 +26,6 @@
 }
 
 .memenu {
-    width: 100%;
     list-style: none;
     display: inline-block;
     position: relative;
@@ -39,9 +38,15 @@
 }
 
 ul.memenu.skyblue {
-    text-align: center;
-}
 
+    text-align: center;
+    margin-left: -100px;
+
+}
+#All{
+    margin-left: 400px;
+    width:200px;
+}
 .memenu > li > a {
     font-family: 'Dosis-Regular';
     float: left;
@@ -52,7 +57,10 @@ ul.memenu.skyblue {
     text-decoration: none;
     transition: color .4s ease-in-out;
 }
-
+#dx{
+    margin-left: 150px;
+    width:200px;
+}
 .memenu > li > .mepanel {
     position: absolute;
     display: none;

@@ -40,7 +40,7 @@ public class MainController {
 
     @RequestMapping(value = "/register")
     public String register() {
-        return "login";
+        return "register";
     }
 
     /**

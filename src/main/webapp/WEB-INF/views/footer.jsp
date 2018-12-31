@@ -5,6 +5,11 @@
 <head>
     <title>Footer(页脚)</title>
     <link type="text/css" rel="stylesheet" href="${ctp}/css/footer.css"/>
+    <style type="text/css">
+        p{
+           color:black;
+        }
+    </style>
 </head>
 <body>
 <div class="footer-link">

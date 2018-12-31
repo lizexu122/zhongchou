@@ -17,39 +17,19 @@
     </div>
     <div class="top-nav">
         <ul class="memenu skyblue">
-            <li id="Home" class="active"><a href="${ctp}/index">已有筹款</a></li>
-            <li id="Hot" class="grid"><a href="${ctp}/browse/hot">最热筹款</a></li>
-            <li id="New" class="grid"><a href="${ctp}/browse/new">最新筹款</a></li>
-            <li id="All" class="grid"><a href="${ctp}/browse/all">所有筹款</a>
+            <li id="All" class="grid"><a id="dx" href="${ctp}/browse/all">已发布项目</a>
                 <div class="mepanel">
                     <div class="row">
-                        <div class="col1 me-one">
-                            <h4>Type</h4>
-                            <ul>
-                                <li><a href="${ctp}/browse/sort-1">农业</a></li>
-                                <li><a href="${ctp}/browse/sort-2">商业</a></li>
-                                <li><a href="${ctp}/browse/sort-3">娱乐</a></li>
-                                <li><a href="${ctp}/browse/sort-4">科技</a></li>
-                                <li><a href="${ctp}/browse/sort-5">网络</a></li>
-                                <li><a href="${ctp}/browse/sort-6">其他</a></li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
             </li>
         </ul>
     </div>
-    <div class="search-bar">
-        <input onfocus="this.value = '';"
-               placeholder="Search"
-               type="text" id="searchByKeyWord">
-        <a href="javascript:;" id="searchImg"></a>
-    </div>
     <c:choose>
         <c:when test="${empty user}">
             <%--未登录，提示登录按钮--%>
             <div id="defaultShow">
-                <button id="promptLogin" type="submit" onclick="window.location.href='${ctp}/login'"
+                <button id="promptLogin" type="submit" onclick="window.location.href='${ctp}/register'"
                         onmouseover="this.style.cursor='pointer'">
                     <a href='javascript:;'>注册/登录</a>
                 </button>

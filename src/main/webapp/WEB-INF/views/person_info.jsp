@@ -14,61 +14,88 @@
         #save, #csave {
             position: relative;
             left: -250px;
+            top: -700px;
+            left: 400px;
         }
+        #chakan{
+            position: relative;
+            top: 70px;
+        }
+
+
     </style>
 </head>
 
 <body class="personal">
 <div class="wrap">
     <jsp:include page="person_left.jsp"/>
+    <div id="kk">
+        <input type="button" id="chakan" class="button" value="查看信息" onclick="kk()"/>
+    </div>
     <div class="r right_content">
-        <div class="common minheight800">
-
-            <div class="common_title fix">
-                <span class="l">Personal Information</span>
-                <a href="#" class="complete r"></a>
-            </div>
-            <div class="tab-menu">
-                <ul>
-                    <li><a class="tab-selected" href="#">Modify Person Information</a></li>
-                    <li><a href="#">Certificate</a></li>
-                </ul>
-                <li class="fix">
-                    <p class="_title l">gender</p>
-                    <p class="l">
-                        <label>
-                            <input type="radio" name="gender" value="female"
-                            <c:if test="${sessionScope.user.gender=='female'}">
-                                   checked="true"
-                            </c:if>
-                            > Female
-                        </label>
-                        <label>
-                            <input type="radio" name="gender" value="male"
-                            <c:if test="${sessionScope.user.gender=='male'}">
-                                   checked
-                            </c:if>
-                            > Male
-                        </label>
-                        <label>
-                            <input type="radio" name="gender" value="secrecy"
-                            <c:if test="${sessionScope.user.gender=='secrecy'}">
-                                   checked
-                            </c:if>
-                            > Secrecy
-                        </label>
-                    <p class="_title l">class</p>
-                    </p>
-                    <div style="clear: both"></div>
-                </li>
-            </div>
+        <div class="common minheight800" id="cyyq">
             <div class="tab-box">
                 <div class="user_info fix">
+
                     <form id="formInfo" action="/doModifyUserInfo" method="post"
                           enctype="multipart/form-data">
                         <ul class="user_info_ul">
+
+                            <li class="fix">
+                                <p class="_title l">用户名</p>
+                                <p class="l">
+                                    <input type="text" name="username" id="inputUserName"
+                                           value="${sessionScope.user.username}" class="info_text">
+                                </p>
+                                <div style="clear: both"></div>
+                            </li>
+                            <li class="fix">
+                                <p class="_title l">电话</p>
+                                <p class="l">
+                                    <span>${sessionScope.user.mobile}</span>
+                                </p>
+                                <div style="clear: both"></div>
+                            </li>
+                            <li class="fix">
+                                <p class="_title l">邮箱</p>
+                                <p class="l">
+                                    <input type="email" class="info_text" id="inputEmail" name="email"
+                                           placeholder="xxxxxx@xx.com" value="${sessionScope.user.email}">
+                                </p>
+                                <div style="clear: both"></div>
+                            </li>
+                            <li class="fix">
+                                <p class="_title l">性别</p>
+                                <p class="l">
+                                    <label>
+                                        <input type="radio" name="gender" value="female"
+                                        <c:if test="${sessionScope.user.gender=='female'}">
+                                                checked="true"
+                                        </c:if>
+                                        > 女士
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="gender" value="male"
+                                        <c:if test="${sessionScope.user.gender=='male'}">
+                                               checked
+                                        </c:if>
+                                        > 男士
+                                    </label>
+
+                                </p>
+                                <div style="clear: both"></div>
+                            </li>
+                            <li class="fix">
+                                <p class="_title l">地址</p>
+                                <p class="l">
+                                    <input type="text" class="info_text" value="${sessionScope.user.zone}"
+                                           id="inputAddress"
+                                           name="zone"/>
+                                </p>
+                                <div style="clear: both"></div>
+                            </li>
                             <li class="user_info_img fix">
-                                <p class="_title l">avatar</p>
+                                <p class="_title l">头像</p>
                                 <div class="l _img">
                                     <img src="${sessionScope.user.avatar}" alt="">
                                     <div class="am-form-group am-form-file">
@@ -77,84 +104,9 @@
                                 </div>
                                 <div style="clear: both"></div>
                             </li>
-                            <li class="fix">
-                                <p class="_title l">username</p>
-                                <p class="l">
-                                <div style="background-color: #00a0e9">
-
-                            </div>
-                                    <input type="text" name="username" id="inputUserName"
-                                           value="${sessionScope.user.username}" class="info_text">
-                                </p>
-                                <div style="clear: both"></div>
-                            </li>
-                            <li class="fix">
-                                <p class="_title l">mobile</p>
-                                <p class="l">
-                                    <span>${sessionScope.user.mobile}</span>
-                                </p>
-                                <p>
-                                    <span class="has_check">已验证</span>
-                                </p>
-                                <p>
-                                    <span class="has_check">验证过程有疑问？</span>
-                                </p>
-                                <p>
-                                    <span style="background-color: #00a0e9">有疑问？ </span>
-                                </p>
-                                <p>
-                                    <span style="background-color: #00a0e9;align-content: center">提示：请注意字母大小写 </span>
-                                </p>
-
-                                <div style="clear: both"></div>
-                            </li>
-                            <li class="fix">
-                                <p class="_title l">email</p>
-                                <p class="l">
-                                    <input type="email" class="info_text" id="inputEmail" name="email"
-                                           placeholder="xxxxxx@xx.com" value="${sessionScope.user.email}">
-                                </p>
-                                <div style="clear: both"></div>
-                            </li>
-                            <li class="fix">
-                                <p class="_title l">gender</p>
-                                <p class="l">
-                                    <label>
-                                        <input type="radio" name="gender" value="female"
-                                        <c:if test="${sessionScope.user.gender=='female'}">
-                                                checked="true"
-                                        </c:if>
-                                        > Female
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="gender" value="male"
-                                        <c:if test="${sessionScope.user.gender=='male'}">
-                                               checked
-                                        </c:if>
-                                        > Male
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="gender" value="secrecy"
-                                        <c:if test="${sessionScope.user.gender=='secrecy'}">
-                                               checked
-                                        </c:if>
-                                        > Secrecy
-                                    </label>
-                                </p>
-                                <div style="clear: both"></div>
-                            </li>
-                            <li class="fix">
-                                <p class="_title l">zone</p>
-                                <p class="l">
-                                    <input type="text" class="info_text" value="${sessionScope.user.zone}"
-                                           id="inputAddress"
-                                           name="zone"/>
-                                </p>
-                                <div style="clear: both"></div>
-                            </li>
 
                             <li class="fix">
-                                <p class="_title l">intro</p>
+                                <p class="_title l">个人简介</p>
                                 <p class="l">
                                     <textarea class="info_text" name="intro" value="${sessionScope.user.intro}"
                                               id="inputInformation"></textarea>
@@ -163,36 +115,11 @@
                             </li>
                         </ul>
                         <div class="tc">
-                            <input type="button" id="save" class="button" value="SAVE" onclick="modify()"/>
+                            <input type="button" id="save" class="button" value="编辑资料" onclick="modify()"/>
                         </div>
                     </form>
                 </div>
-                <div class="user_info fix tab-hide">
-                    <form id="formCert" action="/doCertificate" method="post"
-                          enctype="multipart/form-data">
-                        <ul class="user_info_ul">
-                            <li class="fix">
-                                <p class="_title l">ic</p>
-                                <p class="l">
-                                    <input type="text" class="info_text" id="inputId" name="ic"
-                                           value="${sessionScope.user.ic}">
-                                </p>
-                                <div style="clear: both"></div>
-                            </li>
-                            <li class="fix">
-                                <p class="_title l">realName</p>
-                                <p class="l">
-                                    <input type="text" class="info_text" id="inputRealName" name="realName"
-                                           placeholder="真实姓名" value="${sessionScope.user.realName}">
-                                </p>
-                                <div style="clear: both"></div>
-                            </li>
-                        </ul>
-                        <div class="tc">
-                            <button type="button" id="csave" class="button" onclick="certificate()">SAVE</button>
-                        </div>
-                    </form>
-                </div>
+
             </div>
         </div>
     </div>
@@ -258,53 +185,9 @@
             })
         })
     }
-
-    function certificate() {
-        var realName = document.getElementById("inputRealName").value;
-        var ic = document.getElementById("inputId").value;
-        var bb = /^[a-z0-9]{18}$/;
-        if (ic) {
-
-        } else {
-            layer.msg('身份证不能为空');
-            return false;
-        }
-        if (!bb.test(ic)) {
-            layer.msg('身份证只能是18位');
-            return false;
-        }
-        if (realName) {
-
-        } else {
-            layer.msg('真实姓名不能为空');
-            return false;
-        }
-        console.log(realName);
-
-        $.ajax({//调用ajax后台数据异步方法
-            //提交的方式
-            type: "Post",
-            async: false,
-            //数据的传送页面：要启动界面的地址/界面的后台的方法
-            url: "${ctp}/doCertificate",
-            // contentType:false,
-            data: {
-                "realName": realName,
-                "ic": ic,
-            },
-            //传到服务器的参数类型
-            dataType: "json",
-            //重要的后台的回调函数（很重要）
-            success: function (result) {
-                if (result.flag == 1) {
-                    layer.msg("验证成功");
-                    window.location.reload();
-                } else {
-                    layer.msg("验证失败");
-                }
-            },
-        });
-    }
+  $("#chakan").click(function(){
+     $("#cyyq").slideToggle();
+  });
 
 
 
