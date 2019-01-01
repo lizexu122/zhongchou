@@ -10,9 +10,14 @@
     <script type="text/javascript" src="${ctp}/js/user.js"></script>
     <script src="${ctp}/js/layer.js" type="text/javascript"></script>
     <title>- 个人中心 -</title>
+    <style type="text/css">
+        body{
+            background-image: url("${ctp}/image/beijing.png");
+        }
+    </style>
 </head>
 
-<body class="personal">
+<body class="personal" >
 <div class="wrap">
     <jsp:include page="person_left.jsp"/>
     <div class="r right_content">
@@ -22,7 +27,7 @@
                 </div>
                 <div class="user_info fix" id="fx" >
                     <form id="formCert" action="/doCertificate" method="post"
-                          enctype="multipart/form-data" ">
+                          enctype="multipart/form-data" >
                         <ul class="user_info_ul">
                             <li class="fix">
                                 <p class="_title l">身份证</p>

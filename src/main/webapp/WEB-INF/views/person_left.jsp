@@ -13,27 +13,27 @@
     <ul class="ul_left_nav">
         <li id="personCenter" class="active">
             <a href="${ctp}/personCenter">
-                <span class="left_nav_name dib">个人中心</span>
+                <span class="left_nav_name dib">个人中心 |</span>
             </a>
         </li>
         <li id="personInfo" class="grid">
             <a href="${ctp}/personCenter/personInfo">
-                <span class="left_nav_name dib">个人信息</span>
+                <span class="left_nav_name dib">个人信息  |</span>
             </a>
         </li>
         <li id="projectCreate" class="grid">
             <a href="${ctp}/personCenter/projectCreate">
-                <span class="left_nav_name dib">项目发布</span>
+                <span class="left_nav_name dib">项目发布  |</span>
             </a>
         </li>
         <li id="personProject" class="grid">
             <a href="${ctp}/personCenter/personProject">
-                <span class="left_nav_name dib">我的项目</span>
+                <span class="left_nav_name dib">我的项目  |</span>
             </a>
         </li>
         <li id="personOrder" class="grid">
             <a href="${ctp}/personCenter/personOrder">
-                <span class="left_nav_name dib">我的订单</span>
+                <span class="left_nav_name dib">我的订单  |</span>
             </a>
         </li>
     </ul>

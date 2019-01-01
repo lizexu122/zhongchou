@@ -31,11 +31,7 @@
         <div class="row cb-slideshow-text-container ">
             <div class="tm-content col-xl-6 col-sm-8 col-xs-8 ml-auto section">
                 <header class="mb-5"><h1>登录</h1></header>
-                <%--<br/>--%>
-                <%--<P class="mb-5">如果你没有用户，可以快速注册一个--%>
-                    <%--<a id="Register" rel="nofollow" target="_parent" href='register'>注册</a>--%>
-                     <%--谢谢您的光顾</P>--%>
-                <%--<br>--%>
+
                 <form action="${ctp}/doLogin" method="post" class="subscribe-form" id="f2">
                     <div class="row form-section">
                         <div class="col-md-7 col-sm-7 col-xs-7">

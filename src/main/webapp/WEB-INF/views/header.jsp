@@ -44,7 +44,8 @@
                             <div id="self_image">
                                 <c:if test="${not empty user.avatar}">
                                     <%--成功获取头像数据并加载--%>
-                                    <img id="showSelfImage" src="${user.avatar}"/>
+                                    <%--<img id="showSelfImage" src="${user.avatar}"/>--%>
+                                    <p>欢迎您</p>
                                 </c:if>
                                 <c:if test="${empty user.avatar}">
                                     <%--未得头像数据默认返回--%>
@@ -56,13 +57,12 @@
                                 <div class="row">
                                     <div class="col1 me-one">
                                         <ul>
-                                            <li><a href="${ctp}/personCenter"><span class="icon_profile"></span>My
-                                                Profile</a></li>
-                                            <li><a href="${ctp}/personCenter/personProject"><span
-                                                    class="icon_clipboard"></span>My
-                                                Project</a>
-                                            </li>
-                                            <li><a href="${ctp}/doLogout"><span class="icon_key"></span>Log Out</a></li>
+                                            <li><a href="${ctp}/personCenter">
+                                                <%--<span class="icon_profile"></span>--%>
+                                              个人中心</a></li>
+                                            <li><a href="${ctp}/doLogout">
+                                                <%--<span class="icon_key"></span>--%>
+                                                退出登录</a></li>
                                         </ul>
                                     </div>
                                 </div>
