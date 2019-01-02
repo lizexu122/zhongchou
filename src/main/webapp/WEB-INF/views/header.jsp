@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="${ctp}/css/icon.css" type="text/css"/>
     <script type="text/javascript" src="${ctp}/js/memenu.js"></script>
     <script type="text/javascript" src="${ctp}/js/responsiveslides.min.js"></script>
+    <style type="text/css">
+        #kcc{
+            color:white;
+        }
+    </style>
 </head>
 <body>
 <div id="Head">
@@ -45,7 +50,7 @@
                                 <c:if test="${not empty user.avatar}">
                                     <%--成功获取头像数据并加载--%>
                                     <%--<img id="showSelfImage" src="${user.avatar}"/>--%>
-                                    <p>欢迎您</p>
+                                    <p id="kcc">欢迎您</p>
                                 </c:if>
                                 <c:if test="${empty user.avatar}">
                                     <%--未得头像数据默认返回--%>

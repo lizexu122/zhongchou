@@ -11,8 +11,23 @@
     <script src="${ctp}/js/layer.js" type="text/javascript"></script>
     <title>- 个人中心 -</title>
     <style type="text/css">
-        body{
-            background-image: url("${ctp}/image/beijing.png");
+        .nickname.l {
+            border: 3px solid #f4f4f4;
+            border-radius: 50%;
+            width: 200px;
+            height: 180px;
+            position: relative;
+            top: 250px;
+        }
+        #ju {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            left: -500px;
+        }
+        #tpi {
+            position: relative;
+            left: -500px;
         }
     </style>
 </head>
@@ -23,8 +38,6 @@
     <div class="r right_content">
         <div class="personal_info fix">
             <div class="personal_info_left l">
-                <div class="head_portrait l">
-                </div>
                 <div class="user_info fix" id="fx" >
                     <form id="formCert" action="/doCertificate" method="post"
                           enctype="multipart/form-data" >
@@ -46,6 +59,8 @@
                                 <div style="clear: both"></div>
                             </li>
                         </ul>
+                        <p id="tpi">头像:</p>
+                        <img id="ju" src="${ctp}/image/ju.jpg"/>
                         <div class="tc">
                             <button type="button" id="csave" class="button" onclick="certificate()">保存</button>
                         </div>

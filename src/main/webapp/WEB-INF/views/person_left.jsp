@@ -7,9 +7,16 @@
      a:hover{
         color:purple;
     }
+    .left_nav_name:hover{
+        padding-left: 15px;
+    }
+    #oppo{
+        margin-left: 25px;
+    }
 </style>
 
 <div class="left_nav l">
+    <img id="oppo" src="${ctp}/image/opium.png"/>
     <ul class="ul_left_nav">
         <li id="personCenter" class="active">
             <a href="${ctp}/personCenter">

@@ -229,7 +229,10 @@ a img {
 #fx {
     position: relative;
     top: -400px;
-    right: 400px;
+    border-bottom: 1px solid #d0d0d0;
+    height: 220px;
+    right:200px;
+    border-top: 1px solid #d0d0d0;
 }
 .personal .common_title span {
     padding-left: 20px;
@@ -292,6 +295,7 @@ input {
     border-radius: 3px;
     transition: all 0.2s;
     outline: none;
+    margin-left: 100px;
 }
 
 .tab-selected {
