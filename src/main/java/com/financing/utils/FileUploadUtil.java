@@ -25,11 +25,11 @@ public class FileUploadUtil {
                 String fileRealPath = "";
                 String fileName = "";
                 String fileId = DateUtil.dateIDGenerator();
-                if (type.equals("image/jpeg")){
+                if (type.equals("image/jpg")){
 //                    fileRealPath = servletContext.getRealPath("/upload/image");
-                    fileRealPath = "E://financing-uploadfile/image";
+                    fileRealPath = "C:\\financingK\\target\\financing\\WEB-INF\\res\\image";
                     fileName = "cover_"+fileId+".jpg";
-                    filePath = "/upload/image/"+fileName;
+                    filePath = "image/"+fileName;
                 }else if (type.equals("video/mp4")){
 //                    fileRealPath = servletContext.getRealPath("/res/video_upload");
                     fileRealPath = "E://financing-uploadfile/video";

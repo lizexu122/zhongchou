@@ -62,9 +62,8 @@ public class OrderController {
         String projectId = request.getParameter("project");
         Project project = new Project();
         project.setId(projectId);
-        int backId = Integer.parseInt(request.getParameter("project_back"));
+//        int backId = Integer.parseInt(request.getParameter("project_back"));
         ProjectBack back = new ProjectBack();
-        back.setId(backId);
         BigDecimal amount = BigDecimal.valueOf(Double.parseDouble(request.getParameter("amount")));
 
 

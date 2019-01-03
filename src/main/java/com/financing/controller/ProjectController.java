@@ -182,19 +182,19 @@ public class ProjectController {
     /**
      * 参与支持总数
      */
-    @RequestMapping(value = "/doSupportCount", method = RequestMethod.GET)
-    @ResponseBody
-    public Map<String, Object> doSupportCount() {
-        long count = projectService.getSupportCount();
-
-        Map<String, Object> result = new HashMap<String, Object>();
-        result.put("flag", SUCCESS_CODE);
-        result.put("msg", "success");
-        result.put("data", count);
-
-        return result;
-    }
-
+//    @RequestMapping(value = "/doSupportCount", method = RequestMethod.GET)
+//    @ResponseBody
+//    public Map<String, Object> doSupportCount() {
+//        long count = projectService.getSupportCount();
+//
+//        Map<String, Object> result = new HashMap<String, Object>();
+//        result.put("flag", SUCCESS_CODE);
+//        result.put("msg", "success");
+//        result.put("data", count);
+//
+//        return result;
+//    }
+//
     /**
      * 最新发布前五条
      */

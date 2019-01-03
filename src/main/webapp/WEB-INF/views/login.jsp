@@ -11,9 +11,28 @@
     <script type="text/javascript" src="${ctp}/js/loadClickChange.js"></script>
     <script type="text/javascript" src="${ctp}/js/layer.js"></script>
     <style type="text/css">
-        .container {
-            width: 310px;
+        #dengl {
+            background-color: #006699;
+            border-radius: .5rem;
+            border-color: white;
+            padding: 0.75rem 1.6rem;
+            font-weight: 300;
+            font-size: 1.4rem;
+            cursor: pointer;
+            position: relative;
+            left: 70px;
         }
+        #qq {
+            position: relative;
+            top: -580px;
+            left: -580px;
+        }
+        #gg{
+            position: relative;
+            top:170px;
+            left:550px;
+        }
+
     </style>
 </head>
 <body class="loaded">
@@ -44,10 +63,12 @@
                         </div>
                         <br>
                         <div class="col-md-5 col-sm-5 col-xs-5">
-                            <button type="button" class="tm-btn-subscribe" onclick="kf()">登录</button>
+                            <button type="button"  id="dengl" onclick="kf()">登录</button>
                         </div>
                     </div>
                 </form>
+                <img id="qq" src="${ctp}/image/xx.png"/>
+                <img id="gg" src="${ctp}/image/gg.png"/>
             </div>
         </div>
     </div>

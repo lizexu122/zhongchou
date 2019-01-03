@@ -149,7 +149,7 @@
                                 <div class="eachOneLeft">
                                     <p>
                                             <%--list:装载文件路径（绝对路径）--%>
-                                        <object class="showImage" data="${project.cover}"></object>
+                                        <img class="showImage" src="/financing/${project.cover}"></img>
                                     </p>
                                 </div>
                                 <div class="eachOneRight">
@@ -171,8 +171,8 @@
                                     </p><br/>
 
                                         <output class="PJCategory">剩余天数：
-                                            <input type="text" value="${project.endTime}" disabled/>
-                                            <input id="shengyutian" value="${project.endTime}" readonly/></output>
+                                            <input type="text" value="${project.endTime}" name="pedC" style="display: none"/>
+                                            <input id="shengyutian"  name="ped"  readonly/></output>
                                     <br>
                                     <p>
                                         <output class="PJ">状态：</output>
@@ -193,7 +193,8 @@
                                     </output>
 
                                     <a href="#">
-                                        <a href='${ctp}/browse/support-${data.id}' id="sdzc" id="sdzc">立即支持</a>
+                                        <p>${project.id}</p>
+                                        <a href='${ctp}/browse/support-${project.id}' id="sdzc" id="sdzc">立即支持</a>
                                     </a><br>
                                 </div>
                             </div>
@@ -212,19 +213,20 @@
 <jsp:include page="footer.jsp"/>
 </body>
 <script type="text/javascript">
-    23:22:36
-    孟文杰 2018/12/31 23:22:36
     function cheangetime() {
-        var controlsC = document.getElementsByName("pedC");
-        var controls = document.getElementsByName("ped");
+        var controlsC = document.getElementsByName("pedC");//pedc显示截至时间
+        var controls = document.getElementsByName("ped");//ped 显示剩余时间
+        console.log(controlsC);
         for (var i = 0; i < controlsC.length; i++) {
             var ped = controlsC[i].value;
-
-            ped = ped.substr(0, ped.length - 4);
-
-            var pedfor = new Date(ped.replace(/-/g, "/"));
+           console.log(ped);
+            ped = ped.substr(0, ped.length - 2);
+            console.log(ped);
+            var pedfor = new Date(ped);
             var dateBegin = new Date(pedfor);
             var dateEnd = new Date();
+            // console.log(dateBegin);
+            // console.log(dateEnd);
             var dateDiff = dateBegin.getTime() - dateEnd.getTime();//时间差的毫秒数
             if (dateDiff <= 0) {
                 controls[i].value = '已超过时间';
@@ -249,7 +251,9 @@
             cheangetime();
         }, 1000);
     }
+    window.onload=cheangetime();
 
 
 </script>
+
 </html>

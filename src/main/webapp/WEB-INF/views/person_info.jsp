@@ -21,8 +21,6 @@
             position: relative;
             top: 70px;
         }
-
-
     </style>
 </head>
 

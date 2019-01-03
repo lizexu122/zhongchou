@@ -114,4 +114,19 @@ public class Order {
     public void setStatus(Byte status) {
         this.status = status;
     }
+
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id='" + id + '\'' +
+                ", address=" + address +
+                ", createTime=" + createTime +
+                ", project=" + project +
+                ", user=" + user +
+                ", projectBack=" + projectBack +
+                ", amount=" + amount +
+                ", status=" + status +
+                '}';
+    }
 }

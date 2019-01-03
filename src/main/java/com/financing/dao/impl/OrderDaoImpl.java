@@ -23,7 +23,9 @@ public class OrderDaoImpl implements OrderDao {
     @Override
     public void insert(Order order) {
         Session session = sessionFactory.getCurrentSession();
+        System.out.println(order.toString());
         session.save(order);
+
         System.out.println("////////"+order);
     }
 

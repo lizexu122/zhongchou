@@ -82,7 +82,7 @@
     }
 
     function cz() {
-        var bb = document.getElementsByClassName("post1")[0].value;
+        // var bb = document.getElementsByClassName("post1")[0].value;
         var cc = document.getElementsByClassName("ordernum")[0].value;
         document.getElementsByClassName("qian")[0].value = bb * cc;
 

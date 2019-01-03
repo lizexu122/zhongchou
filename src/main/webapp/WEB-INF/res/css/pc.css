@@ -295,7 +295,9 @@ input {
     border-radius: 3px;
     transition: all 0.2s;
     outline: none;
-    margin-left: 100px;
+    position: relative;
+    left: -100px;
+    top: -200px;
 }
 
 .tab-selected {
