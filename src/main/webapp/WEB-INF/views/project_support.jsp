@@ -81,12 +81,12 @@
         document.getElementById("qiana").value = aa;
     }
 
-    function cz() {
+    // function cz() {
         // var bb = document.getElementsByClassName("post1")[0].value;
-        var cc = document.getElementsByClassName("ordernum")[0].value;
-        document.getElementsByClassName("qian")[0].value = bb * cc;
+        // var cc = document.getElementsByClassName("ordernum")[0].value;
+        // document.getElementsByClassName("qian")[0].value = bb * cc;
 
-    }
+    // }
 
     $(document).ready(function () {
         $(".cx").click(function () {
@@ -104,6 +104,7 @@
             data: $('#formOrder').serialize(),
             success: function (result) {
                 if (result.flag == 1) {
+                    console.log(result.flag);
                     window.location.href = "${ctp}/personCenter/personOrder";
                 } else {
                     layer.msg(result.msg);
@@ -324,8 +325,8 @@
             }
         }
     });
-
-    window.onload = cz();
+    //
+    // window.onload = cz();
 
     function zhic() {
         $.ajax({

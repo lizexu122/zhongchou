@@ -4,10 +4,17 @@
 <c:set var="ctp" value="${pageContext.request.contextPath}"/>
 <html>
 <head>
-    <title>Order Detail</title>
+    <title>订单详情</title>
     <link rel="stylesheet" href="${ctp}/css/pc.css">
     <script src="${ctp}/js/jquery-1.11.0.min.js" type="text/javascript"></script>
     <script src="${ctp}/js/layer.js" type="text/javascript"></script>
+    <style type="text/css">
+        #cancelBtn {
+            position: relative;
+            top: 10px;
+            left: 1px;
+        }
+    </style>
 </head>
 <body class="personal">
 <div class="wrap">
@@ -15,13 +22,13 @@
     <div class="r right_content">
         <div class="common minheight800">
             <div class="common_title fix">
-                <span class="l">Order Detail</span>
+                <span class="l">订单详情</span>
                 <a href="#" class="complete r"></a>
             </div>
             <div class="order_detail">
                 <div class="check fix">
                     <div class="check_left l">
-                        OrderID
+                        订单ID
                     </div>
                     <div class="check_right l">
                         ${data.id}
@@ -29,33 +36,7 @@
                 </div>
                 <div class="check fix">
                     <div class="check_left l">
-                        Back Content
-                    </div>
-                    <div class="check_right l">
-                        ${data.projectBack.content}
-                    </div>
-                </div>
-                <div class="check fix">
-                    <div class="check_left l">
-                        Back Date
-                    </div>
-                    <div class="check_right l">
-                        ${data.projectBack.backDate}
-                    </div>
-                </div>
-                <c:if test="${data.address!=null && data.address!=''}">
-                    <div class="check fix">
-                        <div class="check_left l">
-                            Address
-                        </div>
-                        <div class="check_right l">
-                                ${data.address.zone}&nbsp;${data.address.detail}
-                        </div>
-                    </div>
-                </c:if>
-                <div class="check fix">
-                    <div class="check_left l">
-                        Create Time
+                        创建时间
                     </div>
                     <div class="check_right l">
                         ${data.createTime}
@@ -63,7 +44,7 @@
                 </div>
                 <div class="check fix">
                     <div class="check_left l">
-                        Project ID
+                        订单ID
                     </div>
                     <div class="check_right l">
                         ${data.project.id}
@@ -71,7 +52,7 @@
                 </div>
                 <div class="check fix">
                     <div class="check_left l">
-                        Project Title
+                        订单标题
                     </div>
                     <div class="check_right l">
                         ${data.project.title}
@@ -79,7 +60,7 @@
                 </div>
                 <div class="check fix">
                     <div class="check_left l">
-                        Project Creator
+                        订单发起者
                     </div>
                     <div class="check_right l">
                         ${data.user.username}
@@ -87,26 +68,23 @@
                 </div>
                 <div class="check fix">
                     <div class="check_left l">
-                        Status
+                        状态
                     </div>
                     <div class="check_right l">
                         <c:if test="${data.status==0}">
-                            Submitted
+                            进行中
                         </c:if>
                         <c:if test="${data.status==-1}">
-                            Withdrawn
-                        </c:if>
-                        <c:if test="${data.status==-2}">
-                            Refund
+                            撤回
                         </c:if>
 
                     </div>
                 </div>
                 <div class="check fix">
-                    <div class="check_left l m-main">
-                        Total Amount
+                    <div class="check_left l">
+                        总计钱
                     </div>
-                    <div class="check_right l m-main fz-20">
+                    <div class="check_right l">
                         $${data.amount}
                     </div>
                 </div>

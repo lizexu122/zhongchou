@@ -12,19 +12,11 @@ import java.util.Date;
 @Table(name = "`Order`")
 public class Order {
     @Id
-    @GeneratedValue(generator = "IDGenerator")
-    @GenericGenerator(
-            name = "IDGenerator",
-            strategy = "com.financing.utils.IDGenerator",
-            parameters = {
-                    @Parameter(name ="classname",value = "com.financing.entity.Order"),
-                    @Parameter(name = "pk",value = "id"),
-                    @Parameter(name = "sign",value = "OD"),
-                    @Parameter(name = "numLength",value = "8")}
-                    )
-    private String id;
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Integer id;
 
-    @ManyToOne(targetEntity = Address.class)
+
+    @ManyToOne(targetEntity = Address.class)//外键关联，查order一起把addressz
     @JoinColumn(name = "address_id",referencedColumnName = "id")
     private Address address;
 
@@ -39,9 +31,7 @@ public class Order {
     @JoinColumn(name = "user_id",referencedColumnName = "id",nullable = false)
     private User user;
 
-    @ManyToOne(targetEntity = ProjectBack.class)
-    @JoinColumn(name = "project_back_id",referencedColumnName = "id",nullable = false)
-    private ProjectBack projectBack;
+
 
     @Column
     private BigDecimal amount;
@@ -50,11 +40,11 @@ public class Order {
     private Byte status;
 
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -91,13 +81,7 @@ public class Order {
         this.user = user;
     }
 
-    public ProjectBack getProjectBack() {
-        return projectBack;
-    }
 
-    public void setProjectBack(ProjectBack projectBack) {
-        this.projectBack = projectBack;
-    }
 
     public BigDecimal getAmount() {
         return amount;
@@ -124,7 +108,7 @@ public class Order {
                 ", createTime=" + createTime +
                 ", project=" + project +
                 ", user=" + user +
-                ", projectBack=" + projectBack +
+
                 ", amount=" + amount +
                 ", status=" + status +
                 '}';

@@ -43,7 +43,7 @@ public class OrderDaoImpl implements OrderDao {
         Session session = sessionFactory.getCurrentSession();
         Query query = session.createQuery("update Order set status = ? where id = ?");
         query.setByte(0, order.getStatus());
-        query.setString(1,order.getId());
+        query.setInteger(1,order.getId());
         query.executeUpdate();
     }
 

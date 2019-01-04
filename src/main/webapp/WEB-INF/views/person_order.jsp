@@ -85,7 +85,7 @@
                                         "<div class=\"order_number_right r\">" + "<span>" + status + "</span>" + "</div>" +
                                     "</div>" +
                                     "<div class=\"project_order_content fix\">" +
-                                        // "<div class=\"project_order_content_img l\">" + "<object class='order_showImg' data='" + data[i].project.cover+ "'/>" + "</div>" +
+                                        "<div class=\"project_order_content_img l\">" + "<object class='order_showImg' data='/financing/" + data[i].project.cover+ "'/>" + "</div>" +
                                         "<div class=\"project_order_content_info l\">" +
                                             "<a href='/financing/personCenter/personOrder/detail-" + data[i].id + "' class='el'>"
                                 + data[i].project.title + "</a>" +

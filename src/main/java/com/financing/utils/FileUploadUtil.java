@@ -25,7 +25,7 @@ public class FileUploadUtil {
                 String fileRealPath = "";
                 String fileName = "";
                 String fileId = DateUtil.dateIDGenerator();
-                if (type.equals("image/jpg")){
+                if (type.equals("image/jpeg")){
 //                    fileRealPath = servletContext.getRealPath("/upload/image");
                     fileRealPath = "C:\\financingK\\target\\financing\\WEB-INF\\res\\image";
                     fileName = "cover_"+fileId+".jpg";

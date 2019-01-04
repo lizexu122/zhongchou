@@ -4,7 +4,7 @@ import com.financing.entity.*;
 import com.financing.service.ProjectBackService;
 import com.financing.service.ProjectService;
 import com.financing.utils.DateUtil;
-import com.financing.utils.FileUploadUtil;
+import com.financing.utils.*;
 import com.financing.utils.PageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -182,19 +182,19 @@ public class ProjectController {
     /**
      * 参与支持总数
      */
-//    @RequestMapping(value = "/doSupportCount", method = RequestMethod.GET)
-//    @ResponseBody
-//    public Map<String, Object> doSupportCount() {
-//        long count = projectService.getSupportCount();
-//
-//        Map<String, Object> result = new HashMap<String, Object>();
-//        result.put("flag", SUCCESS_CODE);
-//        result.put("msg", "success");
-//        result.put("data", count);
-//
-//        return result;
-//    }
-//
+    @RequestMapping(value = "/doSupportCount", method = RequestMethod.GET)
+    @ResponseBody
+    public Map<String, Object> doSupportCount() {
+        long count = projectService.getSupportCount();
+
+        Map<String, Object> result = new HashMap<String, Object>();
+        result.put("flag", SUCCESS_CODE);
+        result.put("msg", "success");
+        result.put("data", count);
+
+        return result;
+    }
+
     /**
      * 最新发布前五条
      */

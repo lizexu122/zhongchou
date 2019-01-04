@@ -59,7 +59,7 @@ public class ProjectBackDaoImpl implements ProjectBackDao {
                 query = session.createQuery("update ProjectBack set actual = actual - 1 where id = ?");
                 break;
         }
-        query.setInteger(0,projectBack.getId());
-        query.executeUpdate();
+//        query.setInteger(0,projectBack.getId());
+//        query.executeUpdate();
     }
 }
