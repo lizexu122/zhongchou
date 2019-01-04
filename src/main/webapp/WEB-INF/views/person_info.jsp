@@ -11,16 +11,20 @@
     <script src="${ctp}/js/user.js" type="text/javascript"></script>
     <title>- PersonCenter -</title>
     <style>
-        #save, #csave {
+        #save {
             position: relative;
-            left: -250px;
-            top: -700px;
-            left: 400px;
+            top: -50px;
+            left: -180px;
         }
-        #chakan{
+        #chakan {
+
             position: relative;
             top: 70px;
+            text-decoration: none;
+            color: red;
+
         }
+
     </style>
 </head>
 
@@ -28,7 +32,7 @@
 <div class="wrap">
     <jsp:include page="person_left.jsp"/>
     <div id="kk">
-        <input type="button" id="chakan" class="button" value="查看信息" onclick="kk()"/>
+        <a id="chakan"  href="javascript:void(0)" onclick="kk()">+</a>
     </div>
     <div class="r right_content">
         <div class="common minheight800" id="cyyq">
