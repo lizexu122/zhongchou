@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="${ctp}/css/pc.css">
     <script src="${ctp}/js/jquery-1.11.0.min.js" type="text/javascript"></script>
     <script src="${ctp}/js/layer.js" type="text/javascript"></script>
-    <title>Person Project Information</title>
+    <title>项目详细信息</title>
     <style type="text/css">
         table td {
             width: 15%;
@@ -28,21 +28,21 @@
             <div class="user_info fix">
                 <ul class="user_info_ul">
                     <li class="fix">
-                        <p class="_title l">项目ID</p>
+                        <p class="_title l">项目 ID</p>
                         <p class="l">
                             <span>${data.id}</span>
                         </p>
                         <div style="clear: both"></div>
                     </li>
                     <li class="fix">
-                        <p class="_title l">主题</p>
+                        <p class="_title l">标题</p>
                         <p class="l">
                             <span>${data.title}</span>
                         </p>
                         <div style="clear: both"></div>
                     </li>
                     <li class="fix">
-                        <p class="_title l">联系人姓名</p>
+                        <p class="_title l">联系姓名</p>
                         <p class="l">
                             <span>${data.contactName}</span>
                         </p>
@@ -50,33 +50,20 @@
                     </li>
                     <div style="clear: both"></div>
                     <li class="fix">
-                        <p class="_title l">联系人电话</p>
+                        <p class="_title l">联系电话</p>
                         <p class="l">
                             <span>${data.contactPhone}</span>
                         </p>
                         <div style="clear: both"></div>
                     </li>
                     <li class="fix">
-                        <p class="_title l">目录</p>
+                        <p class="_title l">类别</p>
                         <p class="l">
                             <span>${data.category.name}</span>
                         </p>
                         <div style="clear: both"></div>
                     </li>
-                    <li class="fix">
-                        <p class="_title l">固定电话</p>
-                        <p class="l">
-                            <span>${data.hotline}</span>
-                        </p>
-                        <div style="clear: both"></div>
-                    </li>
-                    <li class="user_info_img fix">
-                        <p class="_title l">内容</p>
-                        <div class="l _img">
-                            <object data="${data.cover}"></object>
-                        </div>
-                        <div style="clear: both"></div>
-                    </li>
+
                     <li class="fix">
                         <p class="_title l">目标金额</p>
                         <p class="l">
@@ -101,39 +88,17 @@
                     </li>
 
                     <li class="fix">
-                        <p class="_title l">截止日期</p>
+                        <p class="_title l">截至时间</p>
                         <p class="l">
                             ${data.endTime}
                         </p>
                         <div style="clear: both"></div>
                     </li>
 
-
                     <li class="fix">
-                        <p class="_title l">团队</p>
-                        <p class="l">
-                        <div>${data.team}</div>
-                        </p>
-                        <div style="clear: both"></div>
-                    </li>
-                    <li class="fix">
-                        <p class="_title l">目的</p>
-                        <p class="l">
-                        <div>${data.purpose}</div>
-                        </p>
-                        <div style="clear: both"></div>
-                    </li>
-                    <li class="fix">
-                        <p class="_title l">支持者</p>
+                        <p class="_title l">支持数</p>
                         <p class="l">
                             <span>${data.supportCount}</span>
-                        </p>
-                        <div style="clear: both"></div>
-                    </li>
-                    <li class="fix">
-                        <p class="_title l">奖赏</p>
-                        <p class="l">
-                            <span>${data.praise}</span>
                         </p>
                         <div style="clear: both"></div>
                     </li>
@@ -143,95 +108,69 @@
                             <span>
                                 <c:if test="${data.status eq '0'}">未到期</c:if>
                                 <c:if test="${data.status eq '1'}">已到期</c:if>
-                                <c:if test="${data.status eq '2'}">未终止</c:if>
-                                <c:if test="${data.status eq '3'}">已终止</c:if>
+                                <c:if test="${data.status eq '2'}">未完成</c:if>
+                                <c:if test="${data.status eq '3'}">已完成</c:if>
                             </span>
                         </p>
                         <div style="clear: both"></div>
                     </li>
                 </ul>
-                <p>细节</p>
-                <div style="width: 800px; height: 400px; overflow-y: auto">
-                    ${data.detail}
-                </div>
             </div>
             <hr>
             <div class="tab-menu" style="height: 40px;font-size: 26px">
                 <ul>
-                    <li><a class="tab-selected" href="javascript:void(0);">项目回报</a></li>
-                    <li><a href="javascript:void(0);">项目更新</a></li>
+                    <li><a class="tab-selected"></a></li>
+                    <li><a href="javascript:void(0);">更新项目</a></li>
                 </ul>
             </div>
             <div class="tab-box" style="margin-top: 30px">
                 <div>
-                    <div>
-                        <input type="button" class="button" onclick="addBox()" value="添加回报">
-                    </div>
                     <div id="addBackBox" style="display:none;">
                         <form id="addBackForm">
                             <ul class="user_info_ul">
                                 <input type="hidden" name="project" value="${data.id}">
                                 <li class="fix">
-                                    <p class="_title l">金额</p>
+                                    <p class="_title l">amount</p>
                                     <p class="l">
                                         <input name="amount" type="number">
                                     </p>
                                     <div style="clear: both"></div>
                                 </li>
                                 <li>
-                                    <p class="_title l">内容</p>
+                                    <p class="_title l">content</p>
                                     <p class="l">
                                         <input name="content">
                                     </p>
                                     <div style="clear: both"></div>
                                 </li>
                                 <li>
-                                    <p class="_title l">人数</p>
+                                    <p class="_title l">allow</p>
                                     <p class="l">
                                         <input name="allow" type="number">
                                     </p>
                                     <div style="clear: both"></div>
                                 </li>
                                 <li>
-                                    <p class="_title l"><p>回报日期</p>
+                                    <p class="_title l">back date</p>
                                     <p class="l">
                                         <input name="back_date" type="date">
                                     </p>
                                     <div style="clear: both"></div>
                                 </li>
-                                <li><p class="_title l" id="bb">利益</p>
+                                <li><p class="_title l" id="bb">post</p>
                                     <p class="l">
                                         <select name="post">
-                                            <option value="0">钱</option>
-                                            <option value="1">无偿</option>
+                                            <option value="0">实物回报</option>
+                                            <option value="1">虚拟回报</option>
                                         </select>
                                     </p>
                                     <div style="clear: both"></div>
                                 </li>
                                 <li>
-                                    <input type="button" id="addBackBtn" class="button" value="提交">
+                                    <input type="button" id="addBackBtn" class="button" value="submit">
                                 </li>
                             </ul>
                         </form>
-                    </div>
-                    <div style="margin-top: 20px">
-                        <div class="common_title fix">
-                            <span class="l">回报列表</span>
-                            <a href="#" class="complete r"></a>
-                        </div>
-                        <table style="margin-top: 20px">
-                            <thead>
-                            <th>内容</th>
-                            <th>回报日期</th>
-                            <th>金额</th>
-                            <th>人数</th>
-                            <th>类型</th>
-                            <th>支付金额</th>
-                            </thead>
-                            <tbody id="backs">
-
-                            </tbody>
-                        </table>
                     </div>
                 </div>
                 <div class="tab-hide">

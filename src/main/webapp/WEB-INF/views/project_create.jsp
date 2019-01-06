@@ -3,10 +3,15 @@
 <c:set var="ctp" value="${pageContext.request.contextPath}"/>
 <html>
 <head>
-    <title>创建项目
-    </title>
+    <title>发布项目</title>
     <link rel="stylesheet" href="${ctp}/css/pc.css">
     <script type="text/javascript" src="${ctp}/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" charset="utf-8"
+            src="${ctp}/ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8"
+            src="${ctp}/ueditor/ueditor.all.js"></script>
+    <script type="text/javascript" charset="utf-8"
+            src="${ctp}/ueditor/lang/zh-cn/zh-cn.js"></script>
     <script src="${ctp}/js/layer.js" type="text/javascript"></script>
 </head>
 <body class="personal">
@@ -15,22 +20,23 @@
     <div class="r right_content">
         <div class="common minheight800">
             <div class="common_title fix">
+                <span class="l">创建项目</span>
                 <a href="#" class="complete r"></a>
             </div>
             <form action="/doCreateProject" id="createForm" enctype="multipart/form-data">
                 <div class="user_info fix">
                     <ul class="user_info_ul">
                         <li class="fix">
-                            <p class="_title l">主题</p>
+                            <p class="_title l">标题</p>
                             <p class="l">
-                                <input type="text" name="title" class="info_text" id="inputTitle">
+                                <input type="text" name="title" id="inputTitle">
                             </p>
                             <div style="clear: both"></div>
                         </li>
                         <li class="fix">
                             <p class="_title l">联系姓名</p>
                             <p class="l">
-                                <input type="text" name="contact_name" class="info_text" id="inputContaceName">
+                                <input type="text" name="contact_name" id="inputContaceName">
                             </p>
                             <div style="clear: both"></div>
                         </li>
@@ -38,19 +44,19 @@
                         <li class="fix">
                             <p class="_title l">联系电话</p>
                             <p class="l">
-                                <input type="text" name="contact_phone" class="info_text" id="inputContact">
+                                <input type="text" name="contact_phone" id="inputContact">
                             </p>
                             <div style="clear: both"></div>
                         </li>
                         <li class="fix">
-                            <p class="_title l">目录</p>
+                            <p class="_title l">类别</p>
                             <p class="l">
                                 <select id="category" name="category_id"></select>
                             </p>
                             <div style="clear: both"></div>
                         </li>
                         <li class="user_info_img fix">
-                            <p class="_title l">封面</p>
+                            <p class="_title l">内容</p>
                             <div class="l _img">
                                 <div class="am-form-group am-form-file">
                                     <input type="file" name="coverUpload" id="inputCover">
@@ -61,23 +67,21 @@
                         <li class="fix">
                             <p class="_title l">目标金额</p>
                             <p class="l">
-                                <input type="number" class="info_text" name="goal_amount" id="inputGoalAmount">
+                                <input type="number" name="goal_amount" id="inputGoalAmount">
                             </p>
                             <div style="clear: both"></div>
                         </li>
 
                         <li class="fix">
-                            <p class="_title l">截至时间</p>
+                            <p class="_title l">截止日期</p>
                             <p class="l">
-                                <input type="date" name="end_time" class="info_text" id="inputEndTime"></p>
+                                <input type="date" name="end_time" id="inputEndTime"></p>
                             <div style="clear: both"></div>
                         </li>
-                        <p id="shou">收款方式:</p>
-                        <img id="er" src="${ctp}/image/erweima.png" >
-                    </ul>
 
+                    </ul>
                     <div class="tc">
-                        <button type="button" class="button" id="fa" onclick="fabu()">发布
+                        <button type="button" class="button" onclick="fabu()">发布
                         </button>
                     </div>
                 </div>
@@ -110,6 +114,7 @@
         wordCount: false,
 
     }
+    var ue1 = UE.getEditor('dpeditor', ue_param);
 
     function fabu() {
         var project = {};
@@ -137,7 +142,6 @@
             layer.msg("结束时间不能为空");
             return false;
         }
-
         if (project.contact_name) {
 
         } else {

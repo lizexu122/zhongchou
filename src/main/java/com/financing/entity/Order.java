@@ -12,11 +12,19 @@ import java.util.Date;
 @Table(name = "`Order`")
 public class Order {
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Integer id;
+    @GeneratedValue(generator = "IDGenerator")
+    @GenericGenerator(
+            name = "IDGenerator",
+            strategy = "com.financing.utils.IDGenerator",
+            parameters = {
+                    @Parameter(name ="classname",value = "com.financing.entity.Order"),
+                    @Parameter(name = "pk",value = "id"),
+                    @Parameter(name = "sign",value = "OD"),
+                    @Parameter(name = "numLength",value = "8")}
+                    )
+    private String id;
 
-
-    @ManyToOne(targetEntity = Address.class)//外键关联，查order一起把addressz
+    @ManyToOne(targetEntity = Address.class)
     @JoinColumn(name = "address_id",referencedColumnName = "id")
     private Address address;
 
@@ -31,7 +39,9 @@ public class Order {
     @JoinColumn(name = "user_id",referencedColumnName = "id",nullable = false)
     private User user;
 
-
+    @ManyToOne(targetEntity = ProjectBack.class)
+    @JoinColumn(name = "project_back_id",referencedColumnName = "id",nullable = false)
+    private ProjectBack projectBack;
 
     @Column
     private BigDecimal amount;
@@ -40,11 +50,11 @@ public class Order {
     private Byte status;
 
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -81,7 +91,13 @@ public class Order {
         this.user = user;
     }
 
+    public ProjectBack getProjectBack() {
+        return projectBack;
+    }
 
+    public void setProjectBack(ProjectBack projectBack) {
+        this.projectBack = projectBack;
+    }
 
     public BigDecimal getAmount() {
         return amount;
@@ -97,20 +113,5 @@ public class Order {
 
     public void setStatus(Byte status) {
         this.status = status;
-    }
-
-
-    @Override
-    public String toString() {
-        return "Order{" +
-                "id='" + id + '\'' +
-                ", address=" + address +
-                ", createTime=" + createTime +
-                ", project=" + project +
-                ", user=" + user +
-
-                ", amount=" + amount +
-                ", status=" + status +
-                '}';
     }
 }

@@ -4,7 +4,7 @@ import com.financing.entity.*;
 import com.financing.service.ProjectBackService;
 import com.financing.service.ProjectService;
 import com.financing.utils.DateUtil;
-import com.financing.utils.*;
+import com.financing.utils.FileUploadUtil;
 import com.financing.utils.PageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -99,7 +99,7 @@ public class ProjectController {
             //添加无私回报
             ProjectBack projectBack = new ProjectBack();
             projectBack.setCompensation(1);
-            projectBack.setContent("谢谢你的无私支持!");
+            projectBack.setContent("Thank you for your unselfish support!");
             project.setId(projectId);
             projectBack.setProject(project);
             projectBack.setActual(0);

@@ -9,44 +9,44 @@
 <html>
 <head>
     <base href="<%=basePath%>">
-    <title>project_show</title>
+    <title>最热发布</title>
     <link rel="stylesheet" href="${ctp}/css/project_show.css" type="text/css"/>
     <script type="text/javascript" src="${ctp}/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript">
-        <%--$(function () {--%>
-            <%--//未登录的不能点赞。弹框提示登录--%>
-            <%--$('.projectPraise').click(function () {--%>
-                <%--if (${empty user}) {--%>
-                    <%--window.alert("Please log in first and then do the following!!!");--%>
-                    <%--window.location.href = "${ctp}/login";--%>
-                <%--}--%>
-            <%--})--%>
-        <%--});--%>
-        <%--//点赞动画具体实现--%>
-        <%--$(document).on("click", ".projectPraise", function () {--%>
-            <%--var praise = $(this);--%>
-            <%--var id = praise.parent(".praise").attr("id");--%>
-            <%--$.get('${ctp}/doAddCancelInterest-' + id, function (result) {--%>
-                <%--var text_box = praise.parent(".praise").find('.add-num');--%>
-                <%--var praise_txt = praise.parent(".praise").find('.praise-txt');--%>
-                <%--var num = parseInt(praise_txt.text());--%>
-                <%--if (result.flag == 0) { //后台查询是否已经点赞--%>
-                    <%--praise.find(".praiseImg").addClass("animation").attr("src", "${ctp}/image/praiseBefore.png");--%>
-                    <%--praise_txt.removeClass("hover");--%>
-                    <%--text_box.show().html("<em class='add-animation'>-1</em>");--%>
-                    <%--$(".add-animation").removeClass("hover");--%>
-                    <%--num -= 1;--%>
-                    <%--praise_txt.text(num);--%>
-                <%--} else {--%>
-                    <%--praise.find(".praiseImg").addClass("animation").attr("src", "${ctp}/image/praiseAfter.png");--%>
-                    <%--praise_txt.addClass("hover");--%>
-                    <%--text_box.show().html("<em class='add-animation'>+1</em>");--%>
-                    <%--$(".add-animation").addClass("hover");--%>
-                    <%--num += 1;--%>
-                    <%--praise_txt.text(num);--%>
-                <%--}--%>
-            <%--});--%>
-        <%--});--%>
+        $(function () {
+            //未登录的不能点赞。弹框提示登录
+            $('.projectPraise').click(function () {
+                if (${empty user}) {
+                    window.alert("Please log in first and then do the following!!!");
+                    window.location.href = "${ctp}/login";
+                }
+            })
+        });
+        //点赞动画具体实现
+        $(document).on("click", ".projectPraise", function () {
+            var praise = $(this);
+            var id = praise.parent(".praise").attr("id");
+            $.get('${ctp}/doAddCancelInterest-' + id, function (result) {
+                var text_box = praise.parent(".praise").find('.add-num');
+                var praise_txt = praise.parent(".praise").find('.praise-txt');
+                var num = parseInt(praise_txt.text());
+                if (result.flag == 0) { //后台查询是否已经点赞
+                    praise.find(".praiseImg").addClass("animation").attr("src", "${ctp}/image/praiseBefore.png");
+                    praise_txt.removeClass("hover");
+                    text_box.show().html("<em class='add-animation'>-1</em>");
+                    $(".add-animation").removeClass("hover");
+                    num -= 1;
+                    praise_txt.text(num);
+                } else {
+                    praise.find(".praiseImg").addClass("animation").attr("src", "${ctp}/image/praiseAfter.png");
+                    praise_txt.addClass("hover");
+                    text_box.show().html("<em class='add-animation'>+1</em>");
+                    $(".add-animation").addClass("hover");
+                    num += 1;
+                    praise_txt.text(num);
+                }
+            });
+        });
     </script>
 </head>
 <%--用于加载各种搜索结果--%>
@@ -131,7 +131,8 @@
         <c:choose>
             <c:when test="${empty list}">
                 <div class="alert alert-danger alert-dismissable">
-                    <button aria-hidden="true" list-dismiss="alert" class="close" type="button"> ×</button>0,0
+                    <button aria-hidden="true" list-dismiss="alert" class="close" type="button"> ×</button>
+                   对不起 还没有发布任何项目
                 </div>
                 <script type="text/javascript">
                     document.body.style.background = "url('${ctp}/image/Warning.jpg') no-repeat center 0px fixed";
@@ -142,63 +143,62 @@
                 <%--从第一条（index=0）记录开始取，到（index=1）结束：begin="0" end="1" step="1" --%>
                 <%--展示5条记录--%>
                 <ul>
+                    <script type="text/javascript">
+                        document.body.style.background = "url('${ctp}/image/RBG3.jpg') no-repeat center 0px fixed";
+                        document.body.style.backgroundSize = "cover";
+                    </script>
                     <span class="AllR">所有项目</span>
                     <c:forEach varStatus="PJ" var="project" items="${list}">
                         <li>
                             <div class="eachOne">
                                 <div class="eachOneLeft">
-                                    <p>
+                                    <a href='${ctp}/browse/detail-${project.id}'>
                                             <%--list:装载文件路径（绝对路径）--%>
-                                        <img class="showImage" src="/financing/${project.cover}"></img>
-                                    </p>
+                                        <object class="showImage" data="${project.cover}"></object>
+                                    </a>
                                 </div>
                                 <div class="eachOneRight">
-                                    <p>
-                                        <output class="PJTitle">项目主题：</output>
+                                    <div class="praise" id="${project.id}">
+                                        <span class="projectPraise">
+                                            <img class="praiseImg" src="${ctp}/image/praiseBefore.png" id="praise-img">
+                                            </span>
+                                        <span class="praise-txt">${project.praise}</span>
+                                        <span class="add-num"><em>+1</em></span>
+                                    </div>
+                                    <a href="${ctp}/browse/detail-${project.id}">
+                                        <output class="PJTitle">项目标题：</output>
                                             ${project.title}
-                                    </p><br>
-                                    <p>
+                                    </a><br>
+                                    <a href="${ctp}/browse/detail-${project.id}">
                                         <output class="PJCategory">目录：</output>
                                             ${project.category.name}
-                                    </p><br>
-                                    <br>
-                                    <p>
-                                        <output class="PJGAmount">目标：</output>
+                                    </a><br>
+                                    <a href="${ctp}/browse/detail-${project.id}">
+                                        <output class="PJGAmount">Goal：</output>
                                         $${project.goalAmount}
-                                    </p><br/>
-
-                                        <output class="PJCategory">剩余天数：
-                                            <input type="text" value="${project.endTime}" name="pedC" style="display: none"/>
-                                            <input class="shengyutian"  name="ped"  readonly/></output>
-                                    <br>
-                                    <p>
-                                        <output class="PJ">状态：</output>
-                                        <c:if test="${project.status eq '0'}">未到期</c:if>
-                                        <c:if test="${project.status eq '1'}">已到期</c:if>
-                                        <c:if test="${project.status eq '2'}">未完成</c:if>
-                                        <c:if test="${project.status eq '3'}">已完成</c:if>
-                                    </p><br/>
-                                    <output class="PJPublishTime">发表时间：
+                                    </a><br/>
+                                    <a href="${ctp}/browse/detail-${project.id}">
+                                        <output class="PJ">Project Status：</output>
+                                        <c:if test="${project.status eq '0'}">Unfinished Undue</c:if>
+                                        <c:if test="${project.status eq '1'}">Completed Undue</c:if>
+                                        <c:if test="${project.status eq '2'}">Unfinished Expiry</c:if>
+                                        <c:if test="${project.status eq '3'}">Completed Expiry</c:if>
+                                    </a><br/>
+                                    <output class="PJPublishTime">Publish Time：
                                             ${project.publishTime}
                                     </output>
-                                    <%--<div class="progress">--%>
-                                        <%--<div class="progress-bar progress-bar-primary"--%>
-                                             <%--style="width: ${(project.actualAmount.divide(project.goalAmount,4,1))*100}% "></div>--%>
-                                    <%--</div>--%>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-primary"
+                                             style="width: ${(project.actualAmount.divide(project.goalAmount,4,1))*100}% "></div>
+                                    </div>
                                     <output class="PJFPercentage"
                                             style="width: 50px;height: 50px;color: palevioletred;">
                                     </output>
-                                    <output class="PJFPercentage"
-                                            style="width: 50px;height: 50px;color: black;">
-
-                                    </output>
                                     <output class="PJFPercent">
                                         <fmt:formatNumber type="percent" minFractionDigits="2"
-                                                          value="${project.actualAmount.divide(project.goalAmount,4,1) }"/>实际金额
+                                                          value="${project.actualAmount.divide(project.goalAmount,4,1)}"/>
+                                        Funded
                                     </output>
-
-                                        <a href='${ctp}/browse/support-${project.id}'  class="sdzc">立即支持</a>
-                                    <br>
                                 </div>
                             </div>
                         </li>
@@ -206,57 +206,94 @@
                 </ul>
             </c:otherwise>
         </c:choose>
-        <%--<div class="Page-box">--%>
-            <%--<span id="dqPage" hidden="hidden" class="disabled1 current"></span>--%>
-            <%--<div id="pageBtn" style="width: auto;display:inline-block !important;height: auto;">--%>
-            <%--</div>--%>
-        <%--</div>--%>
+        <div class="Page-box">
+            <span id="dqPage" hidden="hidden" class="disabled1 current"></span>
+            <div id="pageBtn" style="width: auto;display:inline-block !important;height: auto;">
+            </div>
+        </div>
     </div>
 </div>
 <jsp:include page="footer.jsp"/>
 </body>
 <script type="text/javascript">
-    function cheangetime() {
-        var controlsC = document.getElementsByName("pedC");//pedc显示截至时间
-        var controls = document.getElementsByName("ped");//ped 显示剩余时间
-        console.log(controlsC);
-        for (var i = 0; i < controlsC.length; i++) {
-            var ped = controlsC[i].value;
-           console.log(ped);
-            ped = ped.substr(0, ped.length - 2);
-            console.log(ped);
-            var pedfor = new Date(ped);
-            var dateBegin = new Date(pedfor);
-            var dateEnd = new Date();
-            // console.log(dateBegin);
-            // console.log(dateEnd);
-            var dateDiff = dateBegin.getTime() - dateEnd.getTime();//时间差的毫秒数
-            if (dateDiff <= 0) {
-                controls[i].value = '已超过时间';
+    //获得当前用户的点赞记录，并相应的展示在页面
+    $(window).load(function () {
+        getIn();
+    })
+    //用于实现再次登录变红
+    var ProjectList = [];
+    var interestedList = [];
+    var url = window.location.pathname;
+
+    function getIn() {
+        if (${not empty user}) {
+            if (interestedList) {
+                interestedList.splice(0, interestedList.length);
             } else {
-                var dayDiff = Math.floor(dateDiff / (24 * 3600 * 1000));//计算出相差天数
-                var leave1 = dateDiff % (24 * 3600 * 1000)    //计算天数后剩余的毫秒数
-                var hours = Math.floor(leave1 / (3600 * 1000))//计算出小时数
-                //计算相差分钟数
-                var leave2 = leave1 % (3600 * 1000)    //计算小时数后剩余的毫秒数
-                var minutes = Math.floor(leave2 / (60 * 1000))//计算相差分钟数
-                //计算相差秒数
-                var leave3 = leave2 % (60 * 1000)      //计算分钟数后剩余的毫秒数
-                var seconds = Math.round(leave3 / 1000)
-                var timestr = "剩余" + dayDiff + "天" + hours + "小时" + minutes + "分钟" + seconds + "秒";
-
-                controls[i].value = timestr;
+                interestedList = [];
             }
-
+            $.get("${ctp}/doGetInterest", function (result) {
+                if (result.flag = 1) {
+                    $.each(result.data, function (index, interest) {
+                        interestedList.push(interest.project.id);
+                    })
+                }
+                if (url.indexOf('hot') <= 0) {
+                    getNew();
+                } else {
+                    getHot();
+                }
+            });
         }
-
-        setTimeout(function () {
-            cheangetime();
-        }, 1000);
     }
-    window.onload=cheangetime();
 
+    function getNew() {
+        if (ProjectList) {
+            ProjectList.splice(0, ProjectList.length);
+        } else {
+            ProjectList = [];
+        }
+        $.get("${ctp}/getNewProjectList", function (result) {
+            if (result.flag = 1) {
+                $.each(result.data, function (index, projectList) {
+                    ProjectList.push(projectList.id);
+                });
+                doII();
+            }
+        })
+    }
 
+    function getHot() {
+        if (ProjectList) {
+            ProjectList.splice(0, ProjectList.length);
+        } else {
+            ProjectList = [];
+        }
+        $.get("${ctp}/getHotProjectList", function (result) {
+            if (result.flag = 1) {
+                $.each(result.data, function (index, projectList) {
+                    ProjectList.push(projectList.id);
+                });
+                doII();
+            }
+        })
+    }
+
+    function doII() {
+        for (var i = 0; i < interestedList.length; i++) {
+            for (var j = 0; j < ProjectList.length; j++) {
+                if (interestedList[i] == ProjectList[j]) {
+                    di(ProjectList[j]);
+                    break;
+                }
+            }
+        }
+    }
+
+    //渲染为红色
+    function di(j) {
+        $('#' + j.toString()).find(".praiseImg").addClass("animation").attr("src", "${ctp}/image/praiseAfter.png");
+        $('#' + j.toString()).find('.praise-txt').addClass("hover");
+    }
 </script>
-
 </html>

@@ -15,6 +15,8 @@
             font-size: 25px;
             font-weight: bold;
             color: cornflowerblue;
+            left: 70px;
+            top: -27px;
         }
 
         #Logout {
@@ -36,7 +38,8 @@
 <body>
 <div id="top_choose">
     <div id="log">
-       <a id="logi" href="${ctp}/index" ><img src="${ctp}/image/Home.png" height="60px" width="60px"/></a><br>
+        <img src="${ctp}/image/AboutUs.png" height="60px" width="60px"/><br>
+        <a id="logi" href="${ctp}/index">主页</a><br>
         <a id="Logout" href="${ctp}/login">登出</a>
     </div>
 

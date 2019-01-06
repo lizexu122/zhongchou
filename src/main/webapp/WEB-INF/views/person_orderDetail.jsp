@@ -8,13 +8,6 @@
     <link rel="stylesheet" href="${ctp}/css/pc.css">
     <script src="${ctp}/js/jquery-1.11.0.min.js" type="text/javascript"></script>
     <script src="${ctp}/js/layer.js" type="text/javascript"></script>
-    <style type="text/css">
-        #cancelBtn {
-            position: relative;
-            top: 10px;
-            left: 1px;
-        }
-    </style>
 </head>
 <body class="personal">
 <div class="wrap">
@@ -28,15 +21,25 @@
             <div class="order_detail">
                 <div class="check fix">
                     <div class="check_left l">
-                        订单ID
+                       订单Id
                     </div>
                     <div class="check_right l">
                         ${data.id}
                     </div>
                 </div>
+                <c:if test="${data.address!=null && data.address!=''}">
+                    <div class="check fix">
+                        <div class="check_left l">
+                           地址
+                        </div>
+                        <div class="check_right l">
+                                ${data.address.zone}&nbsp;${data.address.detail}
+                        </div>
+                    </div>
+                </c:if>
                 <div class="check fix">
                     <div class="check_left l">
-                        创建时间
+                       创建时间
                     </div>
                     <div class="check_right l">
                         ${data.createTime}
@@ -44,7 +47,7 @@
                 </div>
                 <div class="check fix">
                     <div class="check_left l">
-                        订单ID
+                        项目Id
                     </div>
                     <div class="check_right l">
                         ${data.project.id}
@@ -52,7 +55,7 @@
                 </div>
                 <div class="check fix">
                     <div class="check_left l">
-                        订单标题
+                        项目标题
                     </div>
                     <div class="check_right l">
                         ${data.project.title}
@@ -60,7 +63,7 @@
                 </div>
                 <div class="check fix">
                     <div class="check_left l">
-                        订单发起者
+                        项目创建者
                     </div>
                     <div class="check_right l">
                         ${data.user.username}
@@ -72,26 +75,26 @@
                     </div>
                     <div class="check_right l">
                         <c:if test="${data.status==0}">
-                            进行中
+                           进行中
                         </c:if>
                         <c:if test="${data.status==-1}">
-                            撤回
+                           取消
                         </c:if>
 
                     </div>
                 </div>
                 <div class="check fix">
-                    <div class="check_left l">
-                        总计钱
+                    <div class="check_left l m-main">
+                       总钱数
                     </div>
-                    <div class="check_right l">
+                    <div class="check_right l m-main fz-20">
                         $${data.amount}
                     </div>
                 </div>
                 <c:if test="${data.status==0}">
                     <div class="check fix">
                         <div style="margin: 10px 10%;">
-                            <input type="button" class="button" id="cancelBtn" value="CANCEL">
+                            <input type="button" class="button" id="cancelBtn" value="取消">
                         </div>
                     </div>
                 </c:if>

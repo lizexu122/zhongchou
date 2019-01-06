@@ -14,13 +14,13 @@
 <jsp:include page="header.jsp"/>
 <div id="grzxOuterBox">
     <div id="zhifuInnerBox">
-        <h3 style="padding-top: 40px;padding-left: 20px;margin-bottom: 30px">请选择支持的项目</h3>
+        <h3 style="padding-top: 40px;padding-left: 20px;margin-bottom: 30px">please select the support item</h3>
         <div class="tjdd_list">
             <div class="tjdd_item animate-reward" id="sad" style="display: block;">
 
                 <div class="ng-scope">
-                    <div class="wyzz_h3">感谢您的支持</div>
-                    <p class="support_inforP">感谢您的支持，您将会收到我们的信或者卡片</p>
+                    <div class="wyzz_h3">Thank you for your support</div>
+                    <p class="support_inforP">Thanks for your support.You will receive our letters or getting cards.</p>
                     <div class="wyzz_Cont">
                         <div class="wyzz_inputBox sitePHBox">
                             <form action="/doAddOrder" id="formOrder" enctype="multipart/form-data">
@@ -81,12 +81,12 @@
         document.getElementById("qiana").value = aa;
     }
 
-    // function cz() {
-        // var bb = document.getElementsByClassName("post1")[0].value;
-        // var cc = document.getElementsByClassName("ordernum")[0].value;
-        // document.getElementsByClassName("qian")[0].value = bb * cc;
+    function cz() {
+        var bb = document.getElementsByClassName("post1")[0].value;
+        var cc = document.getElementsByClassName("ordernum")[0].value;
+        document.getElementsByClassName("qian")[0].value = bb * cc;
 
-    // }
+    }
 
     $(document).ready(function () {
         $(".cx").click(function () {
@@ -104,7 +104,6 @@
             data: $('#formOrder').serialize(),
             success: function (result) {
                 if (result.flag == 1) {
-                    console.log(result.flag);
                     window.location.href = "${ctp}/personCenter/personOrder";
                 } else {
                     layer.msg(result.msg);
@@ -325,8 +324,8 @@
             }
         }
     });
-    //
-    // window.onload = cz();
+
+    window.onload = cz();
 
     function zhic() {
         $.ajax({

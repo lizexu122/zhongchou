@@ -9,40 +9,46 @@
     <script src="${ctp}/js/jquery-1.11.0.min.js" type="text/javascript"></script>
     <script src="${ctp}/js/layer.js" type="text/javascript"></script>
     <script src="${ctp}/js/user.js" type="text/javascript"></script>
-    <title>- PersonCenter -</title>
+    <title>- 个人中心 -</title>
     <style>
-        #save {
+        #save, #csave {
             position: relative;
-            top: -50px;
-            left: -180px;
+            left: -250px;
         }
-        #chakan {
-
-            position: relative;
-            top: 70px;
-            text-decoration: none;
-            color: red;
-
-        }
-
     </style>
 </head>
 
 <body class="personal">
 <div class="wrap">
     <jsp:include page="person_left.jsp"/>
-    <div id="kk">
-        <a id="chakan"  href="javascript:void(0)" onclick="kk()">+</a>
-    </div>
     <div class="r right_content">
-        <div class="common minheight800" id="cyyq">
+        <div class="common minheight800">
+
+            <div class="common_title fix">
+                <span class="l">个人信息</span>
+                <a href="#" class="complete r"></a>
+            </div>
+            <div class="tab-menu">
+                <ul>
+                    <li><a class="tab-selected" href="#">修改个人信息</a></li>
+                    <li><a href="#">验证</a></li>
+                </ul>
+            </div>
             <div class="tab-box">
                 <div class="user_info fix">
-
                     <form id="formInfo" action="/doModifyUserInfo" method="post"
                           enctype="multipart/form-data">
                         <ul class="user_info_ul">
-
+                            <li class="user_info_img fix">
+                                <p class="_title l">头像</p>
+                                <div class="l _img">
+                                    <img src="${sessionScope.user.avatar}" alt="">
+                                    <div class="am-form-group am-form-file">
+                                        <input type="file" name="avatarUpload" id="pic"/>
+                                    </div>
+                                </div>
+                                <div style="clear: both"></div>
+                            </li>
                             <li class="fix">
                                 <p class="_title l">用户名</p>
                                 <p class="l">
@@ -55,6 +61,9 @@
                                 <p class="_title l">电话</p>
                                 <p class="l">
                                     <span>${sessionScope.user.mobile}</span>
+                                </p>
+                                <p>
+                                    <span class="has_check">已验证</span>
                                 </p>
                                 <div style="clear: both"></div>
                             </li>
@@ -74,16 +83,15 @@
                                         <c:if test="${sessionScope.user.gender=='female'}">
                                                 checked="true"
                                         </c:if>
-                                        > 女士
+                                        > 女生
                                     </label>
                                     <label>
                                         <input type="radio" name="gender" value="male"
                                         <c:if test="${sessionScope.user.gender=='male'}">
                                                checked
                                         </c:if>
-                                        > 男士
+                                        > 男生
                                     </label>
-
                                 </p>
                                 <div style="clear: both"></div>
                             </li>
@@ -94,16 +102,6 @@
                                            id="inputAddress"
                                            name="zone"/>
                                 </p>
-                                <div style="clear: both"></div>
-                            </li>
-                            <li class="user_info_img fix">
-                                <p class="_title l">头像</p>
-                                <div class="l _img">
-                                    <img src="${sessionScope.user.avatar}" alt="">
-                                    <div class="am-form-group am-form-file">
-                                        <input type="file" name="avatarUpload" id="pic"/>
-                                    </div>
-                                </div>
                                 <div style="clear: both"></div>
                             </li>
 
@@ -117,11 +115,36 @@
                             </li>
                         </ul>
                         <div class="tc">
-                            <input type="button" id="save" class="button" value="编辑资料" onclick="modify()"/>
+                            <input type="button" id="save" class="button" value="保存" onclick="modify()"/>
                         </div>
                     </form>
                 </div>
-
+                <div class="user_info fix tab-hide">
+                    <form id="formCert" action="/doCertificate" method="post"
+                          enctype="multipart/form-data">
+                        <ul class="user_info_ul">
+                            <li class="fix">
+                                <p class="_title l">身份证</p>
+                                <p class="l">
+                                    <input type="text" class="info_text" id="inputId" name="ic"
+                                           value="${sessionScope.user.ic}">
+                                </p>
+                                <div style="clear: both"></div>
+                            </li>
+                            <li class="fix">
+                                <p class="_title l">真实姓名</p>
+                                <p class="l">
+                                    <input type="text" class="info_text" id="inputRealName" name="realName"
+                                           placeholder="真实姓名" value="${sessionScope.user.realName}">
+                                </p>
+                                <div style="clear: both"></div>
+                            </li>
+                        </ul>
+                        <div class="tc">
+                            <button type="button" id="csave" class="button" onclick="certificate()">保存</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -187,9 +210,53 @@
             })
         })
     }
-  $("#chakan").click(function(){
-     $("#cyyq").slideToggle();
-  });
+
+    function certificate() {
+        var realName = document.getElementById("inputRealName").value;
+        var ic = document.getElementById("inputId").value;
+        var bb = /^[a-z0-9]{18}$/;
+        if (ic) {
+
+        } else {
+            layer.msg('身份证不能为空');
+            return false;
+        }
+        if (!bb.test(ic)) {
+            layer.msg('身份证只能是18位');
+            return false;
+        }
+        if (realName) {
+
+        } else {
+            layer.msg('真实姓名不能为空');
+            return false;
+        }
+        console.log(realName);
+
+        $.ajax({//调用ajax后台数据异步方法
+            //提交的方式
+            type: "Post",
+            async: false,
+            //数据的传送页面：要启动界面的地址/界面的后台的方法
+            url: "${ctp}/doCertificate",
+            // contentType:false,
+            data: {
+                "realName": realName,
+                "ic": ic,
+            },
+            //传到服务器的参数类型
+            dataType: "json",
+            //重要的后台的回调函数（很重要）
+            success: function (result) {
+                if (result.flag == 1) {
+                    layer.msg("验证成功");
+                    window.location.reload();
+                } else {
+                    layer.msg("验证失败");
+                }
+            },
+        });
+    }
 
 
 

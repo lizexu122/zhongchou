@@ -53,7 +53,7 @@
             <c:when test="${empty data}">
                 <div class="alert alert-danger alert-dismissable">
                     <button aria-hidden="true" list-dismiss="alert" class="close" type="button"> ×</button>
-                    I am sorry I can't Find what you want ! Please Change another words.
+                   对不起,我们还没有发布任何项目
                 </div>
                 <script type="text/javascript">
                     document.body.style.background = "url('${ctp}/image/Warning.jpg') no-repeat center 0px fixed";
@@ -89,27 +89,19 @@
                                             ${project.title}
                                     </a><br>
                                     <a href="${ctp}/browse/detail-${project.id}">
-                                        <output class="PJCategory">目录：</output>
+                                        <output class="PJCategory">类别：</output>
                                             ${project.category.name}
                                     </a><br>
-                                    <a href="${ctp}/browse/detail-${project.id}">
-                                        <output class="PJTeam">团队：</output>
-                                            ${project.team}
-                                    </a><br>
-                                    <a href="${ctp}/browse/detail-${project.id}">
-                                        <output class="PJPurpose">目的：</output>
-                                            ${project.purpose}
-                                    </a><br/>
                                     <a href="${ctp}/browse/detail-${project.id}">
                                         <output class="PJGAmount">目标金额：</output>
                                             $${project.goalAmount}
                                     </a><br/>
                                     <a href="${ctp}/browse/detail-${project.id}">
-                                        <output class="PJ">项目状态：</output>
+                                        <output class="PJ">状态：</output>
                                         <c:if test="${project.status eq '0'}">未到期</c:if>
                                         <c:if test="${project.status eq '1'}">已到期</c:if>
-                                        <c:if test="${project.status eq '2'}">未完成</c:if>
-                                        <c:if test="${project.status eq '3'}">已完成</c:if>
+                                        <c:if test="${project.status eq '2'}">已完成</c:if>
+                                        <c:if test="${project.status eq '3'}">未完成</c:if>
                                     </a><br/>
                                     <output class="PJPublishTime">发布时间：${project.publishTime}
                                     </output>
@@ -123,7 +115,7 @@
                                     </output>
                                     <output class="PJFPercent">
                                         <fmt:formatNumber type="percent" minFractionDigits="2"
-                                                          value="${project.actualAmount.divide(project.goalAmount,4,1) }"/>实际金额
+                                                          value="${project.actualAmount.divide(project.goalAmount,4,1) }"/>
                                     </output>
                                 </div>
                             </div>

@@ -23,9 +23,7 @@ public class OrderDaoImpl implements OrderDao {
     @Override
     public void insert(Order order) {
         Session session = sessionFactory.getCurrentSession();
-        System.out.println(order.toString());
         session.save(order);
-
         System.out.println("////////"+order);
     }
 
@@ -43,7 +41,7 @@ public class OrderDaoImpl implements OrderDao {
         Session session = sessionFactory.getCurrentSession();
         Query query = session.createQuery("update Order set status = ? where id = ?");
         query.setByte(0, order.getStatus());
-        query.setInteger(1,order.getId());
+        query.setString(1,order.getId());
         query.executeUpdate();
     }
 

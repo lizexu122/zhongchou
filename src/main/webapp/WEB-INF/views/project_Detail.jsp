@@ -68,7 +68,7 @@
             <%--begin="0" end="4"--%>
             <div class="eachOne">
                 <div class="eachOneLeft">
-                    <object class="showImage" data="${data.cover}"></object>
+                    <img class="showImage" src="${data.cover}"></img>
                     <%--图片必须用绝对路径输出--%>
                 </div>
                 <div class="eachOneRight">
@@ -84,11 +84,9 @@
                     </a><br>
 
                     <a href="#">
-                        <output class="PJ">状态：</output>
+                        <output class="PJ">status：</output>
                         <c:if test="${data.status eq '0'}">未完成</c:if>
                         <c:if test="${data.status eq '1'}">已完成</c:if>
-                        <c:if test="${data.status eq '2'}">2</c:if>
-                        <c:if test="${data.status eq '3'}">3</c:if>
                     </a><br/>
                     <output class="PJPublishTime">发布时间：</output>
                     <fmt:formatDate type="date"
@@ -99,7 +97,7 @@
                     </div>
                     <output class="PJFPercent">
                         <fmt:formatNumber type="percent" minFractionDigits="2"
-                                          value="${data.actualAmount/data.goalAmount}"/> 实际金额
+                                          value="${data.actualAmount/data.goalAmount}"/>
                     </output>
                     <br>
                     <a href="#">
@@ -107,7 +105,7 @@
                     </a><br>
                     <br>
                     <a href="#">
-                        <a href='${ctp}/browse/support-${data.id}' id="sdzc" id="sdzc">立即支持</a>
+                        <a href='${ctp}/browse/support-${data.id}' id="sdzc" id="sdzc">支持</a>
                     </a><br>
                 </div>
             </div>
@@ -115,7 +113,7 @@
         </ul>
         <div id="clearfix">
             <ul>
-                <li id="kk1" onclick="chu()">项目细节</li>
+                <li id="kk1" onclick="chu()">项目详情</li>
                 <li id="ss2" onclick="chu1()">项目更新</li>
                 <li id="pp3" onclick="chu3()">评论</li>
             </ul>
@@ -125,7 +123,7 @@
             <div class="course_head">
                 <div class="course_head_l">
                     <div class="head_img">
-                        <h3>分享</h3>
+                        <h3>share</h3>
                     </div>
                     <div class="brief">
                         <img src="${ctp}/image/qq.png"/>
@@ -143,18 +141,8 @@
                         <div class="course_down" style="display: block;">
                             <ul>
                                 <li>
-                                    <h2 class="h">标题</h2>
+                                    <h2 class="h">title</h2>
                                     <div class="course_img"><h4>${data.title}</h4></div>
-                                </li>
-                                <li>
-                                    <h2 class="h">目的</h2>
-                                    <div class="course_img" style="background-color: #6c7cc8"><h4>${data.purpose}</h4>
-                                    </div>
-                                </li>
-                                <li>
-                                    <h2 class="h">团队</h2>
-                                    <div class="course_img" style="background-color: #00b9b9"><h4>${data.team}</h4>
-                                    </div>
                                 </li>
                             </ul>
                         </div>
@@ -180,7 +168,7 @@
                     <textarea rows="2" cols="10" name="content" id="content2">
                     </textarea>
                     <div id="wn">
-                        <input type="button" id="pinglun" value="comment" onclick="pingluna()"/>
+                        <input type="button" id="pinglun" value="评论" onclick="pingluna()"/>
                     </div>
                     <p>评论列表</p>
                     <table id="plItemCountBox">

@@ -1,3 +1,7 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
 
 html, body {
     margin: auto;
@@ -57,6 +61,7 @@ abbr, acronym {
 /* General Demo Style */
 body {
     font-family: Constantia, Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;
+    background: #000;
     font-weight: 400;
     font-size: 15px;
     color: #aa3e03;
@@ -120,6 +125,7 @@ body {
 
 a, button {
     transition: all 0.3s ease;
+    color: #FFFFFF;
 }
 
 button:focus {
@@ -127,7 +133,7 @@ button:focus {
 }
 
 a:hover {
-    color: #0066cc;
+    color: #FFFF00;
     font-size: 25px;
 }
 
@@ -137,12 +143,13 @@ a:focus {
 }
 
 h1 {
-    font-size: 40px;
-    margin-bottom: 50px;
-    margin-left: 95px;
+    color: #FFFFFF;
+    font-size: 4rem;
 }
 
-
+p {
+    color: #FFFFFF;
+}
 
 #particles-js {
     position: absolute;
@@ -165,15 +172,18 @@ h1 {
 }
 
 .form-control::-moz-placeholder { /* Firefox 19+ */
-    color: black;
+    color: white;
 }
 
+.form-control:-moz-placeholder { /* Firefox 18- */
+    color: white;
+}
 
 .form-control {
-    color: black;
+    color: #FFFFFF;
     border-radius: .5rem;
     background-color: transparent;
-    border: 1px solid black;
+    border: 1px solid #eeeeee;
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 1.4rem;
@@ -207,9 +217,9 @@ h1 {
     cursor: pointer;
 }
 
-/*.tm-btn-subscribe:hover {*/
-    /*background-color: #055278;*/
-/*}*/
+.tm-btn-subscribe:hover {
+    background-color: #055278;
+}
 
 .tm-social-icons-container {
     margin: 10px;

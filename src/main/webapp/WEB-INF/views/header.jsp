@@ -9,32 +9,44 @@
     <link rel="stylesheet" href="${ctp}/css/icon.css" type="text/css"/>
     <script type="text/javascript" src="${ctp}/js/memenu.js"></script>
     <script type="text/javascript" src="${ctp}/js/responsiveslides.min.js"></script>
-    <style type="text/css">
-        #kcc{
-            color:white;
-        }
-    </style>
 </head>
 <body>
 <div id="Head">
     <div class="logo">
-        <h1><a href="${ctp}/index">筹钱</a></h1>
+        <h1><a href="${ctp}/index">Com<span>m</span>erce</a></h1>
     </div>
     <div class="top-nav">
         <ul class="memenu skyblue">
-            <li id="All" class="grid"><a id="dx" href="${ctp}/browse/all">已发布项目</a>
+            <li id="Home" class="active"><a href="${ctp}/index">首页</a></li>
+            <li id="Hot" class="grid"><a href="${ctp}/browse/hot">最热发布</a></li>
+            <li id="New" class="grid"><a href="${ctp}/browse/new">所有项目</a></li>
+            <li id="All" class="grid"><a href="${ctp}/browse/all">所有</a>
                 <div class="mepanel">
                     <div class="row">
+                        <div class="col1 me-one">
+                            <h4>Type</h4>
+                            <ul>
+                                <li><a href="${ctp}/browse/sort-1">艺术</a></li>
+                                <li><a href="${ctp}/browse/sort-2">教育</a></li>
+                                <li><a href="${ctp}/browse/sort-3">其他</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </li>
         </ul>
     </div>
+    <div class="search-bar">
+        <input onfocus="this.value = '';"
+               placeholder="搜索"
+               type="text" id="searchByKeyWord">
+        <a href="javascript:;" id="searchImg"></a>
+    </div>
     <c:choose>
         <c:when test="${empty user}">
             <%--未登录，提示登录按钮--%>
             <div id="defaultShow">
-                <button id="promptLogin" type="submit" onclick="window.location.href='${ctp}/register'"
+                <button id="promptLogin" type="submit" onclick="window.location.href='${ctp}/login'"
                         onmouseover="this.style.cursor='pointer'">
                     <a href='javascript:;'>注册/登录</a>
                 </button>
@@ -49,8 +61,7 @@
                             <div id="self_image">
                                 <c:if test="${not empty user.avatar}">
                                     <%--成功获取头像数据并加载--%>
-                                    <%--<img id="showSelfImage" src="${user.avatar}"/>--%>
-                                    <p id="kcc">欢迎您</p>
+                                    <img id="showSelfImage" src="${user.avatar}"/>
                                 </c:if>
                                 <c:if test="${empty user.avatar}">
                                     <%--未得头像数据默认返回--%>
@@ -62,12 +73,11 @@
                                 <div class="row">
                                     <div class="col1 me-one">
                                         <ul>
-                                            <li><a href="${ctp}/personCenter">
-                                                <%--<span class="icon_profile"></span>--%>
-                                              个人中心</a></li>
-                                            <li><a href="${ctp}/doLogout">
-                                                <%--<span class="icon_key"></span>--%>
-                                                退出登录</a></li>
+                                            <li><a href="${ctp}/personCenter/personProject"><span
+                                                    class="icon_clipboard"></span>
+                                                我的项目</a>
+                                            </li>
+                                            <li><a href="${ctp}/doLogout"><span class="icon_key"></span>登出</a></li>
                                         </ul>
                                     </div>
                                 </div>

@@ -27,9 +27,9 @@ public class FileUploadUtil {
                 String fileId = DateUtil.dateIDGenerator();
                 if (type.equals("image/jpeg")){
 //                    fileRealPath = servletContext.getRealPath("/upload/image");
-                    fileRealPath = "C:\\financingK\\target\\financing\\WEB-INF\\res\\image";
+                    fileRealPath = "E://financing-uploadfile/image";
                     fileName = "cover_"+fileId+".jpg";
-                    filePath = "image/"+fileName;
+                    filePath = "/upload/image/"+fileName;
                 }else if (type.equals("video/mp4")){
 //                    fileRealPath = servletContext.getRealPath("/res/video_upload");
                     fileRealPath = "E://financing-uploadfile/video";

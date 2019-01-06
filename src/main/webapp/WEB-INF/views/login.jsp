@@ -4,60 +4,39 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Welcome</title>
-    <%--<link rel="stylesheet" href="${ctp}/css/jigsaw.css">--%>
+    <title>登录</title>
+    <link rel="stylesheet" href="${ctp}/css/jigsaw.css">
     <link rel="stylesheet" href="${ctp}/css/Login&Register.css"/>
     <script type="text/javascript" src="${ctp}/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="${ctp}/js/loadClickChange.js"></script>
     <script type="text/javascript" src="${ctp}/js/layer.js"></script>
     <style type="text/css">
-        #dengl {
-            background-color: #006699;
-            border-radius: .5rem;
-            border-color: white;
-            padding: 0.75rem 1.6rem;
-            font-weight: 300;
-            font-size: 1.4rem;
-            cursor: pointer;
-            position: relative;
-            left: 70px;
+        .container {
+            width: 310px;
         }
-        #qq {
-            position: relative;
-            top: -580px;
-            left: -480px;
+        #Register{
+            font-size:50px;
+            font-weight: bold;
         }
-        #gg{
-            position: relative;
-            top:170px;
-            left:550px;
-        }
-
     </style>
 </head>
 <body class="loaded">
-<%--<ul class="cb-slideshow">--%>
-    <%--<li></li>--%>
-    <%--<li></li>--%>
-    <%--<li></li>--%>
-    <%--<li></li>--%>
-    <%--<li></li>--%>
-    <%--<li></li>--%>
-<%--</ul>--%>
 
 <div id="LoginPart">
     <div class="container-fluid">
         <div class="row cb-slideshow-text-container ">
             <div class="tm-content col-xl-6 col-sm-8 col-xs-8 ml-auto section">
-                <header class="mb-5"><h1>登录</h1></header>
-                <P class="mb-5">如果您没有账号,请点击注册.
-                    <a id="Login" rel="nofollow" href='register' target="_parent">点击并且注册 </a>
-                    谢谢您的支持!</P>
+                <header class="mb-5"><h1>快速登录</h1></header>
+                <br/>
+                <P class="mb-5">如果你没有账号，你可以点击
+                    <a id="Register" rel="nofollow" target="_parent" href='#'>注册</a>
+                    谢谢您的支持</P>
+                <br>
                 <form action="${ctp}/doLogin" method="post" class="subscribe-form" id="f2">
                     <div class="row form-section">
                         <div class="col-md-7 col-sm-7 col-xs-7">
                             <input name="mobile" type="text" class="form-control" id="username"
-                                   placeholder="手机号" required/>
+                                   placeholder="电话号码" required/>
                             <br><br>
                             <input name="password" type="password" class="form-control" id="password"
                                    placeholder="密码" required/>
@@ -65,19 +44,58 @@
                         </div>
                         <br>
                         <div class="col-md-5 col-sm-5 col-xs-5">
-                            <button type="button"  id="dengl" onclick="kf()">登录</button>
+                            <button type="button" class="tm-btn-subscribe" onclick="kf()">登录</button>
                         </div>
                     </div>
                 </form>
-
             </div>
         </div>
     </div>
 </div>
 
+<div id="RegisterPart">
+    <div class="container-fluid">
+        <div class="row cb-slideshow-text-container ">
+            <div class="tm-content col-xl-6 col-sm-8 col-xs-8 ml-auto section">
+                <header class="mb-5"><h1>注册</h1></header>
+                <br/>
+                <P class="mb-5">如果你已经有账号了
+                    <a id="Login" rel="nofollow" href='javascript:back();' target="_parent">点击登陆</a>
+                     T谢谢您的支持</P>
+                <br>
+                <form action="/doRegister" method="post" class="subscribe-form" id="f1">
+                    <div class="row form-section">
+                        <div class="col-md-7 col-sm-7 col-xs-7">
+
+                            <input id="phone" name="mobile" type="tel" placeholder="电话号码"
+                                   required pattern="[0-9]{11}$" class="form-control"/>
+                            <br><br>
+                            <input name="password" type="password" class="form-control" id="newpassword"
+                                   placeholder="密码" pattern="^[a-zA-Z0-9]{6,12}$" required/>
+                            <br><br>
+                            <input name="ispassword" type="password" class="form-control" id="ispassword"
+                                   placeholder="确认密码"/>
+                            <br><br>
+                            <div class="container">
+                                <div id="captcha" style="position: relative"></div>
+                                <div id="msg"></div>
+                            </div>
+
+                        </div>
+                        <br>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 <jsp:include page="footer.jsp"/>
 <script type="text/javascript" src="${ctp}/js/Login&Register.js"></script>
 <script type="text/javascript" src="${ctp}/js/jigsaw.js"></script>
-
+<script>
+    jigsaw.init(document.getElementById('captcha'), function () {
+       cf();
+    })
+</script>
 </body>
 </html>

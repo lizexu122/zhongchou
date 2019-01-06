@@ -5,7 +5,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>项目列表</title>
+    <title>Person Project</title>
     <link rel="stylesheet" href="${ctp}/css/pc.css">
     <script src="${ctp}/js/jquery-1.11.0.min.js" type="text/javascript"></script>
     <script src="${ctp}/js/layer.js" type="text/javascript"></script>
@@ -17,26 +17,9 @@
         }
 
         #tbody {
+            width: 100%;
             text-align: center;
-
-            font-family: verdana,arial,sans-serif;
-
-            font-size: 11px;
-
-            color: #333333;
-
-            border-width: 1px;
-
-            border-color: #a9c6c9;
-
-            border-collapse: collapse;
-            width:100%;
-        }
-        #tbody th{
-            border-width: 1px;
-            padding: 8px;
-            border-style: solid;
-            border-color: #a9c6c9;
+            border-bottom: 1px solid black;
         }
 
         #tbody object {
@@ -44,14 +27,7 @@
         }
 
         #tbody td {
-            border-width: 1px;
-            padding: 8px;
-            border-style: solid;
-            border-color: #a9c6c9;
-            background-color: #d4e3e5;
-        }
-        #tbody td:hover{
-            background-color: orange;
+            width: 13%;
         }
 
         td a {
@@ -64,6 +40,13 @@
             padding: 0;
             box-sizing: border-box;
         }
+        th {
+            border-bottom: 1px solid;
+        }
+        td:hover{
+            color:orange;
+        }
+
 
     </style>
 </head>
@@ -74,7 +57,7 @@
     <div class="r right_content">
         <div class="common minheight800">
             <div class="common_title fix">
-                <span class="l">项目列表</span>
+                <span class="l">Project List</span>
                 <a href="#" class="complete r"></a>
             </div>
             <div id="projectList">
@@ -112,16 +95,17 @@
                     console.log(result.flag);
                     var d = result.data;
                     console.log(d);
-                    $("#tbody").append('<th>id</th><th>目录</th><th>标题</th><th>截止时间</th><th>进程</th>');
+                    $("#tbody").append('<th>ID</th><th>类别</th><th>截止日期</th><th>进度</th><th>标题</th><th>查看</th>');
                     for (var i = 0; i < d.length; i++) {
                         if ($("#tbody tr").length <= d.length) {
                             $("#tbody").append(
                                 "<tr>" +
                                 "<td>" + d[i].id + "</td>" +
                                 "<td>" + d[i].category.name + "</td>" +
-                                "<td>" + d[i].title + "</td>" +
                                 "<td>" + d[i].endTime + "</td>" +
                                 "<td>" + (d[i].actualAmount / d[i].goalAmount).toFixed(4) * 100 + "%</td>" +
+                                "<td>" + d[i].title + "</td>" +
+                                "<td><a href='${ctp}/personCenter/personProject/info-" + d[i].id + "'>查看</a></td>" +
                                 "</tr>");
 
                         }

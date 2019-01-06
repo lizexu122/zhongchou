@@ -51,7 +51,6 @@ public class OrderController {
 
         String addressStr=request.getParameter("address");
         Order order = new Order();
-       // order.setId(1);
         if(!"".equals(addressStr)&&addressStr!=null){
             Address address = new Address();
             int addressId = Integer.parseInt(request.getParameter("address"));
@@ -63,15 +62,16 @@ public class OrderController {
         String projectId = request.getParameter("project");
         Project project = new Project();
         project.setId(projectId);
-//        int backId = Integer.parseInt(request.getParameter("project_back"));
+        int backId = Integer.parseInt(request.getParameter("project_back"));
         ProjectBack back = new ProjectBack();
+        back.setId(backId);
         BigDecimal amount = BigDecimal.valueOf(Double.parseDouble(request.getParameter("amount")));
 
 
 
         order.setCreateTime(new Date());
         order.setProject(project);
-        //order.setProjectBack(back);
+        order.setProjectBack(back);
         order.setAmount(amount);
         order.setStatus((byte) 0);
         order.setUser(user);
@@ -117,13 +117,13 @@ public class OrderController {
     public Map<String,Object> doCancelOrder(HttpSession session, @PathVariable("oid") String oid){
         User user = (User) session.getAttribute("user");
         Order order = orderService.getOrderDetail(oid);
-       // ProjectBack back =  order.getProjectBack();
+        ProjectBack back =  order.getProjectBack();
         Project project = order.getProject();
         order.setStatus((byte) -1);
         orderService.refundOrder(order);//用户取消订单，退款
         System.out.println("order = " + order);
         userService.refundBalance(user,order.getAmount());
-     //   projectBackService.updateActual(back,-1);
+        projectBackService.updateActual(back,-1);
         projectService.updateSupport(project,order.getAmount(),-1);
         user = userService.getUser(user.getMobile());
         session.setAttribute("user",user);

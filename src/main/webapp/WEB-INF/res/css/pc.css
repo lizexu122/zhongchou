@@ -8,11 +8,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-#shou {
-    position: relative;
-    top: -165px;
-    left: 400px;
-}
 
 .l {
     float: left;
@@ -23,8 +18,7 @@
 }
 
 ol, ul {
-    padding-left: 50px;
-    padding-bottom: 70px;
+    padding: 0;
 }
 
 li {
@@ -46,14 +40,9 @@ a img {
 .personal {
     margin: 0;
     padding: 0;
+    background: url(../image/personal_bg.jpg);
 }
-.info_text{
-    border-radius: 10px;
 
-    text-indent: 10px;
-
-    margin: 10px auto;
-}
 .wrap {
     width: 90%;
     margin-right: auto;
@@ -67,15 +56,6 @@ a img {
     margin-top: 55px;
     margin-bottom: 55px;
 }
-#er {
-    position: relative;
-    top: -120px;
-    left: 400px;
-}
-#fa {
-    position: relative;
-    top: -100px;
-}
 
 .personal ul.ul_left_nav li {
     height: 60px;
@@ -84,12 +64,13 @@ a img {
 
 .personal ul.ul_left_nav li a {
     display: block;
+    width: 100%;
     font-size: 16px;
 }
 
 .personal ul.ul_left_nav li a .left_nav_icon {
-    /*width: 31px;*/
-    /*height: 31px;*/
+    width: 31px;
+    height: 31px;
     background-color: #d2d2d2;
     border-radius: 50%;
     vertical-align: middle;
@@ -108,10 +89,12 @@ a img {
 }
 
 .personal ul.ul_left_nav li.active a .left_nav_icon {
-    background-color: blue;
+    background-color: #ff9e19;
 }
 
-
+.personal ul.ul_left_nav li.active a .left_nav_name {
+    color: #ff6600;
+}
 
 .personal .right_content {
     width: 75%;
@@ -127,9 +110,12 @@ a img {
     width: 60%;
     height: 162px;
     background: #fff;
-    padding-top: 600px;
-    margin-top: -200px;
-    margin-left: 650px;
+    background-image: url(../image/personal_index_bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center left;
+    border-right: 1px dashed #ececec;
+    padding-top: 32px;
+    padding-left: 55px;
 }
 
 .personal .personal_info .personal_info_left .head_portrait {
@@ -144,10 +130,11 @@ a img {
     height: 100%;
 }
 
-.personal_info_left .nickname {
-    margin-top: -850px;
-    margin-left: -700px;
+.personal .personal_info .personal_info_left .nickname {
+    margin-top: 24px;
+    margin-left: 20px;
 }
+
 .personal .personal_info .personal_info_left .nickname p {
     font-size: 22px;
     color: #333333;
@@ -214,30 +201,26 @@ a img {
 }
 
 .personal .common {
-
+    background: #fff;
     margin-bottom: 40px;
     padding-right: 35px;
     padding-left: 35px;
-    border: 1px green solid;
-
 }
+
 .personal .common_title {
     padding: 28px 0 24px;
     border-bottom: 1px solid #eeeeee;
 }
 
-#fx {
-    position: relative;
-    top: -400px;
-    border-bottom: 1px solid #d0d0d0;
-    height: 220px;
-    right:200px;
-    border-top: 1px solid #d0d0d0;
+.personal .user_info {
+    padding: 20px;
 }
+
 .personal .common_title span {
     padding-left: 20px;
     font-size: 18px;
-    background-color: yellow;
+    color: #333333;
+    border-left: 5px solid #ff9e19;
 }
 
 .personal .common_title a.complete {
@@ -289,15 +272,12 @@ input {
     height: 38px;
     line-height: 38px;
     font-size: 14px;
-    background-color: red;
+    background-color: #ff9e19;
     color: #fff;
     border: none;
     border-radius: 3px;
     transition: all 0.2s;
     outline: none;
-    position: relative;
-    left: -100px;
-    top: -200px;
 }
 
 .tab-selected {
@@ -440,6 +420,7 @@ input {
 }
 
 .personal .project_order_content .project_order_content_info p em {
+    color: #ff6600;
     margin-right: 5px;
     margin-left: 5px;
 }
