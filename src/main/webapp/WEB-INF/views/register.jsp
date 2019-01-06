@@ -56,28 +56,34 @@
         left:700px;
     }
     .input-val {
-        width: 200px;
-        height: 32px;
-        border: 1px solid #ddd;
-        box-sizing: border-box;
+        color: black;
+        border-radius: .5rem;
+        background-color: transparent;
+        border: 1px solid black;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 1.4rem;
+        font-weight: 300;
+        height: fit-content;
+        padding: 0.75rem 1.2rem;
+        position: relative;
+        top: 80px;
+        left: -290px;
     }
     #canvas {
         vertical-align: middle;
         box-sizing: border-box;
         border: 1px solid #ddd;
         cursor: pointer;
+        font-size: 1.4rem;
+        font-weight: 300;
+        height: fit-content;
+        padding: 0.75rem 1.2rem;
+        position: relative;
+        top: 80px;
+        left: -280px;
     }
-    .btn {
-        display: block;
-        margin-top: 20px;
-        height: 32px;
-        width: 100px;
-        font-size: 16px;
-        color: #fff;
-        background-color: #457adb;
-        border: none;
-        border-radius: 50px;
-    }
+
 </style>
 <body  onload="createCode()">
 
@@ -104,14 +110,11 @@
                                placeholder="重复密码"/>
                         <%--<input  type="text"   id="input1" />--%>
                         <%--<input type="text" onclick="createCode()" readonly="readonly" id="checkCode" class="unchanged" style="width: 80px"  /><br />--%>
-                        <input type="text" value="" placeholder="请输入验证码（不区分大小写）" class="input-val">
+                        <input type="text" value="" placeholder="请输入验证码" class="input-val">
                         <canvas id="canvas" width="100" height="30"></canvas>
                         <br><br>
-                        <div class="container">
-                            <button type="button" class="tm-btn-subscribe">注册</button>
-                        </div>
-                        <img id="qq" src="${ctp}/image/xx.png"/>
-                        <img id="gg" src="${ctp}/image/gg.png"/>
+                            <button type="button" class="tm-btn-subscribe" id="ctn">注册</button>
+
                     </div>
                     <br>
                 </div>
@@ -153,7 +156,7 @@ $(function(){
     $("#canvas").on('click',function(){
         draw(show_num);
     })
-    $(".btn").on('click',function(){
+    $("#ctn").on('click',function(){
         var val = $(".input-val").val().toLowerCase();
         var num = show_num.join("");
         if(val==''){

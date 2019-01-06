@@ -25,7 +25,7 @@
         #qq {
             position: relative;
             top: -580px;
-            left: -580px;
+            left: -480px;
         }
         #gg{
             position: relative;
@@ -50,7 +50,9 @@
         <div class="row cb-slideshow-text-container ">
             <div class="tm-content col-xl-6 col-sm-8 col-xs-8 ml-auto section">
                 <header class="mb-5"><h1>登录</h1></header>
-
+                <P class="mb-5">如果您没有账号,请点击注册.
+                    <a id="Login" rel="nofollow" href='register' target="_parent">点击并且注册 </a>
+                    谢谢您的支持!</P>
                 <form action="${ctp}/doLogin" method="post" class="subscribe-form" id="f2">
                     <div class="row form-section">
                         <div class="col-md-7 col-sm-7 col-xs-7">
@@ -67,8 +69,7 @@
                         </div>
                     </div>
                 </form>
-                <img id="qq" src="${ctp}/image/xx.png"/>
-                <img id="gg" src="${ctp}/image/gg.png"/>
+
             </div>
         </div>
     </div>

@@ -205,8 +205,6 @@ h1 {
     font-weight: 300;
     font-size: 1.4rem;
     cursor: pointer;
-    position: relative;
-    top: 150px;
 }
 
 /*.tm-btn-subscribe:hover {*/

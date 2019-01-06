@@ -153,9 +153,6 @@
                                     </p>
                                 </div>
                                 <div class="eachOneRight">
-                                    <div class="praise" id="${project.id}">
-
-                                    </div>
                                     <p>
                                         <output class="PJTitle">项目主题：</output>
                                             ${project.title}
@@ -172,7 +169,7 @@
 
                                         <output class="PJCategory">剩余天数：
                                             <input type="text" value="${project.endTime}" name="pedC" style="display: none"/>
-                                            <input id="shengyutian"  name="ped"  readonly/></output>
+                                            <input class="shengyutian"  name="ped"  readonly/></output>
                                     <br>
                                     <p>
                                         <output class="PJ">状态：</output>
@@ -191,11 +188,17 @@
                                     <output class="PJFPercentage"
                                             style="width: 50px;height: 50px;color: palevioletred;">
                                     </output>
+                                    <output class="PJFPercentage"
+                                            style="width: 50px;height: 50px;color: black;">
 
-                                    <a href="#">
-                                        <p>${project.id}</p>
-                                        <a href='${ctp}/browse/support-${project.id}' id="sdzc" id="sdzc">立即支持</a>
-                                    </a><br>
+                                    </output>
+                                    <output class="PJFPercent">
+                                        <fmt:formatNumber type="percent" minFractionDigits="2"
+                                                          value="${project.actualAmount.divide(project.goalAmount,4,1) }"/>实际金额
+                                    </output>
+
+                                        <a href='${ctp}/browse/support-${project.id}'  class="sdzc">立即支持</a>
+                                    <br>
                                 </div>
                             </div>
                         </li>
