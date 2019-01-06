@@ -74,28 +74,25 @@
                             var status = "";
                             switch (data[i].status) {
                                 case 0:
-                                    status += "submitted";
+                                    status += "进行中";
                                     break;
                                 case -1:
-                                    status += "withdrawn";
-                                    break;
-                                case -2:
-                                    status += "refund";
+                                    status += "撤回";
                                     break;
                             }
 
                             str +=
                                 "<div>" +
                                     "<div class=\"order_number\">" +
-                                        "<div class=\"order_number_left l\">OrderID:" + data[i].id + "</div>" +
+                                        "<div class=\"order_number_left l\">订单ID:" + data[i].id + "</div>" +
                                         "<div class=\"order_number_right r\">" + "<span>" + status + "</span>" + "</div>" +
                                     "</div>" +
                                     "<div class=\"project_order_content fix\">" +
                                         "<div class=\"project_order_content_img l\">" + "<object class='order_showImg' data='" + data[i].project.cover+ "'/>" + "</div>" +
                                         "<div class=\"project_order_content_info l\">" +
                                             "<a href='/financing/personCenter/personOrder/detail-" + data[i].id + "' class='el'>" + data[i].project.title + "</a>" +
-                                            "<p>Create Time:" + data[i].createTime + "</p>"+
-                                            "<p>Total:<em>$" + data[i].amount + "</em></p>";
+                                            "<p>创建时间:" + data[i].createTime + "</p>"+
+                                            "<p>总计:<em>$" + data[i].amount + "</em></p>";
 
 
                             if(data[i].status == 0){
@@ -119,14 +116,12 @@
                             var status = "";
                             switch (data[i].status) {
                                 case 0:
-                                    status += "submitted";
+                                    status += "进行中";
                                     break;
                                 case -1:
-                                    status += "withdrawn";
+                                    status += "已取消";
                                     break;
-                                case -2:
-                                    status += "refund";
-                                    break;
+
                             }
                             str +=
                                 "<div>" +
@@ -138,12 +133,12 @@
                                 "<div class=\"project_order_content_img l\">" + "<object class='order_showImg' data='" + data[i].project.cover + "'/>" + "</div>" +
                                 "<div class=\"project_order_content_info l\">" +
                                 "<a href='/financing/personCenter/personOrder/detail-" + data[i].id + "' class='el'>" + data[i].project.title + "</a>" +
-                                "<p>Create Time:"+data[i].createTime+"</p>"+
-                                "<p>Total:<em>$" + data[i].amount + "</em></p>";
+                                "<p>创建时间:"+data[i].createTime+"</p>"+
+                                "<p>总计:<em>$" + data[i].amount + "</em></p>";
 
 
-                            if(data[i].status == 0){
-                                str+="<a href='javascript:void(0);' class='w_customer' onclick=\"withdraw('" + data[i].id + "')\">withdraw</a>"
+                            if(data[i].status==0){
+                                str+="<a href='javascript:void(0);' class='w_customer' onclick=\"withdraw('" + data[i].id + "')\">撤销</a>"
                             }else{
                                 str+="";
                             }
@@ -164,27 +159,25 @@
                             var status = "";
                             switch (data[i].status) {
                                 case 0:
-                                    status += "submitted";
+                                    status += "进行中";
                                     break;
                                 case -1:
-                                    status += "withdrawn";
+                                    status += "已取消";
                                     break;
-                                case -2:
-                                    status += "refund";
-                                    break;
+
                             }
                             str +=
                                 "<div>" +
                                 "<div class=\"order_number\">" +
-                                "<div class=\"order_number_left l\">OrderID:" + data[i].id + "</div>" +
+                                "<div class=\"order_number_left l\">订单ID:" + data[i].id + "</div>" +
                                 "<div class=\"order_number_right r\">" + "<span>" + status + "</span>" + "</div>" +
                                 "</div>" +
                                 "<div class=\"project_order_content fix\">" +
                                 "<div class=\"project_order_content_img l\">" + "<object class='order_showImg' data='" + data[i].project + "'/>" + "</div>" +
                                 "<div class=\"project_order_content_info l\">" +
                                 "<a href='/financing/personCenter/personOrder/detail-" + data[i].id + "' class='el'>" + data[i].project.title + "</a>" +
-                                "<p>Create Time:"+data[i].createTime+"</p>"+
-                                "<p>Total:<em>$" + data[i].amount + "</em></p>";
+                                "<p>创建时间:"+data[i].createTime+"</p>"+
+                                "<p>总计:<em>$" + data[i].amount + "</em></p>";
 
 
                             if(data[i].status == 0){
@@ -208,13 +201,10 @@
                             var status = "";
                             switch (data[i].status) {
                                 case 0:
-                                    status += "submitted";
+                                    status += "进行中";
                                     break;
                                 case -1:
-                                    status += "withdrawn";
-                                    break;
-                                case -2:
-                                    status += "refund";
+                                    status += "已取消";
                                     break;
                             }
                             str +=
@@ -227,8 +217,8 @@
                                 "<div class=\"project_order_content_img l\">" + "<object class='order_showImg' data='" + data[i].project.cover + "'/>" + "</div>" +
                                 "<div class=\"project_order_content_info l\">" +
                                 "<a href='/financing/personCenter/personOrder/detail-" + data[i].id + "' class='el'>" + data[i].project.title + "</a>" +
-                                "<p>Create Time:"+data[i].createTime+"</p>"+
-                                "<p>Total:<em>$" + data[i].amount + "</em></p>";
+                                "<p>创建时间:"+data[i].createTime+"</p>"+
+                                "<p>总计:<em>$" + data[i].amount + "</em></p>";
 
 
                             if(data[i].status == 0){
