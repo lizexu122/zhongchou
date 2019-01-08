@@ -363,7 +363,7 @@ public class ProjectController {
     }
 
     /**
-     * 项目展示：New的json数据
+     * 项目展示：
      *
      * @return
      */
@@ -380,7 +380,7 @@ public class ProjectController {
     }
 
     /**
-     * 项目展示：Hot的json数据
+     * 项目展示：最热发布
      *
      * @return
      */

@@ -21,10 +21,7 @@
 
     <div class="r right_content">
         <div class="common minheight800">
-            <div class="common_title fix">
-                <span class="l">项目信息</span>
-                <a href="#" class="complete r"></a>
-            </div>
+            <p>项目详细信息</p>
             <div class="user_info fix">
                 <ul class="user_info_ul">
                     <li class="fix">
@@ -195,10 +192,7 @@
                         </form>
                     </div>
                     <div style="margin-top: 20px">
-                        <div class="common_title fix">
-                            <span class="l">更新列表</span>
-                            <a href="#" class="complete r"></a>
-                        </div>
+                       <p>更新列表</p>
                         <div class="update-container" style="margin-top: 20px">
                             <ul class="update-list" id="updates">
 
@@ -229,29 +223,8 @@
     }
 
     $(document).ready(function () {
-        getBacks();
         getUpdates();
 
-        $("#addBackBtn").click(function () {
-            $.ajax({
-                type: 'post',
-                async: false,
-                url: '${ctp}/doAddBack',
-                dataType: 'json',
-                data: $("#addBackForm").serialize(),
-
-                success: (function (result) {
-                    var flag = parseInt(result.flag);
-                    var msg = result.msg;
-                    if (flag == 1) {
-                        layer.msg(msg);
-                        window.location.reload();
-                    }
-                })
-            })
-
-            getBacks();
-        });
 
         $("#addUpdateBtn").click(function () {
             $.ajax({
@@ -275,53 +248,8 @@
         })
     });
 
-    function addBox() {
-        $("#addBackBox").slideToggle();
-    }
 
 
-    function getBacks() {
-        var url = window.location.href;
-        var str = {};
-        str = url.split("-");
-        var id = str[1];
-        console.log(id);
-        $.ajax({
-            type: 'GET',
-            async: false,
-            url: '${ctp}/doGetBacks-' + id,
-            dataType: 'json',
-            data: null,
-            success: (function (result) {
-                var flag = parseInt(result.flag);
-                var msg = result.msg;
-                var data = result.data;
-                console.log(data);
-                if (flag == 1) {
-                    $("#backs").empty();
-                    console.log($("#backs"));
-                    if (data.length > 0) {
-                        console.log(data.length);
-                        for (var i = 0; i < data.length; i++) {
-                            $("#backs").append(
-                                "<tr>" +
-                                "<td>" + data[i]["content"] + "</td>" +
-                                "<td>" + (data[i].compensation == 1 ? "/" : data[i]["backDate"]) + "</td>" +
-                                "<td>" + (data[i].compensation == 1 ? "/" : data[i]["amount"]) + "</td>" +
-                                "<td>" + (data[i].compensation == 1 ? "/" : data[i]["allow"]) + "</td>" +
-                                "<td>" + (data[i].post == 1 ? "Y" : "N") + "</td>" +
-                                "<td>" + (data[i].compensation == 1 ? "N" : "Y") + "</td>" +
-                                "</tr>"
-                            );
-
-                        }
-                    }
-                } else if (flag == 0) {
-                    alert(msg);
-                }
-            })
-        })
-    }
 
 
     function updateBox() {
@@ -331,7 +259,7 @@
     function getUpdates() {
         var url = window.location.href;
         var str = {};
-        str = url.split("-");
+        str = url.split("-");//分割字符串
         var id = str[1];
         console.log(id);
         $.ajax({
@@ -355,7 +283,7 @@
                                 "<li class=\"update-item\"> " +
                                 "<a class=\"a_fold\" href=\"javascript:void(0)\" onclick=\"showFold(this)\">·</a> " +
                                 "<div class=\"update-item-title\">" +
-                                "<h3>"+data[i].project.user.username+"</h3>"+
+                                "<h3>"+data[i ].project.user.username+"</h3>"+
                                 "<p>"+data[i].updateTime+"</p>" +
                                 "</div> " +
                                 "<div class=\"update-item-content\">" +

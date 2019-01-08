@@ -1,7 +1,7 @@
 <%--
   Created by IntelliJ IDEA.
   User: Lizexu
-  Date: 2018/6/4
+  Date: 2019/1/4
   Time: 16:45
   To change this template use File | Settings | File Templates.
 --%>
@@ -54,6 +54,10 @@
             height: 20%;
             margin-left: 90%;
         }
+        body{
+            background-image: url("${ctp}image/n1.jpg");
+        }
+
     </style>
 
 
@@ -73,7 +77,7 @@
                 </div>
                 <div class="eachOneRight">
                     <a href="#">
-                        <output class="PJTitle">主题：<span id="title"> ${data.title}</span></output>
+                        <output class="PJCategory">主题：<span id="title"> ${data.title}</span></output>
                     </a><br>
                     <a href="#">
                         <output class="PJCategory">支持数：<span id="shengyu">${data.supportCount} </span></output>
@@ -84,21 +88,14 @@
                     </a><br>
 
                     <a href="#">
-                        <output class="PJ">status：</output>
+                        <output class="PJ">状态：</output>
                         <c:if test="${data.status eq '0'}">未完成</c:if>
                         <c:if test="${data.status eq '1'}">已完成</c:if>
                     </a><br/>
-                    <output class="PJPublishTime">发布时间：</output>
-                    <fmt:formatDate type="date"
-                                    value="${project.publishTime}"></fmt:formatDate>
                     <div class="progress" onloadstart="PJPercentage">
 
                         <div class="progress-bar progress-bar-primary"></div>
                     </div>
-                    <output class="PJFPercent">
-                        <fmt:formatNumber type="percent" minFractionDigits="2"
-                                          value="${data.actualAmount/data.goalAmount}"/>
-                    </output>
                     <br>
                     <a href="#">
                         <output class="PJCategory">剩余天数：<input id="shengyutian" readonly/></output>
@@ -123,7 +120,7 @@
             <div class="course_head">
                 <div class="course_head_l">
                     <div class="head_img">
-                        <h3>share</h3>
+                        <h3>分享</h3>
                     </div>
                     <div class="brief">
                         <img src="${ctp}/image/qq.png"/>
@@ -141,7 +138,7 @@
                         <div class="course_down" style="display: block;">
                             <ul>
                                 <li>
-                                    <h2 class="h">title</h2>
+                                    <h2 class="h">标题</h2>
                                     <div class="course_img"><h4>${data.title}</h4></div>
                                 </li>
                             </ul>

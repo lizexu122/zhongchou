@@ -11,9 +11,15 @@
     <script type="text/javascript" src="${ctp}/js/responsiveslides.min.js"></script>
 </head>
 <body>
+<style type="text/css">
+    #photo {
+        position: relative;
+        left: -150px;
+    }
+</style>
 <div id="Head">
     <div class="logo">
-        <h1><a href="${ctp}/index">Com<span>m</span>erce</a></h1>
+        <h1><a href="${ctp}/index">Commerce</a></h1>
     </div>
     <div class="top-nav">
         <ul class="memenu skyblue">
@@ -36,12 +42,7 @@
             </li>
         </ul>
     </div>
-    <div class="search-bar">
-        <input onfocus="this.value = '';"
-               placeholder="搜索"
-               type="text" id="searchByKeyWord">
-        <a href="javascript:;" id="searchImg"></a>
-    </div>
+
     <c:choose>
         <c:when test="${empty user}">
             <%--未登录，提示登录按钮--%>
@@ -61,7 +62,7 @@
                             <div id="self_image">
                                 <c:if test="${not empty user.avatar}">
                                     <%--成功获取头像数据并加载--%>
-                                    <img id="showSelfImage" src="${user.avatar}"/>
+                                    <%--<img id="showSelfImage" src="${user.avatar}"/>--%>
                                 </c:if>
                                 <c:if test="${empty user.avatar}">
                                     <%--未得头像数据默认返回--%>
@@ -73,11 +74,10 @@
                                 <div class="row">
                                     <div class="col1 me-one">
                                         <ul>
-                                            <li><a href="${ctp}/personCenter/personProject"><span
-                                                    class="icon_clipboard"></span>
+                                            <li><a href="${ctp}/personCenter/personProject">
                                                 我的项目</a>
                                             </li>
-                                            <li><a href="${ctp}/doLogout"><span class="icon_key"></span>登出</a></li>
+                                            <li><a href="${ctp}/doLogout">登出</a></li>
                                         </ul>
                                     </div>
                                 </div>

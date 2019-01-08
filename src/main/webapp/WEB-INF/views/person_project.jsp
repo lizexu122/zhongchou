@@ -56,10 +56,7 @@
 
     <div class="r right_content">
         <div class="common minheight800">
-            <div class="common_title fix">
-                <span class="l">Project List</span>
-                <a href="#" class="complete r"></a>
-            </div>
+           <p>项目列表</p>
             <div id="projectList">
                 <table id="tbody">
 

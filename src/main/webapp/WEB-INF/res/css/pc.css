@@ -282,9 +282,7 @@ input {
 
 .tab-selected {
     border-radius: 4px;
-    /*border:solid 2px #1f7eaa;*/
-    background-color: #618aff;
-    color: white;
+    color:black;
 }
 
 .tab-menu {

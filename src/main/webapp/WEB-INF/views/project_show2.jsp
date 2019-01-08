@@ -56,14 +56,14 @@
                    对不起,我们还没有发布任何项目
                 </div>
                 <script type="text/javascript">
-                    document.body.style.background = "url('${ctp}/image/Warning.jpg') no-repeat center 0px fixed";
+                    document.body.style.background = "url('${ctp}/image/n1.jpg') no-repeat center 0px fixed";
                     document.body.style.backgroundSize = "cover";
                 </script>
             </c:when>
             <c:otherwise>
                 <ul>
                     <script type="text/javascript">
-                        document.body.style.background = "url('${ctp}/image/RBG3.jpg') no-repeat center 0px fixed";
+                        document.body.style.background = "url('${ctp}/image/n1.jpg') no-repeat center 0px fixed";
                         document.body.style.backgroundSize = "cover";
                     </script>
                     <c:forEach varStatus="PJ" var="project" items="${data}">
@@ -210,5 +210,7 @@
         $('#' + j.toString()).find(".praiseImg").addClass("animation").attr("src", "${ctp}/image/praiseAfter.png");
         $('#' + j.toString()).find('.praise-txt').addClass("hover");
     }
+    document.body.style.background = "url('${ctp}/image/n1.jpg') no-repeat center 0px fixed";
+    document.body.style.backgroundSize = "cover";
 </script>
 </html>

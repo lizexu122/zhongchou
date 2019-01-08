@@ -15,6 +15,15 @@
             position: relative;
             left: -250px;
         }
+      .info_text{
+          border: 1px solid #ddd;
+          border-radius: inherit;
+          height:52px;
+      }
+        .info_text:hover{
+            border:1px solid blue;
+            color:orange;
+        }
     </style>
 </head>
 
@@ -25,8 +34,7 @@
         <div class="common minheight800">
 
             <div class="common_title fix">
-                <span class="l">个人信息</span>
-                <a href="#" class="complete r"></a>
+              <p>个人信息</p>
             </div>
             <div class="tab-menu">
                 <ul>

@@ -11,23 +11,23 @@
     <script type="text/javascript" src="${ctp}/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="${ctp}/js/responsiveslides.min.js"></script>
     <script type="text/javascript">
-        //背景切换图
+        //背景切换图 使用jquery插件
         $(function () {
             $("#slider").responsiveSlides({
-                auto: true,
-                nav: true,
-                speed: 600,
-                namespace: "callbacks",
-                pager: false,
+                auto: true, //是否自动播放
+                nav: true,  //是否显示左右导航箭头
+                speed: 500, //动画持续时间 单位毫秒
+                namespace: "callbacks", //修改默认的容器名称
+                pager: false, //是否显示页码
             });
         });
         //AboutProject输出关于本网站总体的数据
         $(window).load(
             function showAboutObject() {
-                $.get('doProjectCount', function (result) {
+                $.get('doProjectCount', function (result) {    //项目总数，返回的是result对象
                     document.getElementById("pjPosted").innerHTML = result.data;
                 });
-                $.get('doSupportCount', function (result) {
+                $.get('doSupportCount', function (result) {  //参与支持总数 返回的是result对象
                     document.getElementById("backers").innerHTML = result.data;
                 });
                 $.get('doProjectFinished', function (result) {
@@ -70,27 +70,18 @@
             <li>
                 <div class="banner1">
                     <div class="banner-info">
-                        <%--<h3>投资</h3>--%>
-                        <%--<p>投资与风险并存，应保持理性与感性相统一</p>--%>
                     </div>
                 </div>
             </li>
             <li>
                 <div class="banner2">
                     <div class="banner-info">
-                        <%--<h3>实现目标</h3>--%>
-                        <%--<p> One option is to tap existing limited partners for co-investments. </p>--%>
-                        <%--&lt;%&ndash;寻求现有有限合伙人共同投资是一个选择&ndash;%&gt;--%>
                     </div>
                 </div>
             </li>
             <li>
                 <div class="banner3">
                     <div class="banner-info">
-                        <%--<h3>Gain wealth</h3>--%>
-                        <%--<p>Wise investing is the surest path to financial independence and its something everyone can--%>
-                            <%--work on.</p>--%>
-                        <%--&lt;%&ndash;明智的投资是经济独立最可靠的道路，而且每个人都可以做到。&ndash;%&gt;--%>
                     </div>
                 </div>
             </li>

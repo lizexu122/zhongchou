@@ -14,29 +14,32 @@
             src="${ctp}/ueditor/lang/zh-cn/zh-cn.js"></script>
     <script src="${ctp}/js/layer.js" type="text/javascript"></script>
 </head>
+<style type="text/css">
+    .info_text{
+        border: 1px solid #ddd;
+        border-radius: inherit;
+        height:52px;
+    }
+</style>
 <body class="personal">
 <div class="wrap">
     <jsp:include page="person_left.jsp"/>
     <div class="r right_content">
         <div class="common minheight800">
-            <div class="common_title fix">
-                <span class="l">创建项目</span>
-                <a href="#" class="complete r"></a>
-            </div>
             <form action="/doCreateProject" id="createForm" enctype="multipart/form-data">
                 <div class="user_info fix">
                     <ul class="user_info_ul">
                         <li class="fix">
                             <p class="_title l">标题</p>
                             <p class="l">
-                                <input type="text" name="title" id="inputTitle">
+                                <input type="text" name="title" id="inputTitle" class="info_text">
                             </p>
                             <div style="clear: both"></div>
                         </li>
                         <li class="fix">
                             <p class="_title l">联系姓名</p>
                             <p class="l">
-                                <input type="text" name="contact_name" id="inputContaceName">
+                                <input type="text" name="contact_name" id="inputContaceName" class="info_text">
                             </p>
                             <div style="clear: both"></div>
                         </li>
@@ -44,7 +47,7 @@
                         <li class="fix">
                             <p class="_title l">联系电话</p>
                             <p class="l">
-                                <input type="text" name="contact_phone" id="inputContact">
+                                <input type="text" name="contact_phone" id="inputContact" class="info_text">
                             </p>
                             <div style="clear: both"></div>
                         </li>
@@ -59,7 +62,7 @@
                             <p class="_title l">内容</p>
                             <div class="l _img">
                                 <div class="am-form-group am-form-file">
-                                    <input type="file" name="coverUpload" id="inputCover">
+                                    <input type="file" name="coverUpload" id="inputCover" >
                                 </div>
                             </div>
                             <div style="clear: both"></div>
@@ -75,7 +78,7 @@
                         <li class="fix">
                             <p class="_title l">截止日期</p>
                             <p class="l">
-                                <input type="date" name="end_time" id="inputEndTime"></p>
+                                <input type="date" name="end_time" id="inputEndTime" class="info_text"></p>
                             <div style="clear: both"></div>
                         </li>
 

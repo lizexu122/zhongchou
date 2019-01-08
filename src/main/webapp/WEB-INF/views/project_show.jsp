@@ -135,7 +135,7 @@
                    对不起 还没有发布任何项目
                 </div>
                 <script type="text/javascript">
-                    document.body.style.background = "url('${ctp}/image/Warning.jpg') no-repeat center 0px fixed";
+                    document.body.style.background = "url('${ctp}/image/n1.jpg') no-repeat center 0px fixed";
                     document.body.style.backgroundSize = "cover";
                 </script>
             </c:when>
@@ -144,7 +144,7 @@
                 <%--展示5条记录--%>
                 <ul>
                     <script type="text/javascript">
-                        document.body.style.background = "url('${ctp}/image/RBG3.jpg') no-repeat center 0px fixed";
+                        document.body.style.background = "url('${ctp}/image/n1.jpg') no-repeat center 0px fixed";
                         document.body.style.backgroundSize = "cover";
                     </script>
                     <span class="AllR">所有项目</span>
@@ -174,17 +174,15 @@
                                             ${project.category.name}
                                     </a><br>
                                     <a href="${ctp}/browse/detail-${project.id}">
-                                        <output class="PJGAmount">Goal：</output>
+                                        <output class="PJGAmount">目标金额：</output>
                                         $${project.goalAmount}
                                     </a><br/>
                                     <a href="${ctp}/browse/detail-${project.id}">
                                         <output class="PJ">Project Status：</output>
-                                        <c:if test="${project.status eq '0'}">Unfinished Undue</c:if>
-                                        <c:if test="${project.status eq '1'}">Completed Undue</c:if>
-                                        <c:if test="${project.status eq '2'}">Unfinished Expiry</c:if>
-                                        <c:if test="${project.status eq '3'}">Completed Expiry</c:if>
+                                        <c:if test="${project.status eq '0'}">未完成</c:if>
+                                        <c:if test="${project.status eq '1'}">已完成</c:if>
                                     </a><br/>
-                                    <output class="PJPublishTime">Publish Time：
+                                    <output class="PJPublishTime">发布时间：
                                             ${project.publishTime}
                                     </output>
                                     <div class="progress">
@@ -197,7 +195,6 @@
                                     <output class="PJFPercent">
                                         <fmt:formatNumber type="percent" minFractionDigits="2"
                                                           value="${project.actualAmount.divide(project.goalAmount,4,1)}"/>
-                                        Funded
                                     </output>
                                 </div>
                             </div>

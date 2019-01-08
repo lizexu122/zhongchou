@@ -28,9 +28,8 @@
             <div class="tm-content col-xl-6 col-sm-8 col-xs-8 ml-auto section">
                 <header class="mb-5"><h1>快速登录</h1></header>
                 <br/>
-                <P class="mb-5">如果你没有账号，你可以点击
-                    <a id="Register" rel="nofollow" target="_parent" href='#'>注册</a>
-                    谢谢您的支持</P>
+                <P class="mb-5">
+                    <a id="Register" rel="nofollow" target="_parent" href='#'>注册</a></P>
                 <br>
                 <form action="${ctp}/doLogin" method="post" class="subscribe-form" id="f2">
                     <div class="row form-section">
@@ -59,9 +58,9 @@
             <div class="tm-content col-xl-6 col-sm-8 col-xs-8 ml-auto section">
                 <header class="mb-5"><h1>注册</h1></header>
                 <br/>
-                <P class="mb-5">如果你已经有账号了
+                <P class="mb-5">
                     <a id="Login" rel="nofollow" href='javascript:back();' target="_parent">点击登陆</a>
-                     T谢谢您的支持</P>
+                     </P>
                 <br>
                 <form action="/doRegister" method="post" class="subscribe-form" id="f1">
                     <div class="row form-section">
@@ -76,7 +75,7 @@
                             <input name="ispassword" type="password" class="form-control" id="ispassword"
                                    placeholder="确认密码"/>
                             <br><br>
-                            <div class="container">
+                            <div class="container">  <!-- 滑块验证码 使用插件-->
                                 <div id="captcha" style="position: relative"></div>
                                 <div id="msg"></div>
                             </div>

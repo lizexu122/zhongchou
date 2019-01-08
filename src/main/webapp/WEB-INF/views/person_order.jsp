@@ -14,10 +14,7 @@
     <jsp:include page="person_left.jsp"/>
     <div class="r right_content">
         <div class="common minheight800">
-            <div class="common_title fix">
-                <span class="l">选项列表</span>
-                <a href="#" class="complete r"></a>
-            </div>
+           <p>订单</p>
             <div class="tab-menu">
                 <ul>
                     <li><a class="tab-selected" href="javascript:void(0);">所有选项</a></li>
@@ -126,7 +123,7 @@
                             str +=
                                 "<div>" +
                                 "<div class=\"order_number\">" +
-                                "<div class=\"order_number_left l\">OrderID:" + data[i].id + "</div>" +
+                                "<div class=\"order_number_left l\">订单ID:" + data[i].id + "</div>" +
                                 "<div class=\"order_number_right r\">" + "<span>" + status + "</span>" + "</div>" +
                                 "</div>" +
                                 "<div class=\"project_order_content fix\">" +
