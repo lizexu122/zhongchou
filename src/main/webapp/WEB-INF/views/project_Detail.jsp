@@ -348,17 +348,17 @@
                             "</tr>"
                             + "<tr>" +
                             "<td id='cm'>" + d[i].content +
-                            "<span id='xuan'>Please select the reply object</span>" +
+                            "<span id='xuan'>请选择回复的对象</span>" +
                             "<input class='radio' type='radio' value='"
                             + d[i].fromUser.id + "' name='to_user'> </td>" +
                             "</tr>"
                             + "<tr>" +
-                            "<td> ToUser:"
+                            "<td> 给用户:"
                             + d[i].toUser.username + " </td>" +
                             "<td>" + " <img id='gf' src=\"${d[i].toUser.avater}\"/>" + "</td>" +
                             "</tr>" +
                             "<tr>" +
-                            "<td>CreateTime: " + d[i].createTime + "</td>" +
+                            "<td>创建时间: " + d[i].createTime + "</td>" +
                             "</tr>"
                         );
 

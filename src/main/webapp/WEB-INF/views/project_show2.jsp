@@ -4,7 +4,7 @@
 <c:set var="ctp" value="${pageContext.request.contextPath}"/>
 <html>
 <head>
-    <title>project_show</title>
+    <title>所有项目</title>
     <link rel="stylesheet" href="${ctp}/css/project_show.css" type="text/css"/>
     <script type="text/javascript" src="${ctp}/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript">

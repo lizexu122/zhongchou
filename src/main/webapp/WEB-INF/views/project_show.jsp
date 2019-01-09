@@ -9,7 +9,7 @@
 <html>
 <head>
     <base href="<%=basePath%>">
-    <title>最热发布</title>
+    <title>所有项目</title>
     <link rel="stylesheet" href="${ctp}/css/project_show.css" type="text/css"/>
     <script type="text/javascript" src="${ctp}/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript">
@@ -178,7 +178,7 @@
                                         $${project.goalAmount}
                                     </a><br/>
                                     <a href="${ctp}/browse/detail-${project.id}">
-                                        <output class="PJ">Project Status：</output>
+                                        <output class="PJ">状态：</output>
                                         <c:if test="${project.status eq '0'}">未完成</c:if>
                                         <c:if test="${project.status eq '1'}">已完成</c:if>
                                     </a><br/>
@@ -244,21 +244,6 @@
         }
     }
 
-    function getNew() {
-        if (ProjectList) {
-            ProjectList.splice(0, ProjectList.length);
-        } else {
-            ProjectList = [];
-        }
-        $.get("${ctp}/getNewProjectList", function (result) {
-            if (result.flag = 1) {
-                $.each(result.data, function (index, projectList) {
-                    ProjectList.push(projectList.id);
-                });
-                doII();
-            }
-        })
-    }
 
     function getHot() {
         if (ProjectList) {
