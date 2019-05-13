@@ -62,25 +62,25 @@ public class InterestController {
         Map<String, Object> result = new HashMap<String, Object>();
         //查询是否已有点赞记录
         List<Interest> list = interestService.getInterestByUP(user, project);
-        if (list != null && list.size() > 0) { //如果找到了这条记录，则删除该记录，同时文章的点赞数减1
-            interestService.cancelInterest(list.get(0)); //删除记录
-            Project p = projectService.getProject(pid); //得到此project
-            p.setPraise(p.getPraise() - 1); //点赞数-1
+        if (list != null && list.size() > 0) {
+            interestService.cancelInterest(list.get(0));
+            Project p = projectService.getProject(pid);
+            p.setPraise(p.getPraise() - 1);
             projectService.updateProject(p);
             //点过了是flag=0
             result.put("flag", FAIL_CODE);
             result.put("msg", "fail");
             result.put("data", "");
-        } else {  //如果没有找到这条记录，则添加这条记录，同时文章点赞数加1
+        } else {
             Interest interest = new Interest();
             Project p2 = projectService.getProject(pid);
             interest.setUser(user);
             interest.setProject(p2);
-            //添加纪录
+            //插入
             interestService.addInterest(interest);
             p2.setPraise(p2.getPraise() + 1);
             projectService.updateProject(p2);
-            //文章点赞数+1
+            //没点过赞flag=1
             result.put("flag", SUCCESS_CODE);
             result.put("msg", "success");
             result.put("data", "");

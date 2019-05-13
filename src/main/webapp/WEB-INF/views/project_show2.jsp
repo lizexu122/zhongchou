@@ -4,7 +4,7 @@
 <c:set var="ctp" value="${pageContext.request.contextPath}"/>
 <html>
 <head>
-    <title>所有项目</title>
+    <title>project_show</title>
     <link rel="stylesheet" href="${ctp}/css/project_show.css" type="text/css"/>
     <script type="text/javascript" src="${ctp}/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript">
@@ -53,17 +53,17 @@
             <c:when test="${empty data}">
                 <div class="alert alert-danger alert-dismissable">
                     <button aria-hidden="true" list-dismiss="alert" class="close" type="button"> ×</button>
-                   对不起,我们还没有发布任何项目
+                    I am sorry I can't Find what you want ! Please Change another words.
                 </div>
                 <script type="text/javascript">
-                    document.body.style.background = "url('${ctp}/image/n1.jpg') no-repeat center 0px fixed";
+                    document.body.style.background = "url('${ctp}/image/Warning.jpg') no-repeat center 0px fixed";
                     document.body.style.backgroundSize = "cover";
                 </script>
             </c:when>
             <c:otherwise>
                 <ul>
                     <script type="text/javascript">
-                        document.body.style.background = "url('${ctp}/image/n1.jpg') no-repeat center 0px fixed";
+                        document.body.style.background = "url('${ctp}/image/RBG3.jpg') no-repeat center 0px fixed";
                         document.body.style.backgroundSize = "cover";
                     </script>
                     <c:forEach varStatus="PJ" var="project" items="${data}">
@@ -85,25 +85,33 @@
                                         <span class="add-num"><em>+1</em></span>
                                     </div>
                                     <a href="${ctp}/browse/detail-${project.id}">
-                                        <output class="PJTitle">项目标题：</output>
+                                        <output class="PJTitle">Project Title：</output>
                                             ${project.title}
                                     </a><br>
                                     <a href="${ctp}/browse/detail-${project.id}">
-                                        <output class="PJCategory">类别：</output>
+                                        <output class="PJCategory">Category：</output>
                                             ${project.category.name}
                                     </a><br>
                                     <a href="${ctp}/browse/detail-${project.id}">
-                                        <output class="PJGAmount">目标金额：</output>
+                                        <output class="PJTeam">Team：</output>
+                                            ${project.team}
+                                    </a><br>
+                                    <a href="${ctp}/browse/detail-${project.id}">
+                                        <output class="PJPurpose">Purpose：</output>
+                                            ${project.purpose}
+                                    </a><br/>
+                                    <a href="${ctp}/browse/detail-${project.id}">
+                                        <output class="PJGAmount">Goal：</output>
                                             $${project.goalAmount}
                                     </a><br/>
                                     <a href="${ctp}/browse/detail-${project.id}">
-                                        <output class="PJ">状态：</output>
-                                        <c:if test="${project.status eq '0'}">未到期</c:if>
-                                        <c:if test="${project.status eq '1'}">已到期</c:if>
-                                        <c:if test="${project.status eq '2'}">已完成</c:if>
-                                        <c:if test="${project.status eq '3'}">未完成</c:if>
+                                        <output class="PJ">Project Status：</output>
+                                        <c:if test="${project.status eq '0'}">Unfinished Undue</c:if>
+                                        <c:if test="${project.status eq '1'}">Completed Undue</c:if>
+                                        <c:if test="${project.status eq '2'}">Unfinished Expiry</c:if>
+                                        <c:if test="${project.status eq '3'}">Completed Expiry</c:if>
                                     </a><br/>
-                                    <output class="PJPublishTime">发布时间：${project.publishTime}
+                                    <output class="PJPublishTime">Publish Time：${project.publishTime}
                                     </output>
                                     <div class="progress">
                                         <div class="progress-bar progress-bar-primary"
@@ -115,7 +123,7 @@
                                     </output>
                                     <output class="PJFPercent">
                                         <fmt:formatNumber type="percent" minFractionDigits="2"
-                                                          value="${project.actualAmount.divide(project.goalAmount,4,1) }"/>
+                                                          value="${project.actualAmount.divide(project.goalAmount,4,1) }"/>Funded
                                     </output>
                                 </div>
                             </div>
@@ -210,7 +218,5 @@
         $('#' + j.toString()).find(".praiseImg").addClass("animation").attr("src", "${ctp}/image/praiseAfter.png");
         $('#' + j.toString()).find('.praise-txt').addClass("hover");
     }
-    document.body.style.background = "url('${ctp}/image/n1.jpg') no-repeat center 0px fixed";
-    document.body.style.backgroundSize = "cover";
 </script>
 </html>

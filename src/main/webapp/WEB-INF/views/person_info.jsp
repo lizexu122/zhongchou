@@ -9,20 +9,11 @@
     <script src="${ctp}/js/jquery-1.11.0.min.js" type="text/javascript"></script>
     <script src="${ctp}/js/layer.js" type="text/javascript"></script>
     <script src="${ctp}/js/user.js" type="text/javascript"></script>
-    <title>- 个人中心 -</title>
+    <title>- PersonCenter -</title>
     <style>
         #save, #csave {
             position: relative;
             left: -250px;
-        }
-      .info_text{
-          border: 1px solid #ddd;
-          border-radius: inherit;
-          height:52px;
-      }
-        .info_text:hover{
-            border:1px solid blue;
-            color:orange;
         }
     </style>
 </head>
@@ -34,12 +25,13 @@
         <div class="common minheight800">
 
             <div class="common_title fix">
-              <p>个人信息</p>
+                <span class="l">个人信息</span>
+                <a href="#" class="complete r"></a>
             </div>
             <div class="tab-menu">
                 <ul>
                     <li><a class="tab-selected" href="#">修改个人信息</a></li>
-                    <li><a href="#">验证</a></li>
+                    <li><a href="#">身份验证</a></li>
                 </ul>
             </div>
             <div class="tab-box">
@@ -91,20 +83,27 @@
                                         <c:if test="${sessionScope.user.gender=='female'}">
                                                 checked="true"
                                         </c:if>
-                                        > 女生
+                                        > 女士
                                     </label>
                                     <label>
                                         <input type="radio" name="gender" value="male"
                                         <c:if test="${sessionScope.user.gender=='male'}">
                                                checked
                                         </c:if>
-                                        > 男生
+                                        > 男士
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="gender" value="secrecy"
+                                        <c:if test="${sessionScope.user.gender=='secrecy'}">
+                                               checked
+                                        </c:if>
+                                        > 保密
                                     </label>
                                 </p>
                                 <div style="clear: both"></div>
                             </li>
                             <li class="fix">
-                                <p class="_title l">地址</p>
+                                <p class="_title l">地区</p>
                                 <p class="l">
                                     <input type="text" class="info_text" value="${sessionScope.user.zone}"
                                            id="inputAddress"

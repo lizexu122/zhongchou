@@ -8,8 +8,9 @@
 </head>
 <body>
 <div class="footer-link">
-    <p>设计者 李泽旭 翟广达 王玉喜 刘再思 崔振国</p>
-    <a>版权所有 农业科技有限公司</a>
+    <p>Copyright ©2018 Made By -All rights reserved.</p>
+    <p>Designer : CoolLi Penny Wendy</p>
+    <a>版权所有 CPW</a>
     <br/>
 </div>
 </body>

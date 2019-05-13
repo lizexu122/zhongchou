@@ -66,7 +66,7 @@ public class UserController {
         String password = request.getParameter("password");
         System.out.println("password = " + password);
         System.out.println("mobile = " + mobile);
-        password = Md5Util.getMD5String(password);
+        password = Md5Util.getMD5String(password);//md5加密
         Map<String,Object> result = new HashMap<String, Object>();
         User user =userService.getUser(mobile);
         if (user==null){

@@ -38,9 +38,9 @@
 <body>
 <div id="top_choose">
     <div id="log">
-        <img src="${ctp}/image/AboutUs.png" height="60px" width="60px"/><br>
+        <img src="${ctp}/image/Home.png" height="60px" width="60px"/><br>
         <a id="logi" href="${ctp}/index">主页</a><br>
-        <a id="Logout" href="${ctp}/login">登出</a>
+        <a id="Logout" href="${ctp}/login">登录/登出</a>
     </div>
 
 </div>

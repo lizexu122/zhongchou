@@ -248,11 +248,11 @@ ul.memenu.skyblue {
     height: 60px;
     position: relative;
     margin-top: 10px;
-    margin-left: 200px;
+    margin-left: 270px;
 }
 
 .search-bar input[type="text"] {
-    width: 250px;
+    width: 300px;
     padding: 6px;
     border: 1px solid #F5F5F5;
     color: rgba(0, 0, 0, 0.74);

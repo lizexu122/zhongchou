@@ -99,7 +99,7 @@ public class ProjectController {
             //添加无私回报
             ProjectBack projectBack = new ProjectBack();
             projectBack.setCompensation(1);
-            projectBack.setContent("Thank you for your unselfish support!");
+            projectBack.setContent("感谢你的无私奉献!");
             project.setId(projectId);
             projectBack.setProject(project);
             projectBack.setActual(0);
@@ -363,7 +363,7 @@ public class ProjectController {
     }
 
     /**
-     * 项目展示：
+     * 项目展示：New的json数据
      *
      * @return
      */
@@ -380,7 +380,7 @@ public class ProjectController {
     }
 
     /**
-     * 项目展示：最热发布
+     * 项目展示：Hot的json数据
      *
      * @return
      */

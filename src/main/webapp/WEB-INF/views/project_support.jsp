@@ -3,7 +3,7 @@
 <c:set var="ctp" value="${pageContext.request.contextPath}"/>
 <html>
 <head>
-    <title>支持</title>
+    <title>support</title>
     <link rel="stylesheet" href="${ctp}/css/pc.css">
     <link rel="stylesheet" href="${ctp}/css/support.css">
     <link rel="stylesheet" href="${ctp}/css/project_show.css" type="text/css"/>
@@ -14,13 +14,13 @@
 <jsp:include page="header.jsp"/>
 <div id="grzxOuterBox">
     <div id="zhifuInnerBox">
-        <h3 style="padding-top: 40px;padding-left: 20px;margin-bottom: 30px">请选择支持项目</h3>
+        <h3 style="padding-top: 40px;padding-left: 20px;margin-bottom: 30px">请选择支持的项目</h3>
         <div class="tjdd_list">
             <div class="tjdd_item animate-reward" id="sad" style="display: block;">
 
                 <div class="ng-scope">
                     <div class="wyzz_h3">感谢你的支持</div>
-                    <p class="support_inforP">感谢你的支持.你将会收到收益或者我们的贺卡.</p>
+                    <p class="support_inforP">感谢你的支持.你将会收到短信或者我们的贺卡.</p>
                     <div class="wyzz_Cont">
                         <div class="wyzz_inputBox sitePHBox">
                             <form action="/doAddOrder" id="formOrder" enctype="multipart/form-data">

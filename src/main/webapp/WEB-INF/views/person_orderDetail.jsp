@@ -4,7 +4,7 @@
 <c:set var="ctp" value="${pageContext.request.contextPath}"/>
 <html>
 <head>
-    <title>订单详情</title>
+    <title>Order Detail</title>
     <link rel="stylesheet" href="${ctp}/css/pc.css">
     <script src="${ctp}/js/jquery-1.11.0.min.js" type="text/javascript"></script>
     <script src="${ctp}/js/layer.js" type="text/javascript"></script>
@@ -21,16 +21,32 @@
             <div class="order_detail">
                 <div class="check fix">
                     <div class="check_left l">
-                       订单Id
+                        订单ID
                     </div>
                     <div class="check_right l">
                         ${data.id}
                     </div>
                 </div>
+                <div class="check fix">
+                    <div class="check_left l">
+                        回归内容
+                    </div>
+                    <div class="check_right l">
+                        ${data.projectBack.content}
+                    </div>
+                </div>
+                <div class="check fix">
+                    <div class="check_left l">
+                        回归日期
+                    </div>
+                    <div class="check_right l">
+                        ${data.projectBack.backDate}
+                    </div>
+                </div>
                 <c:if test="${data.address!=null && data.address!=''}">
                     <div class="check fix">
                         <div class="check_left l">
-                           地址
+                            地址
                         </div>
                         <div class="check_right l">
                                 ${data.address.zone}&nbsp;${data.address.detail}
@@ -39,7 +55,7 @@
                 </c:if>
                 <div class="check fix">
                     <div class="check_left l">
-                       创建时间
+                        创建时间
                     </div>
                     <div class="check_right l">
                         ${data.createTime}
@@ -47,7 +63,7 @@
                 </div>
                 <div class="check fix">
                     <div class="check_left l">
-                        项目Id
+                       项目ID
                     </div>
                     <div class="check_right l">
                         ${data.project.id}
@@ -75,17 +91,20 @@
                     </div>
                     <div class="check_right l">
                         <c:if test="${data.status==0}">
-                           进行中
+                            已提交
                         </c:if>
                         <c:if test="${data.status==-1}">
-                           取消
+                            已撤回
+                        </c:if>
+                        <c:if test="${data.status==-2}">
+                            已退还
                         </c:if>
 
                     </div>
                 </div>
                 <div class="check fix">
                     <div class="check_left l m-main">
-                       总钱数
+                        总计金额
                     </div>
                     <div class="check_right l m-main fz-20">
                         $${data.amount}
@@ -101,7 +120,7 @@
                 <c:if test="${data.status!=0}">
                     <div class="check fix">
                         <div style="margin: 20px 10%;">
-                            <input type="button" style="background-color: gray" class="button" value="INVALID" disabled>
+                            <input type="button" style="background-color: gray" class="button" value="无效" disabled>
                         </div>
                     </div>
                 </c:if>

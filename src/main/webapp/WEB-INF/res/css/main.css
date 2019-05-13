@@ -93,19 +93,19 @@ body {
 }
 
 .banner1 {
-    background: url(../image/HomePage1.jpg) no-repeat 0px 0px;
+    background: url(../image/bnr.jpg) no-repeat 0px 0px;
     background-size: cover;
     min-height: 715px;
 }
 
 .banner2 {
-    background: url(../image/chouqian.jpg) no-repeat 0px 0px;
+    background: url(../image/bnr2.jpg) no-repeat 0px 0px;
     background-size: cover;
     min-height: 715px;
 }
 
 .banner3 {
-    background: url(../image/chouqian2.jpg) no-repeat 0px 0px;
+    background: url(../image/bnr3.jpg) no-repeat 0px 0px;
     background-size: cover;
     min-height: 715px;
 }

@@ -19,7 +19,6 @@
         #tbody {
             width: 100%;
             text-align: center;
-            border-bottom: 1px solid black;
         }
 
         #tbody object {
@@ -40,13 +39,6 @@
             padding: 0;
             box-sizing: border-box;
         }
-        th {
-            border-bottom: 1px solid;
-        }
-        td:hover{
-            color:orange;
-        }
-
 
     </style>
 </head>
@@ -56,7 +48,10 @@
 
     <div class="r right_content">
         <div class="common minheight800">
-           <p>项目列表</p>
+            <div class="common_title fix">
+                <span class="l">项目列表</span>
+                <a href="#" class="complete r"></a>
+            </div>
             <div id="projectList">
                 <table id="tbody">
 
@@ -92,16 +87,17 @@
                     console.log(result.flag);
                     var d = result.data;
                     console.log(d);
-                    $("#tbody").append('<th>ID</th><th>类别</th><th>截止日期</th><th>进度</th><th>标题</th><th>查看</th>');
+                    $("#tbody").append('<th>ID</th><th>标题</th><th>项目种类</th><th>封面</th><th>截止日期</th><th>进程</th><th>查看</th>');
                     for (var i = 0; i < d.length; i++) {
                         if ($("#tbody tr").length <= d.length) {
                             $("#tbody").append(
                                 "<tr>" +
                                 "<td>" + d[i].id + "</td>" +
+                                "<td>" + d[i].title + "</td>" +
                                 "<td>" + d[i].category.name + "</td>" +
+                                "<td><object data='" + d[i].cover + "'/></td>" +
                                 "<td>" + d[i].endTime + "</td>" +
                                 "<td>" + (d[i].actualAmount / d[i].goalAmount).toFixed(4) * 100 + "%</td>" +
-                                "<td>" + d[i].title + "</td>" +
                                 "<td><a href='${ctp}/personCenter/personProject/info-" + d[i].id + "'>查看</a></td>" +
                                 "</tr>");
 

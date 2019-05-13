@@ -89,45 +89,45 @@ public class CommentController {
         result.put("data",comments);
         return result;
     }
-//
-//    /**
-//     * 用户获取自己发表的评论列表
-//     * @param session
-//     * @return
-//     */
-//    @RequestMapping(value = "/doGetOwnerComment")
-//    @ResponseBody
-//    public Map<String,Object> doGetOwnerComment(HttpSession session){
-//        User user = (User) session.getAttribute("user");
-//
-//        List<Comment> comments = commentService.getOwnerCommentList(user);
-//
-//        Map<String,Object> result = new HashMap<String,Object>();
-//
-//        result.put("flag",SUCCESS_CODE);
-//        result.put("msg","success");
-//        result.put("data",comments);
-//        return result;
-//    }
-//
-//    /**
-//     * 用户获取收到的评论列表
-//     * @param session
-//     * @return
-//     */
-//    @RequestMapping(value = "/doGetReceiveComment")
-//    @ResponseBody
-//    public Map<String,Object> doGetReceiveComment(HttpSession session){
-//        User user = (User) session.getAttribute("user");
-//
-//        List<Comment> comments = commentService.getTargetCommentList(user);
-//
-//        Map<String,Object> result = new HashMap<String,Object>();
-//
-//        result.put("flag",SUCCESS_CODE);
-//        result.put("msg","success");
-//        result.put("data",comments);
-//        return result;
-//    }
+
+    /**
+     * 用户获取自己发表的评论列表
+     * @param session
+     * @return
+     */
+    @RequestMapping(value = "/doGetOwnerComment")
+    @ResponseBody
+    public Map<String,Object> doGetOwnerComment(HttpSession session){
+        User user = (User) session.getAttribute("user");
+
+        List<Comment> comments = commentService.getOwnerCommentList(user);
+
+        Map<String,Object> result = new HashMap<String,Object>();
+
+        result.put("flag",SUCCESS_CODE);
+        result.put("msg","success");
+        result.put("data",comments);
+        return result;
+    }
+
+    /**
+     * 用户获取收到的评论列表
+     * @param session
+     * @return
+     */
+    @RequestMapping(value = "/doGetReceiveComment")
+    @ResponseBody
+    public Map<String,Object> doGetReceiveComment(HttpSession session){
+        User user = (User) session.getAttribute("user");
+
+        List<Comment> comments = commentService.getTargetCommentList(user);
+
+        Map<String,Object> result = new HashMap<String,Object>();
+
+        result.put("flag",SUCCESS_CODE);
+        result.put("msg","success");
+        result.put("data",comments);
+        return result;
+    }
 
 }

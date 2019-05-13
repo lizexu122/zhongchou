@@ -9,7 +9,7 @@
     <script type="text/javascript" src="${ctp}/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="${ctp}/js/user.js"></script>
     <script src="${ctp}/js/layer.js" type="text/javascript"></script>
-    <title>- 个人中心 -</title>
+    <title>- PersonCenter -</title>
 </head>
 
 <body class="personal">
@@ -33,13 +33,25 @@
                             <i>
                             <c:if test="${sessionScope.user.status==1}">已验证</c:if>
                             <c:if test="${sessionScope.user.status==0}">未验证</c:if>
+                            <c:if test="${sessionScope.user.status==-1}">黑名单</c:if>
                             </i>
                         </span>
                     </p>
-                    <span>电话号码 &nbsp; : &nbsp; ${sessionScope.user.mobile}</span>
+                    <span>电话 &nbsp; : &nbsp; ${sessionScope.user.mobile}</span>
                 </div>
             </div>
             <div class="personal_info_right l">
+                <div class="personal_info_right_asset">
+                    <div class="tit">
+                        财产
+                    </div>
+                    <div class="mub">
+                        <div class="mub_com l">
+                            <span>余额</span>
+                            <p><i>$</i>${sessionScope.user.balance}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

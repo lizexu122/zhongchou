@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>个人选项</title>
+    <title>Person Order</title>
     <link rel="stylesheet" href="${ctp}/css/pc.css">
     <script src="${ctp}/js/jquery-1.11.0.min.js" type="text/javascript"></script>
     <script src="${ctp}/js/layer.js" type="text/javascript"></script>
@@ -14,10 +14,16 @@
     <jsp:include page="person_left.jsp"/>
     <div class="r right_content">
         <div class="common minheight800">
-           <p>订单</p>
+            <div class="common_title fix">
+                <span class="l">订单列表</span>
+                <a href="#" class="complete r"></a>
+            </div>
             <div class="tab-menu">
                 <ul>
-                    <li><a class="tab-selected" href="javascript:void(0);">所有选项</a></li>
+                    <li><a class="tab-selected" href="javascript:void(0);">所有订单</a></li>
+                    <li><a href="javascript:void(0);">已提交</a></li>
+                    <li><a href="javascript:void(0);">已撤回</a></li>
+                    <li><a href="javascript:void(0);">已退回</a></li>
                 </ul>
             </div>
             <div class="tab-box">
@@ -71,10 +77,13 @@
                             var status = "";
                             switch (data[i].status) {
                                 case 0:
-                                    status += "进行中";
+                                    status += "已提交";
                                     break;
                                 case -1:
-                                    status += "撤回";
+                                    status += "已撤回";
+                                    break;
+                                case -2:
+                                    status += "已退还";
                                     break;
                             }
 
@@ -93,7 +102,7 @@
 
 
                             if(data[i].status == 0){
-                                str+="<a href='javascript:void(0);' class='w_customer' onclick=\"withdraw('" + data[i].id + "')\">撤销</a>"
+                                str+="<a href='javascript:void(0);' class='w_customer' onclick=\"withdraw('" + data[i].id + "')\">撤回</a>"
                             }else{
                                 str+="";
                             }
@@ -113,12 +122,14 @@
                             var status = "";
                             switch (data[i].status) {
                                 case 0:
-                                    status += "进行中";
+                                    status += "已提交";
                                     break;
                                 case -1:
-                                    status += "已取消";
+                                    status += "已撤回";
                                     break;
-
+                                case -2:
+                                    status += "已退还";
+                                    break;
                             }
                             str +=
                                 "<div>" +
@@ -134,8 +145,8 @@
                                 "<p>总计:<em>$" + data[i].amount + "</em></p>";
 
 
-                            if(data[i].status==0){
-                                str+="<a href='javascript:void(0);' class='w_customer' onclick=\"withdraw('" + data[i].id + "')\">撤销</a>"
+                            if(data[i].status == 0){
+                                str+="<a href='javascript:void(0);' class='w_customer' onclick=\"withdraw('" + data[i].id + "')\">撤回</a>"
                             }else{
                                 str+="";
                             }
@@ -156,12 +167,14 @@
                             var status = "";
                             switch (data[i].status) {
                                 case 0:
-                                    status += "进行中";
+                                    status += "已提交";
                                     break;
                                 case -1:
-                                    status += "已取消";
+                                    status += "已撤回";
                                     break;
-
+                                case -2:
+                                    status += "已退还";
+                                    break;
                             }
                             str +=
                                 "<div>" +
@@ -178,7 +191,7 @@
 
 
                             if(data[i].status == 0){
-                                str+="<a href='javascript:void(0);' class='w_customer' onclick=\"withdraw('" + data[i].id + "')\">撤销</a>"
+                                str+="<a href='javascript:void(0);' class='w_customer' onclick=\"withdraw('" + data[i].id + "')\">撤回</a>"
                             }else{
                                 str+="";
                             }
@@ -198,16 +211,19 @@
                             var status = "";
                             switch (data[i].status) {
                                 case 0:
-                                    status += "进行中";
+                                    status += "已提交";
                                     break;
                                 case -1:
-                                    status += "已取消";
+                                    status += "已撤回";
+                                    break;
+                                case -2:
+                                    status += "已退还";
                                     break;
                             }
                             str +=
                                 "<div>" +
                                 "<div class=\"order_number\">" +
-                                "<div class=\"order_number_left l\">OrderID:" + data[i].id + "</div>" +
+                                "<div class=\"order_number_left l\">订单ID:" + data[i].id + "</div>" +
                                 "<div class=\"order_number_right r\">" + "<span>" + status + "</span>" + "</div>" +
                                 "</div>" +
                                 "<div class=\"project_order_content fix\">" +
@@ -219,7 +235,7 @@
 
 
                             if(data[i].status == 0){
-                                str+="<a href='javascript:void(0);' class='w_customer' onclick=\"withdraw('" + data[i].id + "')\">撤销</a>"
+                                str+="<a href='javascript:void(0);' class='w_customer' onclick=\"withdraw('" + data[i].id + "')\">撤回</a>"
                             }else{
                                 str+="";
                             }

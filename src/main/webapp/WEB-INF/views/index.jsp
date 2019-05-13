@@ -4,30 +4,30 @@
 <html>
 <head>
     <meta charset="utf-8"/>
-    <title>Commerce</title>
+    <title>Funding</title>
     <link rel="stylesheet" href="${ctp}/css/main.css" type="text/css"/>
     <link rel="stylesheet" href="${ctp}/css/model.css" type="text/css"/>
     <link rel="stylesheet" href="${ctp}/css/jquery.slideBox.css" type="text/css"/>
     <script type="text/javascript" src="${ctp}/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="${ctp}/js/responsiveslides.min.js"></script>
     <script type="text/javascript">
-        //背景切换图 使用jquery插件
+        //背景切换图
         $(function () {
             $("#slider").responsiveSlides({
-                auto: true, //是否自动播放
-                nav: true,  //是否显示左右导航箭头
-                speed: 500, //动画持续时间 单位毫秒
-                namespace: "callbacks", //修改默认的容器名称
-                pager: false, //是否显示页码
+                auto: true,
+                nav: true,
+                speed: 500,
+                namespace: "callbacks",
+                pager: false,
             });
         });
         //AboutProject输出关于本网站总体的数据
         $(window).load(
             function showAboutObject() {
-                $.get('doProjectCount', function (result) {    //项目总数，返回的是result对象
+                $.get('doProjectCount', function (result) {
                     document.getElementById("pjPosted").innerHTML = result.data;
                 });
-                $.get('doSupportCount', function (result) {  //参与支持总数 返回的是result对象
+                $.get('doSupportCount', function (result) {
                     document.getElementById("backers").innerHTML = result.data;
                 });
                 $.get('doProjectFinished', function (result) {
@@ -70,86 +70,113 @@
             <li>
                 <div class="banner1">
                     <div class="banner-info">
+                        <h3>Investment</h3>
+                        <p>Investment in fixed assets is an important vehicle for ensuring that the latest technology is
+                            available to business.</p>
+                        <%--固定资产投资是确保企业获得最新技术的重要手段--%>
                     </div>
                 </div>
             </li>
             <li>
                 <div class="banner2">
                     <div class="banner-info">
+                        <h3>Achieve the goal</h3>
+                        <p> One option is to tap existing limited partners for co-investments. </p>
+                        <%--寻求现有有限合伙人共同投资是一个选择--%>
                     </div>
                 </div>
             </li>
             <li>
                 <div class="banner3">
                     <div class="banner-info">
+                        <h3>Gain wealth</h3>
+                        <p>Wise investing is the surest path to financial independence and its something everyone can
+                            work on.</p>
+                        <%--明智的投资是经济独立最可靠的道路，而且每个人都可以做到。--%>
                     </div>
                 </div>
             </li>
         </ul>
     </div>
 </div>
-
 <%--第一个固定的背景大图--%>
-<%--<div class="firstBackground">--%>
-    <%--&lt;%&ndash;三个显示数据&ndash;%&gt;--%>
-    <%--<div class="aboutProject" id="about">--%>
-        <%--<div class="showMember" id="pricing">--%>
-            <%--<div class="Center">--%>
-                <%--<span class="AboutObject">总数目</span>--%>
-                <%--<div class="members">--%>
-                    <%--<ul>--%>
-                        <%--<li>--%>
-                            <%--<div class="numOMember">--%>
-                                <%--<h5>第一</h5>--%>
-                            <%--</div>--%>
-                            <%--<div class="nameOMember">--%>
-                                <%--<h2>总项目</h2>--%>
-                            <%--</div>--%>
-                            <%--<div class="amountOMember">--%>
-                                <%--<h2 id="pjPosted"></h2>--%>
-                            <%--</div>--%>
-                            <%--<div class="bigNumOMember">--%>
-                                <%--<h5>First</h5>--%>
-                            <%--</div>--%>
-                        <%--</li>--%>
-                    <%--</ul>--%>
-                    <%--<ul>--%>
-                        <%--<li>--%>
-                            <%--<div class="numOMember">--%>
-                                <%--<h5>第二</h5>--%>
-                            <%--</div>--%>
-                            <%--<div class="nameOMember">--%>
-                                <%--<h2>投资家</h2>--%>
-                            <%--</div>--%>
-                            <%--<div class="amountOMember">--%>
-                                <%--<h2 id="backers"></h2>--%>
-                            <%--</div>--%>
-                            <%--<div class="bigNumOMember">--%>
-                                <%--<h5>第二</h5>--%>
-                            <%--</div>--%>
-                        <%--</li>--%>
-                    <%--</ul>--%>
-                    <%--<ul>--%>
-                        <%--<li>--%>
-                            <%--<div class="numOMember">--%>
-                                <%--<h5>第三</h5>--%>
-                            <%--</div>--%>
-                            <%--<div class="nameOMember">--%>
-                                <%--<h2>已完成项目</h2>--%>
-                            <%--</div>--%>
-                            <%--<div class="amountOMember">--%>
-                                <%--<h2 id="pjCompleted"></h2>--%>
-                            <%--</div>--%>
-                            <%--<div class="bigNumOMember">--%>
-                                <%--<h5>第三</h5>--%>
-                            <%--</div>--%>
-                        <%--</li>--%>
-                    <%--</ul>--%>
-                <%--</div>--%>
-            <%--</div>--%>
-        <%--</div>--%>
-    <%--</div>--%>
-<%--</div>--%>
+<div class="firstBackground">
+    <%--三个显示数据--%>
+    <div class="aboutProject" id="about">
+        <div class="showMember" id="pricing">
+            <div class="Center">
+                <span class="AboutObject">Total Number of</span>
+                <div class="members">
+                    <ul>
+                        <li>
+                            <div class="numOMember">
+                                <h5>First</h5>
+                            </div>
+                            <div class="nameOMember">
+                                <h2>Projects Posted</h2>
+                            </div>
+                            <div class="amountOMember">
+                                <h2 id="pjPosted"></h2>
+                            </div>
+                            <div class="bigNumOMember">
+                                <h5>First</h5>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <div class="numOMember">
+                                <h5>Second</h5>
+                            </div>
+                            <div class="nameOMember">
+                                <h2>Backers</h2>
+                            </div>
+                            <div class="amountOMember">
+                                <h2 id="backers"></h2>
+                            </div>
+                            <div class="bigNumOMember">
+                                <h5>Second</h5>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <div class="numOMember">
+                                <h5>Third</h5>
+                            </div>
+                            <div class="nameOMember">
+                                <h2>Projects Completed</h2>
+                            </div>
+                            <div class="amountOMember">
+                                <h2 id="pjCompleted"></h2>
+                            </div>
+                            <div class="bigNumOMember">
+                                <h5>Third</h5>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%--第二个固定的背景大图--%>
+<div class="secondBackground">
+    <%--用于展示部分前五记录--%>
+    <div id="aboutNP">
+        <div class="typeOfProject">
+            <ul class="top">
+                <li class="currentLi"><a href="javascript:;" onclick="showTopFiveOfNH('doNewProjectTop')">New &
+                    Noteworthy</a></li>
+                <li><a href="javascript:;" onclick="showTopFiveOfNH('doHotProjectTop')">Hot</a></li>
+                <li><a href="javascript:;" onclick="showTopFiveOfNH('doProjectTopByCID-1')">Agriculture</a></li>
+                <li><a href="javascript:;" onclick="showTopFiveOfNH('doProjectTopByCID-2')">Publish</a></li>
+            </ul>
+        </div>
+        <div id="showNP" class="showNP">
+            <jsp:include page="model.jsp"/>
+        </div>
+    </div>
     <jsp:include page="footer.jsp"/>
 </div>
 </body>

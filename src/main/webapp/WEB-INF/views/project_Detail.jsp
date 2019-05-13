@@ -1,7 +1,7 @@
 <%--
   Created by IntelliJ IDEA.
   User: Lizexu
-  Date: 2019/1/4
+  Date: 2018/6/4
   Time: 16:45
   To change this template use File | Settings | File Templates.
 --%>
@@ -54,10 +54,6 @@
             height: 20%;
             margin-left: 90%;
         }
-        body{
-            background-image: url("${ctp}image/n1.jpg");
-        }
-
     </style>
 
 
@@ -72,12 +68,12 @@
             <%--begin="0" end="4"--%>
             <div class="eachOne">
                 <div class="eachOneLeft">
-                    <img class="showImage" src="${data.cover}"></img>
+                    <object class="showImage" data="${data.cover}"></object>
                     <%--图片必须用绝对路径输出--%>
                 </div>
                 <div class="eachOneRight">
                     <a href="#">
-                        <output class="PJCategory">主题：<span id="title"> ${data.title}</span></output>
+                        <output class="PJTitle">标题：<span id="title"> ${data.title}</span></output>
                     </a><br>
                     <a href="#">
                         <output class="PJCategory">支持数：<span id="shengyu">${data.supportCount} </span></output>
@@ -89,20 +85,29 @@
 
                     <a href="#">
                         <output class="PJ">状态：</output>
-                        <c:if test="${data.status eq '0'}">未完成</c:if>
-                        <c:if test="${data.status eq '1'}">已完成</c:if>
+                        <c:if test="${data.status eq '0'}">未完成未到期 </c:if>
+                        <c:if test="${data.status eq '1'}">未完成已到期 </c:if>
+                        <c:if test="${data.status eq '2'}">已完成未到期</c:if>
+                        <c:if test="${data.status eq '3'}">已完成已到期</c:if>
                     </a><br/>
+                    <output class="PJPublishTime">发布时间：</output>
+                    <fmt:formatDate type="date"
+                                    value="${project.publishTime}"></fmt:formatDate>
                     <div class="progress" onloadstart="PJPercentage">
 
                         <div class="progress-bar progress-bar-primary"></div>
                     </div>
+                    <output class="PJFPercent">
+                        <fmt:formatNumber type="percent" minFractionDigits="2"
+                                          value="${data.actualAmount/data.goalAmount}"/>
+                    </output>
                     <br>
                     <a href="#">
                         <output class="PJCategory">剩余天数：<input id="shengyutian" readonly/></output>
                     </a><br>
                     <br>
                     <a href="#">
-                        <a href='${ctp}/browse/support-${data.id}' id="sdzc" id="sdzc">支持</a>
+                        <a href='${ctp}/browse/support-${data.id}' id="sdzc" id="sdzc">立即支持</a>
                     </a><br>
                 </div>
             </div>
@@ -141,6 +146,16 @@
                                     <h2 class="h">标题</h2>
                                     <div class="course_img"><h4>${data.title}</h4></div>
                                 </li>
+                                <li>
+                                    <h2 class="h">目的</h2>
+                                    <div class="course_img" style="background-color: #6c7cc8"><h4>${data.purpose}</h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h2 class="h">团队</h2>
+                                    <div class="course_img" style="background-color: #00b9b9"><h4>${data.team}</h4>
+                                    </div>
+                                </li>
                             </ul>
                         </div>
                     </li>
@@ -165,7 +180,7 @@
                     <textarea rows="2" cols="10" name="content" id="content2">
                     </textarea>
                     <div id="wn">
-                        <input type="button" id="pinglun" value="评论" onclick="pingluna()"/>
+                        <input type="button" id="pinglun" value="comment" onclick="pingluna()"/>
                     </div>
                     <p>评论列表</p>
                     <table id="plItemCountBox">
@@ -348,17 +363,17 @@
                             "</tr>"
                             + "<tr>" +
                             "<td id='cm'>" + d[i].content +
-                            "<span id='xuan'>请选择回复的对象</span>" +
+                            "<span id='xuan'>请选择需要回复的对象</span>" +
                             "<input class='radio' type='radio' value='"
                             + d[i].fromUser.id + "' name='to_user'> </td>" +
                             "</tr>"
                             + "<tr>" +
-                            "<td> 给用户:"
+                            "<td> ToUser:"
                             + d[i].toUser.username + " </td>" +
                             "<td>" + " <img id='gf' src=\"${d[i].toUser.avater}\"/>" + "</td>" +
                             "</tr>" +
                             "<tr>" +
-                            "<td>创建时间: " + d[i].createTime + "</td>" +
+                            "<td>评论时间: " + d[i].createTime + "</td>" +
                             "</tr>"
                         );
 

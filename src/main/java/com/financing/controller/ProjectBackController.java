@@ -105,7 +105,7 @@ public class ProjectBackController {
         result.put("flag",SUCCESS_CODE);
         result.put("msg","add success");
         result.put("data",backs);
-
+        System.out.println("result = " + result.get("data"));
         return result;
 
     }

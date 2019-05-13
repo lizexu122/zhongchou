@@ -2,45 +2,65 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="ctp" value="${pageContext.request.contextPath}"/>
 <jsp:include page="personTop.jsp"/>
-<style type="text/css">
-    .left_nav_name:hover{
-        padding-left: 15px;
-    }
-</style>
 <div class="left_nav l">
     <ul class="ul_left_nav">
         <li id="personCenter" class="active">
             <a href="${ctp}/personCenter">
-                <span class="left_nav_name dib">个人中心  |</span>
+                <i class="left_nav_icon dib">
+                    <img class="icon_img" src="${ctp}/image/personal_icon04.png" alt="">
+                </i>
+                <span class="left_nav_name dib">个人中心</span>
             </a>
         </li>
         <li id="personInfo" class="grid">
             <a href="${ctp}/personCenter/personInfo">
-                <span class="left_nav_name dib">个人信息  |</span>
+                <i class="left_nav_icon dib">
+                    <img class="icon_img" src="${ctp}/image/personal_icon09.png" alt="">
+                </i>
+                <span class="left_nav_name dib">个人信息</span>
             </a>
         </li>
         <li id="projectCreate" class="grid">
             <a href="${ctp}/personCenter/projectCreate">
-                <span class="left_nav_name dib">发布项目  |</span>
+                <i class="left_nav_icon dib">
+                    <img class="icon_img" src="${ctp}/image/personal_icon08.png" alt="">
+                </i>
+                <span class="left_nav_name dib">项目发布</span>
             </a>
         </li>
         <li id="personProject" class="grid">
             <a href="${ctp}/personCenter/personProject">
-                <span class="left_nav_name dib">我的项目  |</span>
+                <i class="left_nav_icon dib">
+                    <img class="icon_img" src="${ctp}/image/personal_icon07.png" alt="">
+                </i>
+                <span class="left_nav_name dib">我的项目</span>
             </a>
         </li>
         <li id="personOrder" class="grid">
             <a href="${ctp}/personCenter/personOrder">
-                <span class="left_nav_name dib">我的订单  |</span>
+                <i class="left_nav_icon dib">
+                    <img class="icon_img" src="${ctp}/image/personal_icon02.png" alt="">
+                </i>
+                <span class="left_nav_name dib">我的订单</span>
             </a>
         </li>
 
         <li id="personAddress" class="grid">
             <a href="${ctp}/personCenter/personAddress">
-                <span class="left_nav_name dib">我的地址  |</span>
+                <i class="left_nav_icon dib">
+                    <img class="icon_img" src="${ctp}/image/personal_icon06.png" alt="">
+                </i>
+                <span class="left_nav_name dib">我的地址</span>
             </a>
         </li>
-
+        <li id="personComment" class="grid">
+            <a href="${ctp}/personCenter/personComment">
+                <i class="left_nav_icon dib">
+                    <img class="icon_img" src="${ctp}/image/personal_icon01.png" alt="">
+                </i>
+                <span class="left_nav_name dib">我的评论</span>
+            </a>
+        </li>
     </ul>
 </div>
 <script type="text/javascript">
